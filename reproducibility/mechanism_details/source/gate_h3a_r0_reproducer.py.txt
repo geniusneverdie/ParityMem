@@ -1,0 +1,167 @@
+#!/usr/bin/env python3
+"""Fresh-process, zero-model reproducers for frozen external history integrations."""
+
+from __future__ import annotations
+
+from copy import deepcopy
+import hashlib
+import json
+from pathlib import Path
+import sys
+
+from transformers import AutoTokenizer
+
+ROOT = Path("/data9/amx/fourth/paritymem")
+QWEN = Path("/data9/amx/fourth/_models/huggingface/models--Qwen--Qwen3-14B/snapshots/40c069824f4251a91eefaf281ebe4c544efd3e18")
+LLAMA = Path("/data5/hanwen/llm_file/Meta-Llama-3.1-8B-Instruct")
+MISTRAL = ROOT / "artifacts/gate_h2b_m2/remote_static_candidate"
+
+TOOLS = [
+    {"type": "function", "function": {"name": "get_order", "description": "lookup", "parameters": {"type": "object", "properties": {"order_id": {"type": "string"}}, "required": ["order_id"]}}},
+    {"type": "function", "function": {"name": "get_policies", "description": "policy", "parameters": {"type": "object", "properties": {"topic": {"type": "string"}}, "required": ["topic"]}}},
+    {"type": "function", "function": {"name": "process_refund", "description": "refund", "parameters": {"type": "object", "properties": {"item_id": {"type": "string"}, "confirm": {"type": "boolean"}}, "required": ["item_id", "confirm"]}}},
+]
+
+
+def call(call_id: str, name: str, arguments: dict) -> dict:
+    return {"id": call_id, "type": "function", "function": {"name": name, "arguments": arguments}}
+
+
+def llama_messages() -> list[dict]:
+    calls = [
+        call("call_a", "get_order", {"order_id": "ORD-1"}),
+        call("call_b", "get_policies", {"topic": "refund"}),
+        call("call_c", "process_refund", {"item_id": "ITEM-1", "confirm": False}),
+    ]
+    return [
+        {"role": "system", "content": "External conformance trace."},
+        {"role": "user", "content": "Inspect and act."},
+        {"role": "assistant", "content": "", "tool_calls": calls},
+        {"role": "tool", "tool_call_id": "call_a", "content": {"order_id": "ORD-1"}},
+        {"role": "tool", "tool_call_id": "call_b", "content": {"policy": "refund"}},
+        {"role": "tool", "tool_call_id": "call_c", "content": {"status": "preview"}},
+        {"role": "user", "content": "Continue from the official results."},
+    ]
+
+
+def mistral_role_messages() -> list[dict]:
+    return [
+        {"role": "system", "content": "External conformance trace."},
+        {"role": "user", "content": "Inspect."},
+        {"role": "assistant", "content": "", "tool_calls": [call("m30000001", "get_order", {"order_id": "ORD-1"})]},
+        {"role": "tool", "tool_call_id": "m30000001", "content": {"order_id": "ORD-1"}},
+        {"role": "user", "content": "Continue from the official result."},
+    ]
+
+
+def mistral_id_messages() -> list[dict]:
+    identifier = "call_" + "0" * 24
+    return [
+        {"role": "system", "content": "External conformance trace."},
+        {"role": "user", "content": "Inspect."},
+        {"role": "assistant", "content": "", "tool_calls": [call(identifier, "get_order", {"order_id": "ORD-1"})]},
+        {"role": "tool", "tool_call_id": identifier, "content": {"order_id": "ORD-1"}},
+    ]
+
+
+def repair_llama_template(template: str) -> str:
+    start = template.index("    {%- elif 'tool_calls' in message %}")
+    end = template.index('    {%- elif message.role == "tool" or message.role == "ipython" %}', start)
+    branch = """    {%- elif 'tool_calls' in message %}
+        {{- '<|start_header_id|>assistant<|end_header_id|>\\n\\n' -}}
+        {{- '[' }}
+        {%- for item in message.tool_calls %}
+            {%- set tool_call = item.function %}
+            {{- '{\"name\": \"' + tool_call.name + '\", \"parameters\": ' }}
+            {{- tool_call.arguments | tojson }}
+            {{- '}' }}
+            {%- if not loop.last %}{{- ', ' }}{%- endif %}
+        {%- endfor %}
+        {{- ']<|eot_id|>' }}
+"""
+    return template[:start] + branch + template[end:]
+
+
+def repair_mistral_role_template(template: str) -> str:
+    old = 'if not (message.role == "tool" or message.role == "tool_results" or (message.tool_calls is defined and message.tool_calls is not none))'
+    new = 'if not (message.role == "tool" or message.role == "tool_results")'
+    if old not in template:
+        raise RuntimeError("frozen Mistral role guard not found")
+    return template.replace(old, new, 1)
+
+
+def remap_mistral_ids(messages: list[dict]) -> tuple[list[dict], dict[str, str]]:
+    out = deepcopy(messages)
+    mapping: dict[str, str] = {}
+    next_id = 0
+    for message in out:
+        if message.get("role") == "assistant":
+            for item in message.get("tool_calls") or []:
+                old = item["id"]
+                new = f"h3{next_id:07d}"
+                next_id += 1
+                mapping[old] = new
+                item["id"] = new
+        if message.get("role") == "tool" and message.get("tool_call_id") in mapping:
+            message["tool_call_id"] = mapping[message["tool_call_id"]]
+    return out, mapping
+
+
+def semantic_projection(messages: list[dict]) -> dict:
+    calls = []
+    results = []
+    for message in messages:
+        if message.get("role") == "assistant":
+            for index, item in enumerate(message.get("tool_calls") or []):
+                calls.append({"index": index, "name": item["function"]["name"], "arguments": item["function"]["arguments"]})
+        elif message.get("role") == "tool":
+            results.append({"index": len(results), "content": message.get("content")})
+    return {"calls": calls, "results": results}
+
+
+def run(finding: str, mode: str) -> dict:
+    if finding == "RW-RUNTIME-001":
+        path, messages = LLAMA, llama_messages()
+    elif finding == "RW-RUNTIME-002":
+        path, messages = MISTRAL, mistral_id_messages()
+    elif finding == "RW-RUNTIME-003":
+        path, messages = MISTRAL, mistral_role_messages()
+    else:
+        raise ValueError(finding)
+    tokenizer = AutoTokenizer.from_pretrained(path, local_files_only=True, trust_remote_code=False)
+    template = None
+    working = deepcopy(messages)
+    mapping = None
+    if mode == "repair":
+        if finding == "RW-RUNTIME-001":
+            template = repair_llama_template(tokenizer.chat_template)
+        elif finding == "RW-RUNTIME-002":
+            working, mapping = remap_mistral_ids(working)
+        else:
+            template = repair_mistral_role_template(tokenizer.chat_template)
+    rendered = None
+    error = None
+    try:
+        rendered = tokenizer.apply_chat_template(working, tools=TOOLS, chat_template=template,
+                                                  tokenize=False, add_generation_prompt=True)
+    except Exception as exc:
+        error = {"type": type(exc).__name__, "message": str(exc)}
+    original_projection = semantic_projection(messages)
+    working_projection = semantic_projection(working)
+    return {
+        "finding_id": finding, "mode": mode, "accepted": rendered is not None, "exception": error,
+        "rendered_sha256": hashlib.sha256(rendered.encode()).hexdigest() if rendered else None,
+        "rendered_length": len(rendered) if rendered else None,
+        "input_sha256": hashlib.sha256(json.dumps(messages, sort_keys=True, separators=(",", ":")).encode()).hexdigest(),
+        "template_sha256": hashlib.sha256(tokenizer.chat_template.encode()).hexdigest(),
+        "counterfactual_template_sha256": hashlib.sha256(template.encode()).hexdigest() if template else None,
+        "semantic_projection_before": original_projection, "semantic_projection_after": working_projection,
+        "semantic_projection_preserved": original_projection == working_projection,
+        "transport_id_mapping": mapping, "model_calls": 0, "gpu_calls": 0,
+    }
+
+
+if __name__ == "__main__":
+    if len(sys.argv) != 3 or sys.argv[2] not in {"original", "repair"}:
+        raise SystemExit("usage: gate_h3a_r0_reproducer.py FINDING original|repair")
+    print(json.dumps(run(sys.argv[1], sys.argv[2]), ensure_ascii=False, sort_keys=True))

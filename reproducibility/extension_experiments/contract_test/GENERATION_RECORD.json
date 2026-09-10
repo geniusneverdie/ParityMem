@@ -1,0 +1,9 @@
+{
+  "created_utc": "2026-09-07T11:56:57.344418+00:00",
+  "seed_for_ID_generation": "dd1ee1e6fd069f7a6f5362358bbe9e07",
+  "marker_values_recorded_in_cases": true,
+  "unique_traces": 48,
+  "semantic_conditions": 144,
+  "alias_evaluations": 288,
+  "outcome_labels_generated": false
+}

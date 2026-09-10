@@ -1,0 +1,32 @@
+{
+  "call_counts": {
+    "gpu": 0,
+    "http": 0,
+    "model": 0,
+    "scientific_execution": 0,
+    "scientific_scorer": 0
+  },
+  "generated_at_utc": "2026-08-11T12:54:45.300301+00:00",
+  "not_a_production_patch": true,
+  "repairs": [
+    {
+      "finding_id": "RW-RUNTIME-001",
+      "fixed_input_frozen_first": true,
+      "repair": "isolated copied Llama template branch serializes the full call list in one assistant block",
+      "upstream_modified": false
+    },
+    {
+      "finding_id": "RW-RUNTIME-002",
+      "fixed_input_frozen_first": true,
+      "repair": "isolated bijective 29-to-9-character ID bridge preserves original transport provenance and result pairing",
+      "upstream_modified": false
+    },
+    {
+      "finding_id": "RW-RUNTIME-003",
+      "fixed_input_frozen_first": true,
+      "repair": "isolated copied Mistral role guard counts assistant tool-call turns while still skipping tool-result records",
+      "upstream_modified": false
+    }
+  ],
+  "schema_version": "paritymem.h3a_r0.counterfactual_repair_registry.v1"
+}

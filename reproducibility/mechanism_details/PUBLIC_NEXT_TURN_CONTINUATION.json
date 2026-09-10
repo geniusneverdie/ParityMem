@@ -1,0 +1,77 @@
+{
+  "schema_version": "paritymem.h3a_r1.f1_model_continuation.v1",
+  "generated_at_utc": "2026-08-11T13:25:30.829450+00:00",
+  "status": "MODEL_CONTINUATION_OBTAINED",
+  "model": "meta-llama/Meta-Llama-3.1-8B-Instruct",
+  "revision": "8c22764a7e3675c50d4c7c9a4edb474456022b16",
+  "deterministic_3_of_3": true,
+  "model_continuation_obtained": true,
+  "environment_continuation": {
+    "next_action_official_semantics_policy": "would be parsed/validated if bound; generated response retained without repair",
+    "one_step_executed": false,
+    "reachable": true,
+    "reason": "fixed conformance trace is not bound to an official task-local database; no retry or full episode permitted"
+  },
+  "original_path_model_call_reachable": false,
+  "original_path_model_calls": 0,
+  "path": "repair_only",
+  "benchmark_science": false,
+  "downstream_conformance_only": true,
+  "responses": [
+    {
+      "benchmark_science": false,
+      "downstream_conformance_only": true,
+      "http_status": 200,
+      "input_tokens": 475,
+      "latency_seconds": 77.19984026998281,
+      "output_tokens": 65,
+      "raw_text": "{\"name\": \"get_order\", \"parameters\": {\"order_id\": \"ORD-1\"}}, {\"name\": \"get_policies\", \"parameters\": {\"topic\": \"refund\"}}, {\"name\": \"process_refund\", \"parameters\": {\"item_id\": \"ITEM-1\", \"confirm\": false}}]",
+      "raw_text_sha256": "dec5539dafc9f7ad6b808119afad5795b453cb88c734f16affeb228809d432ef",
+      "repeat": 0,
+      "response_sha256": "a054008dd6c7166494329ace8f605eee95d3f2b773fa7497821f1755350f6470",
+      "status": "PASS",
+      "task_performance_endpoint": false
+    },
+    {
+      "benchmark_science": false,
+      "downstream_conformance_only": true,
+      "http_status": 200,
+      "input_tokens": 475,
+      "latency_seconds": 77.48975386098027,
+      "output_tokens": 65,
+      "raw_text": "{\"name\": \"get_order\", \"parameters\": {\"order_id\": \"ORD-1\"}}, {\"name\": \"get_policies\", \"parameters\": {\"topic\": \"refund\"}}, {\"name\": \"process_refund\", \"parameters\": {\"item_id\": \"ITEM-1\", \"confirm\": false}}]",
+      "raw_text_sha256": "dec5539dafc9f7ad6b808119afad5795b453cb88c734f16affeb228809d432ef",
+      "repeat": 1,
+      "response_sha256": "07a5fbd52086a676cd76ead3f706c655ac371c30671af4bceca969efbed15723",
+      "status": "PASS",
+      "task_performance_endpoint": false
+    },
+    {
+      "benchmark_science": false,
+      "downstream_conformance_only": true,
+      "http_status": 200,
+      "input_tokens": 475,
+      "latency_seconds": 77.005610011518,
+      "output_tokens": 65,
+      "raw_text": "{\"name\": \"get_order\", \"parameters\": {\"order_id\": \"ORD-1\"}}, {\"name\": \"get_policies\", \"parameters\": {\"topic\": \"refund\"}}, {\"name\": \"process_refund\", \"parameters\": {\"item_id\": \"ITEM-1\", \"confirm\": false}}]",
+      "raw_text_sha256": "dec5539dafc9f7ad6b808119afad5795b453cb88c734f16affeb228809d432ef",
+      "repeat": 2,
+      "response_sha256": "079f6a6d71f7e2e50d0f176d2a7f2ec32e66a05aa5007247c309d679e772c01c",
+      "status": "PASS",
+      "task_performance_endpoint": false
+    }
+  ],
+  "model_calls": 3,
+  "http_calls": 3,
+  "scorer": {
+    "called": false,
+    "classification": "VALID_PATH_RETAINED",
+    "reachable": true,
+    "score_effect_claim": false
+  },
+  "provenance": {
+    "original_sha256": "b732260525d0901ef83355485ff31ed2198880309688277193d8e71b0c7e7493",
+    "transformation": "field-selection view; machine resource ownership, process inventory and server startup records omitted",
+    "original_record_in_v7_package": "reproducibility/mechanism_details/source/next_turn_model_continuation.json"
+  }
+}

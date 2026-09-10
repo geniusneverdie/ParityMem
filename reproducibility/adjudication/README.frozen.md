@@ -1,0 +1,7 @@
+# Independent programmatic adjudication: 60 recorded cases
+
+The adjudicator is the independent Python program preserved as `source/paper_p2_s0_adjudicator.py.txt`, not a human panel or an LLM judge. Its imports are Python standard-library modules. It reads the frozen `adjudication_inputs.jsonl` and `adjudication_source_registry.json`, verifies the source-registry binding, and classifies the recorded official/observed semantics, execution evidence, history, pairing and ownership fields. The input can include official-validation evidence; independence here concerns no access to holdout gold labels and no import of the ParityMem checker.
+
+The original prediction and scoring stages are separate. `adjudication_predictions.jsonl` contains the program's recorded decisions; `source/paper_p2_s0_evaluate_adjudication.py.txt` performs the later comparison with reference labels. `adjudication_results.json` reports agreement on class, consequence and first divergence for all 60 sampled cases, and records `adjudicator_gold_access=false` and `adjudicator_paritymem_import=false`.
+
+`adjudication_sample_registry.json` identifies the sample. The recorded sample consists of novel compositions from the existing holdout; it is not 60 additional independent cases to add to 300. Original files are copied byte for byte, with bindings in `../ADDITIONAL_SOURCE_BINDINGS.json`. No adjudication program was rerun for v7.

@@ -1,0 +1,109 @@
+#!/usr/bin/env python3
+"""Frozen ParityMem prediction runner; accepts input records and output path only."""
+
+from __future__ import annotations
+
+import argparse
+import hashlib
+import json
+from pathlib import Path
+import sys
+from typing import Any
+
+ROOT = Path("/data9/amx/fourth/paritymem")
+sys.path.insert(0, str(ROOT))
+
+from paritymem.contract_ir.equivalence import compare_contract_ir
+from paritymem.contract_ir.nodes import InterfaceContractIR, MessageIR, SessionIR, ToolArgumentsIR, ToolCallIR
+from paritymem.contract_ir.schema import CONTRACT_IR_VERSION
+from paritymem.h2b_h1.identity import evaluate_pairing
+
+
+def digest(value: Any) -> str:
+    data = json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(",", ":")).encode()
+    return hashlib.sha256(data).hexdigest()
+
+
+def node(cls: type, semantic_type: str, value: Any, source_id: str):
+    return cls(semantic_type=semantic_type, canonical_value=value, source_layer="RUNTIME_NORMATIVE",
+               source_schema="P1_HOLDOUT_V1", source_identifier=source_id,
+               ordering_semantics="ORDERED", default_semantics="OFFICIAL",
+               null_semantics="EXPLICIT", encoding_semantics="CANONICAL_JSON",
+               identifier_namespace="P1_HOLDOUT", provenance_chain=({"source": "frozen official contract"},),
+               compiler_operators_applied=(), source_hash=digest(value))
+
+
+def build_ir(fixture: dict[str, Any], side: str) -> InterfaceContractIR:
+    value = fixture[side]["semantics"]
+    session = node(SessionIR, "SessionIR", {"integration": fixture["integration_id"]}, fixture["fixture_id"] + ":session")
+    message = node(MessageIR, "MessageIR", {
+        "assistant_text": value["assistant_text"], "history_roles": value["history_roles"],
+        "observation": value["observation"],
+    }, fixture["fixture_id"] + ":message")
+    calls = tuple(node(ToolCallIR, "ToolCallIR", {"index": i, "name": row["name"]}, f"{fixture['fixture_id']}:call:{i}")
+                  for i, row in enumerate(value["calls"]))
+    args = tuple(node(ToolArgumentsIR, "ToolArgumentsIR", {"index": i, "arguments": row["arguments"]}, f"{fixture['fixture_id']}:args:{i}")
+                 for i, row in enumerate(value["calls"]))
+    return InterfaceContractIR(contract_version=CONTRACT_IR_VERSION, benchmark="P1_HOLDOUT",
+                               source_layer="RUNTIME_NORMATIVE", session=session, messages=(message,),
+                               tool_calls=calls, tool_arguments=args,
+                               provenance_chain=({"fixture": fixture["fixture_id"]},))
+
+
+def predict(fixture: dict[str, Any]) -> dict[str, Any]:
+    left_ir = build_ir(fixture, "official")
+    right_ir = build_ir(fixture, "observed")
+    layer = compare_contract_ir(
+        fixture["official"]["representation"], fixture["observed"]["representation"], left_ir, right_ir,
+        left_execution=fixture["official"]["execution"], right_execution=fixture["observed"]["execution"],
+        left_score=fixture["official"]["score"], right_score=fixture["observed"]["score"],
+    )
+    pairing_args = fixture["pairing"]
+    pairing = evaluate_pairing(pairing_args["original_calls"], pairing_args["history_calls"], pairing_args["history_results"],
+                               execution_order=pairing_args["execution_order"], scorer_order=pairing_args["scorer_order"])
+    closure_failure = fixture["history"]["runtime_reachable"] and not fixture["history"]["encoder_accepts_observed"]
+    validation = fixture["ownership"].get("official_validation")
+    if not layer.contract_ir_parity:
+        is_defect, classification, severity = True, "MODEL_VISIBLE_SEMANTIC_DEFECT", "R2"
+    elif closure_failure or not pairing["pairing_preserving_closure"] or layer.execution_parity is False:
+        is_defect, classification, severity = True, "EXECUTION_OR_CLOSURE_DEFECT", "R3"
+    elif layer.scoring_parity is False:
+        is_defect, classification, severity = True, "SCORING_DEFECT", "R4"
+    elif validation is not None:
+        is_defect, classification, severity = False, "EXPECTED_OFFICIAL_BEHAVIOR", "R0"
+    else:
+        is_defect, classification, severity = False, "SAFE_REPRESENTATION_DRIFT", "R0"
+    divergence = "NONE"
+    if is_defect:
+        for event in fixture["trace"]:
+            if event.get("semantic_relevant") and event.get("normative") != event.get("observed"):
+                divergence = event["path"]
+                break
+    return {
+        "schema_version": "paritymem.paper_p1.holdout_prediction.v1", "fixture_id": fixture["fixture_id"],
+        "integration_id": fixture["integration_id"], "is_defect": is_defect,
+        "classification": classification, "severity": severity, "first_divergence": divergence,
+        "pairing_preserved": pairing["pairing_preserving_closure"],
+        "layer_parity": layer.to_dict(), "history_closure_failure": closure_failure,
+        "unresolved": False,
+    }
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--inputs", required=True)
+    parser.add_argument("--predictions", required=True)
+    args = parser.parse_args()
+    source = Path(args.inputs); target = Path(args.predictions)
+    if target.exists():
+        raise RuntimeError("PREDICTION_OUTPUT_COLLISION")
+    rows = [json.loads(line) for line in source.read_text().splitlines() if line.strip()]
+    with target.open("x", encoding="utf-8") as handle:
+        for row in rows:
+            handle.write(json.dumps(predict(row), ensure_ascii=False, sort_keys=True) + "\n")
+    print(json.dumps({"predictions": len(rows), "input_path": str(source), "output_path": str(target),
+                      "model_calls": 0, "http_model_calls": 0, "gpu_calls": 0}, sort_keys=True))
+
+
+if __name__ == "__main__":
+    main()

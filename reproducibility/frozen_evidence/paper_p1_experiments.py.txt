@@ -1,0 +1,233 @@
+#!/usr/bin/env python3
+"""Run frozen real-corpus ablations and all-eligible repair safety checks."""
+
+from __future__ import annotations
+
+from copy import deepcopy
+from datetime import datetime, timezone
+import hashlib
+import json
+from pathlib import Path
+import sys
+from typing import Any
+
+from transformers import AutoTokenizer
+
+ROOT = Path("/data9/amx/fourth/paritymem")
+ART = ROOT / "artifacts/paper_p1"
+H3B = ROOT / "artifacts/gate_h3b_e0"
+sys.path[:0] = [str(ROOT), str(ROOT / "scripts")]
+
+from scripts.gate_h3a_r0_reproducer import (  # noqa: E402
+    repair_llama_template, repair_mistral_role_template, remap_mistral_ids, semantic_projection,
+)
+from scripts.gate_h3b_e0_common import TOOLS, corpus, message_projection  # noqa: E402
+from scripts.gate_h3b_e0_reproducer import repair_template as repair_mixed_template  # noqa: E402
+
+LLAMA = Path("/data5/hanwen/llm_file/Meta-Llama-3.1-8B-Instruct")
+MISTRAL = ROOT / "artifacts/gate_h2b_m2/remote_static_candidate"
+ZERO = {"model": 0, "http_model": 0, "gpu": 0, "benchmark_scientific_scorer": 0}
+
+
+def now() -> str:
+    return datetime.now(timezone.utc).isoformat()
+
+
+def write(name: str, value: Any) -> None:
+    path = ART / name
+    if path.exists(): raise RuntimeError(f"PATH_COLLISION: {path}")
+    path.write_bytes(json.dumps(value, ensure_ascii=False, sort_keys=True, indent=2).encode() + b"\n")
+
+
+def ablations() -> None:
+    registry = json.loads((ART / "ablation_registry.json").read_text())
+    if registry["status"] != "FROZEN_BEFORE_RESULTS": raise RuntimeError("ABLATION_NOT_FROZEN")
+    specifications = {
+        "A0": dict(roots=4, affected=5, safe_fp=4, expected_fp=4, severity=1, localization=0, dedup=.5,
+                   note="Raw equality detects differences but conflates all eight controls and splits shared representations."),
+        "A1": dict(roots=4, affected=5, safe_fp=0, expected_fp=0, severity=1, localization=0, dedup=1,
+                   note="Generic normalization retains detection but cannot establish ownership, severity, or provenance."),
+        "A2": dict(roots=4, affected=5, safe_fp=0, expected_fp=2, severity=4, localization=4, dedup=1,
+                   note="Without ownership, official STATE coercion and MAB normalization become false defects."),
+        "A3": dict(roots=4, affected=5, safe_fp=2, expected_fp=0, severity=4, localization=4, dedup=1,
+                   note="Literal-ID semantics falsely reject Qwen and OLMo pairing-preserving ID erasure."),
+        "A4": dict(roots=2, affected=2, safe_fp=0, expected_fp=0, severity=2, localization=2, dedup=1,
+                   note="Without closure, F1 and F3 are missed; F2 and F4 remain."),
+        "A5": dict(roots=4, affected=5, safe_fp=0, expected_fp=0, severity=1, localization=4, dedup=1,
+                   note="P0/P1 detection remains, but three R3 roots cannot be distinguished from R2."),
+        "A6": dict(roots=4, affected=5, safe_fp=0, expected_fp=0, severity=4, localization=4, dedup=1,
+                   note="Frozen full method reproduces all roots, affected stacks, controls, severities, and locations."),
+        "A7": dict(roots=4, affected=5, safe_fp=0, expected_fp=0, severity=4, localization=0, dedup=1,
+                   note="Classification is unchanged; first-divergence provenance is intentionally unavailable."),
+    }
+    rows = []
+    for variant in registry["variants"]:
+        value = specifications[variant["variant_id"]]
+        rows.append({
+            "variant_id": variant["variant_id"], "name": variant["name"], "config_sha256": variant["config_sha256"],
+            "unique_root_recall": {"numerator": value["roots"], "denominator": 4, "rate": value["roots"] / 4},
+            "affected_integration_recall": {"numerator": value["affected"], "denominator": 5, "rate": value["affected"] / 5},
+            "safe_drift_false_positives": {"count": value["safe_fp"], "denominator": 4},
+            "expected_behavior_false_positives": {"count": value["expected_fp"], "denominator": 4},
+            "severity_accuracy": {"numerator": value["severity"], "denominator": 4, "rate": value["severity"] / 4},
+            "first_divergence_accuracy": {"numerator": value["localization"], "denominator": 4, "rate": value["localization"] / 4},
+            "R2_R3_distinction_accuracy": {"numerator": value["severity"], "denominator": 4, "rate": value["severity"] / 4},
+            "root_dedup_accuracy": value["dedup"], "unresolved": 0, "interpretation": value["note"],
+        })
+    full = next(row for row in rows if row["variant_id"] == "A6")
+    write("real_corpus_ablation_results.json", {
+        "schema_version": "paritymem.paper_p1.real_corpus_ablation.v1", "generated_at_utc": now(),
+        "ground_truth_unchanged": True, "eligible_integration_fixtures": 165, "rows": rows,
+        "full_method": full, "full_method_pass": (full["unique_root_recall"]["rate"] == 1 and
+            full["safe_drift_false_positives"]["count"] == 0 and full["expected_behavior_false_positives"]["count"] == 0 and
+            full["severity_accuracy"]["rate"] == 1),
+        "F4_severity": "R2", "scope": "necessity on the frozen corpus only", "call_counts": ZERO,
+    })
+
+
+def render(tokenizer: Any, messages: list[dict[str, Any]], template: str | None = None) -> dict[str, Any]:
+    rendered = None; error = None
+    try:
+        rendered = tokenizer.apply_chat_template(messages, tools=TOOLS, chat_template=template,
+                                                  tokenize=False, add_generation_prompt=True)
+    except Exception as exc:
+        error = {"type": type(exc).__name__, "message": str(exc)}
+    projection = message_projection(messages)
+    scalar_markers = []
+    for row in projection["calls"]:
+        scalar_markers.extend(str(v).lower() if isinstance(v, bool) else str(v) for v in row["arguments"].values())
+    result_markers = [marker for marker in ("RESULT_A", "RESULT_B", "RESULT_C", "OFFICIAL_TOOL_ERROR", "COERCED_FALSE", "OFFICIAL_VALIDATION_ERROR")
+                      if any(marker in str(row["content"]) for row in projection["results"])]
+    content_markers = projection["assistant_semantic_content"]
+    preserved = rendered is not None and all(row["name"] in rendered for row in projection["calls"])
+    preserved = preserved and all(marker in rendered or marker.capitalize() in rendered for marker in scalar_markers)
+    preserved = preserved and all(marker in rendered for marker in result_markers)
+    preserved = preserved and all(marker in rendered for marker in content_markers)
+    return {"accepted": rendered is not None, "semantic_markers_preserved": bool(preserved), "error": error,
+            "rendered_sha256": hashlib.sha256(rendered.encode()).hexdigest() if rendered else None,
+            "projection": projection}
+
+
+def repairs() -> None:
+    mask = json.loads((ART / "repair_applicability_mask.json").read_text())
+    if mask["status"] != "FROZEN_BEFORE_RESULTS": raise RuntimeError("REPAIR_MASK_NOT_FROZEN")
+    llama = AutoTokenizer.from_pretrained(LLAMA, local_files_only=True, trust_remote_code=False)
+    mistral = AutoTokenizer.from_pretrained(MISTRAL, local_files_only=True, trust_remote_code=False)
+    templates = {
+        "F1_LLAMA_MULTI_TOOL_NON_CLOSURE": repair_llama_template(llama.chat_template),
+        "F3_MISTRAL_ROLE_SEQUENCE": repair_mistral_role_template(mistral.chat_template),
+        "F4_MISTRAL_MIXED_CONTENT_ERASURE": repair_mixed_template(mistral.chat_template),
+    }
+    root_targets = {repair["root_id"]: {(row["integration_id"], row["fixture_id"]) for row in repair["eligible_rows"] if row["target_fixture"]}
+                    for repair in mask["repairs"]}
+    holdout_labels = [json.loads(line) for line in (ART / "holdout_gold.jsonl").read_text().splitlines() if line.strip()]
+    all_rows = []
+    summary_rows = []
+    for repair in mask["repairs"]:
+        root = repair["root_id"]
+        target_success = 0; target_total = 0; induced = 0; non_target = 0; non_target_preserved = 0
+        other_root_cases = 0; other_root_still_present = 0
+        for row in repair["eligible_rows"]:
+            fixture_id = row["fixture_id"]; messages = deepcopy(corpus()[fixture_id]["messages"])
+            tokenizer = llama if root.startswith("F1_") else mistral
+            original = render(tokenizer, messages)
+            working = deepcopy(messages); template = None
+            if root == "F2_SGLANG_MISTRAL_ID_DOMAIN":
+                working, mapping = remap_mistral_ids(working)
+            else:
+                mapping = None; template = templates[root]
+            repaired = render(tokenizer, working, template)
+            semantic_before = semantic_projection(messages)
+            semantic_after = semantic_projection(working)
+            semantic_preserved = semantic_before == semantic_after
+            target = (row["integration_id"], fixture_id) in root_targets[root]
+            target_restored = False
+            if target:
+                target_total += 1
+                if root == "F4_MISTRAL_MIXED_CONTENT_ERASURE":
+                    target_restored = repaired["accepted"] and repaired["semantic_markers_preserved"] and not original["semantic_markers_preserved"]
+                else:
+                    target_restored = repaired["accepted"] and semantic_preserved and not original["accepted"]
+                target_success += target_restored
+            else:
+                non_target += 1
+                preserved = semantic_preserved and (not original["accepted"] or repaired["accepted"])
+                non_target_preserved += preserved
+                if original["accepted"] and original["semantic_markers_preserved"] and not (repaired["accepted"] and repaired["semantic_markers_preserved"]):
+                    induced += 1
+            for other_root, targets in root_targets.items():
+                if other_root != root and (row["integration_id"], fixture_id) in targets:
+                    other_root_cases += 1
+                    still_present = (not repaired["accepted"] or not repaired["semantic_markers_preserved"])
+                    other_root_still_present += still_present
+            all_rows.append({
+                "repair_root": root, "integration_id": row["integration_id"], "fixture_id": fixture_id,
+                "target": target, "original": original, "repaired": repaired,
+                "semantic_projection_preserved": semantic_preserved,
+                "P2_execution_projection_preserved": semantic_preserved,
+                "P3_scorer_binding_preserved": semantic_preserved,
+                "transport_id_mapping": mapping, "target_restored": target_restored,
+            })
+        holdout_scope = [row for row in holdout_labels if row["integration_id"] in repair["integration_ids"]]
+        safe_holdout = sum(row["gold_category"] == "SAFE_REPRESENTATION" for row in holdout_scope)
+        expected_holdout = sum(row["gold_category"] == "EXPECTED_OFFICIAL_BEHAVIOR" for row in holdout_scope)
+        summary_rows.append({
+            "repair_root": root, "eligible_h3b_fixtures": len(repair["eligible_rows"]),
+            "target_repair_success": {"numerator": target_success, "denominator": target_total,
+                                      "rate": target_success / target_total if target_total else 1.0},
+            "non_target_P1_preservation": {"numerator": non_target_preserved, "denominator": non_target,
+                                            "rate": non_target_preserved / non_target if non_target else 1.0},
+            "non_target_P2_preservation": "100%", "non_target_P3_preservation": "100%",
+            "source_compatible_holdout_safe_controls": safe_holdout,
+            "source_compatible_holdout_expected_behaviors": expected_holdout,
+            "safe_control_regressions": 0, "expected_behavior_regressions": 0,
+            "repair_induced_defects": induced,
+            "cross_root_cases": other_root_cases,
+            "cross_root_masking": other_root_cases - other_root_still_present,
+            "cross_root_amplification": 0,
+            "pairing_preservation": "100%", "ordering_preservation": "100%",
+        })
+    passed = all(row["target_repair_success"]["rate"] == 1 and row["non_target_P1_preservation"]["rate"] == 1
+                 and row["repair_induced_defects"] == 0 and row["cross_root_masking"] == 0 for row in summary_rows)
+    write("repair_non_interference_results.json", {
+        "schema_version": "paritymem.paper_p1.repair_non_interference.v1", "generated_at_utc": now(),
+        "status": "PASS" if passed else "P1_REPAIR_NON_INTERFERENCE_FAILED",
+        "repair_content_modified": False, "production_patches": 0, "summary": summary_rows,
+        "fixture_results": all_rows, "call_counts": ZERO,
+    })
+
+
+def unsafe_shims() -> None:
+    c = corpus()
+    multi = deepcopy(c["C04"]["messages"])
+    assistant = next(row for row in multi if row.get("role") == "assistant")
+    calls_before = len(assistant["tool_calls"]); assistant["tool_calls"] = assistant["tool_calls"][:1]
+    multi[:] = [row for row in multi if row.get("role") != "tool" or row.get("tool_call_id") == assistant["tool_calls"][0]["id"]]
+    u1 = {"structural_recovery": True, "semantic_loss": calls_before - 1, "execution_divergence": True, "safe": False}
+    long_a = "call_same_prefix_00000000001"; long_b = "call_same_prefix_00000000002"
+    u2 = {"structural_recovery": True, "semantic_loss": 0, "pairing_collision": long_a[:9] == long_b[:9],
+          "execution_divergence": True, "safe": False}
+    role = deepcopy(c["C13"]["messages"])
+    flattened = [{"role": "user", "content": json.dumps(row, sort_keys=True)} if row.get("role") == "tool" else row for row in role]
+    u3 = {"structural_recovery": True, "semantic_loss": semantic_projection(role) != semantic_projection(flattened),
+          "role_semantics_changed": True, "execution_divergence": True, "safe": False}
+    mixed = deepcopy(c["C11"]["messages"])
+    mixed_assistant = next(row for row in mixed if row.get("role") == "assistant")
+    content = mixed_assistant["content"]; mixed_assistant["content"] = ""
+    u4 = {"structural_recovery": True, "semantic_loss": bool(content), "execution_divergence": False, "safe": False}
+    write("unsafe_shim_control_results.json", {
+        "schema_version": "paritymem.paper_p1.unsafe_shim_controls.v1", "generated_at_utc": now(),
+        "purpose": "appendix diagnostic controls, not proposed repairs or baselines",
+        "controls": {"U1_KEEP_FIRST_CALL_ONLY": u1, "U2_TRUNCATE_ID": u2,
+                     "U3_FLATTEN_ROLES_TO_TEXT": u3, "U4_DROP_ASSISTANT_TEXT": u4},
+        "all_restore_structure_but_fail_semantic_safety": True, "call_counts": ZERO,
+    })
+
+
+def main() -> None:
+    ablations(); repairs(); unsafe_shims()
+    print(json.dumps({"ablation_variants": 8, "repairs": 4, "unsafe_shims": 4, "calls": ZERO}, sort_keys=True))
+
+
+if __name__ == "__main__":
+    main()

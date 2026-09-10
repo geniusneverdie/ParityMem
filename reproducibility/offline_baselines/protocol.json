@@ -1,0 +1,31 @@
+{
+  "study_type": "post_hoc_offline_record_comparison",
+  "date": "2026-09-07",
+  "source_files": [
+    {
+      "path": "artifacts/ai_venue_pivot_r0/natural_trace_eligibility.json",
+      "sha256": "72d8052b3b19525b32aba638c29bba27bcb8e8726376a2a5982b0f0d996ca81f"
+    },
+    {
+      "path": "artifacts/ai_venue_pivot_r0/fixed_trace_outcomes.jsonl",
+      "sha256": "6610bd949affabfa4ebc2fc27394acb47b054fd31a8722decf165ad3d4eee52a"
+    }
+  ],
+  "input_scope": "Assistant content plus ordered call/name/argument and result/content records. Source from frozen natural projection; target from frozen backend history. Transport IDs retained in inputs.",
+  "predictor_inputs": [
+    "cell_id",
+    "source",
+    "target"
+  ],
+  "gold_access_in_predictor": false,
+  "new_model_calls": 0,
+  "new_backend_calls": 0,
+  "source_records_modified": false,
+  "distributed_hashes": {
+    "tools/offline_record_baselines.py": "df965dd7d935a890050d84a5f69c633d86c746da568d754a0c6ab4ac8a52dce6",
+    "reproducibility/offline_baselines/inputs.jsonl": "4d2bb286fedafaccf5b79439019fb394e018afe9fb126089829adf3d6e65564d",
+    "reproducibility/offline_baselines/gold.jsonl": "48cc8bb0ec95c733a869264be0c57dd737599d506e0e88a0c87232386b371b6d",
+    "reproducibility/offline_baselines/predictions.jsonl": "929bccfbc8d35357fdde40cb506e11d05e80f41d026486e2135190d656e37dd5"
+  },
+  "construction_status": "New post-hoc implementations. Author/model has seen historical outcomes; no claim of preregistration or blinded development. Predictor consumes only source/target records."
+}

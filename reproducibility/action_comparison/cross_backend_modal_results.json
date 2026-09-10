@@ -1,0 +1,5783 @@
+{
+  "classification_counts": {
+    "STABLE_BACKEND_DIVERGENCE": 3,
+    "STABLE_BACKEND_INVARIANT": 33
+  },
+  "generated_at_utc": "2026-08-14T09:06:05.429327+00:00",
+  "pairs": [
+    {
+      "benchmark": "APPWORLD",
+      "classification": "STABLE_BACKEND_INVARIANT",
+      "model_family": "Qwen",
+      "pair_id": "APPWORLD__APPWORLD-NAT-003__QWEN",
+      "sglang": {
+        "backend": "SGLang",
+        "benchmark": "APPWORLD",
+        "consensus_fraction": 1.0,
+        "cross_restart_agreement": {
+          "denominator": 6,
+          "numerator": 6
+        },
+        "modal_action": {
+          "kind": "NO_TOOL_ACTION"
+        },
+        "modal_action_sha256": "b92214ca1631896d7564754f29acc10886a4e3e6f784910317f053550dc923d0",
+        "modal_count": 5,
+        "model_family": "Qwen",
+        "pair_id": "APPWORLD__APPWORLD-NAT-003__QWEN",
+        "pairwise_semantic_agreement": {
+          "denominator": 10,
+          "numerator": 10
+        },
+        "repeat_actions": [
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 0,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 1,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 2,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 3,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 4,
+            "server_epoch": 1
+          }
+        ],
+        "repeats": 5,
+        "same_process_agreement": {
+          "denominator": 4,
+          "numerator": 4
+        },
+        "semantic_entropy_base2": -0.0,
+        "stability_class": "FULLY_STABLE"
+      },
+      "vllm": {
+        "backend": "vLLM",
+        "benchmark": "APPWORLD",
+        "consensus_fraction": 1.0,
+        "cross_restart_agreement": {
+          "denominator": 6,
+          "numerator": 6
+        },
+        "modal_action": {
+          "kind": "NO_TOOL_ACTION"
+        },
+        "modal_action_sha256": "b92214ca1631896d7564754f29acc10886a4e3e6f784910317f053550dc923d0",
+        "modal_count": 5,
+        "model_family": "Qwen",
+        "pair_id": "APPWORLD__APPWORLD-NAT-003__QWEN",
+        "pairwise_semantic_agreement": {
+          "denominator": 10,
+          "numerator": 10
+        },
+        "repeat_actions": [
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 0,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 1,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 2,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 3,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 4,
+            "server_epoch": 0
+          }
+        ],
+        "repeats": 5,
+        "same_process_agreement": {
+          "denominator": 4,
+          "numerator": 4
+        },
+        "semantic_entropy_base2": -0.0,
+        "stability_class": "FULLY_STABLE"
+      }
+    },
+    {
+      "benchmark": "APPWORLD",
+      "classification": "STABLE_BACKEND_INVARIANT",
+      "model_family": "Llama",
+      "pair_id": "APPWORLD__APPWORLD-NAT-010__LLAMA",
+      "sglang": {
+        "backend": "SGLang",
+        "benchmark": "APPWORLD",
+        "consensus_fraction": 1.0,
+        "cross_restart_agreement": {
+          "denominator": 6,
+          "numerator": 6
+        },
+        "modal_action": {
+          "kind": "NO_TOOL_ACTION"
+        },
+        "modal_action_sha256": "b92214ca1631896d7564754f29acc10886a4e3e6f784910317f053550dc923d0",
+        "modal_count": 5,
+        "model_family": "Llama",
+        "pair_id": "APPWORLD__APPWORLD-NAT-010__LLAMA",
+        "pairwise_semantic_agreement": {
+          "denominator": 10,
+          "numerator": 10
+        },
+        "repeat_actions": [
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 0,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 1,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 2,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 3,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 4,
+            "server_epoch": 0
+          }
+        ],
+        "repeats": 5,
+        "same_process_agreement": {
+          "denominator": 4,
+          "numerator": 4
+        },
+        "semantic_entropy_base2": -0.0,
+        "stability_class": "FULLY_STABLE"
+      },
+      "vllm": {
+        "backend": "vLLM",
+        "benchmark": "APPWORLD",
+        "consensus_fraction": 1.0,
+        "cross_restart_agreement": {
+          "denominator": 6,
+          "numerator": 6
+        },
+        "modal_action": {
+          "kind": "NO_TOOL_ACTION"
+        },
+        "modal_action_sha256": "b92214ca1631896d7564754f29acc10886a4e3e6f784910317f053550dc923d0",
+        "modal_count": 5,
+        "model_family": "Llama",
+        "pair_id": "APPWORLD__APPWORLD-NAT-010__LLAMA",
+        "pairwise_semantic_agreement": {
+          "denominator": 10,
+          "numerator": 10
+        },
+        "repeat_actions": [
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 0,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 1,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 2,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 3,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 4,
+            "server_epoch": 0
+          }
+        ],
+        "repeats": 5,
+        "same_process_agreement": {
+          "denominator": 4,
+          "numerator": 4
+        },
+        "semantic_entropy_base2": -0.0,
+        "stability_class": "FULLY_STABLE"
+      }
+    },
+    {
+      "benchmark": "APPWORLD",
+      "classification": "STABLE_BACKEND_INVARIANT",
+      "model_family": "Qwen",
+      "pair_id": "APPWORLD__APPWORLD-NAT-010__QWEN",
+      "sglang": {
+        "backend": "SGLang",
+        "benchmark": "APPWORLD",
+        "consensus_fraction": 1.0,
+        "cross_restart_agreement": {
+          "denominator": 6,
+          "numerator": 6
+        },
+        "modal_action": {
+          "kind": "NO_TOOL_ACTION"
+        },
+        "modal_action_sha256": "b92214ca1631896d7564754f29acc10886a4e3e6f784910317f053550dc923d0",
+        "modal_count": 5,
+        "model_family": "Qwen",
+        "pair_id": "APPWORLD__APPWORLD-NAT-010__QWEN",
+        "pairwise_semantic_agreement": {
+          "denominator": 10,
+          "numerator": 10
+        },
+        "repeat_actions": [
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 0,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 1,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 2,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 3,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 4,
+            "server_epoch": 1
+          }
+        ],
+        "repeats": 5,
+        "same_process_agreement": {
+          "denominator": 4,
+          "numerator": 4
+        },
+        "semantic_entropy_base2": -0.0,
+        "stability_class": "FULLY_STABLE"
+      },
+      "vllm": {
+        "backend": "vLLM",
+        "benchmark": "APPWORLD",
+        "consensus_fraction": 1.0,
+        "cross_restart_agreement": {
+          "denominator": 6,
+          "numerator": 6
+        },
+        "modal_action": {
+          "kind": "NO_TOOL_ACTION"
+        },
+        "modal_action_sha256": "b92214ca1631896d7564754f29acc10886a4e3e6f784910317f053550dc923d0",
+        "modal_count": 5,
+        "model_family": "Qwen",
+        "pair_id": "APPWORLD__APPWORLD-NAT-010__QWEN",
+        "pairwise_semantic_agreement": {
+          "denominator": 10,
+          "numerator": 10
+        },
+        "repeat_actions": [
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 0,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 1,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 2,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 3,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 4,
+            "server_epoch": 1
+          }
+        ],
+        "repeats": 5,
+        "same_process_agreement": {
+          "denominator": 4,
+          "numerator": 4
+        },
+        "semantic_entropy_base2": -0.0,
+        "stability_class": "FULLY_STABLE"
+      }
+    },
+    {
+      "benchmark": "APPWORLD",
+      "classification": "STABLE_BACKEND_DIVERGENCE",
+      "model_family": "Llama",
+      "pair_id": "APPWORLD__APPWORLD-NAT-036__LLAMA",
+      "sglang": {
+        "backend": "SGLang",
+        "benchmark": "APPWORLD",
+        "consensus_fraction": 1.0,
+        "cross_restart_agreement": {
+          "denominator": 6,
+          "numerator": 6
+        },
+        "modal_action": {
+          "calls": [
+            {
+              "arguments": {
+                "code": "apis.api_docs.show_api_descriptions(app_name='gmail', continuation_token=apis.api_docs.get_continuation_token())"
+              },
+              "function": "python_exec"
+            }
+          ],
+          "kind": "TOOL_ACTION"
+        },
+        "modal_action_sha256": "0d008bb7de47aebb17098256471a00f91e162585d4763d1d49310059fc1da485",
+        "modal_count": 5,
+        "model_family": "Llama",
+        "pair_id": "APPWORLD__APPWORLD-NAT-036__LLAMA",
+        "pairwise_semantic_agreement": {
+          "denominator": 10,
+          "numerator": 10
+        },
+        "repeat_actions": [
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {
+                    "code": "apis.api_docs.show_api_descriptions(app_name='gmail', continuation_token=apis.api_docs.get_continuation_token())"
+                  },
+                  "function": "python_exec"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 0,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {
+                    "code": "apis.api_docs.show_api_descriptions(app_name='gmail', continuation_token=apis.api_docs.get_continuation_token())"
+                  },
+                  "function": "python_exec"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 1,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {
+                    "code": "apis.api_docs.show_api_descriptions(app_name='gmail', continuation_token=apis.api_docs.get_continuation_token())"
+                  },
+                  "function": "python_exec"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 2,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {
+                    "code": "apis.api_docs.show_api_descriptions(app_name='gmail', continuation_token=apis.api_docs.get_continuation_token())"
+                  },
+                  "function": "python_exec"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 3,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {
+                    "code": "apis.api_docs.show_api_descriptions(app_name='gmail', continuation_token=apis.api_docs.get_continuation_token())"
+                  },
+                  "function": "python_exec"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 4,
+            "server_epoch": 1
+          }
+        ],
+        "repeats": 5,
+        "same_process_agreement": {
+          "denominator": 4,
+          "numerator": 4
+        },
+        "semantic_entropy_base2": -0.0,
+        "stability_class": "FULLY_STABLE"
+      },
+      "vllm": {
+        "backend": "vLLM",
+        "benchmark": "APPWORLD",
+        "consensus_fraction": 1.0,
+        "cross_restart_agreement": {
+          "denominator": 6,
+          "numerator": 6
+        },
+        "modal_action": {
+          "calls": [
+            {
+              "arguments": {
+                "code": "apis.api_docs.show_api_descriptions(app_name='gmail', continuation_token=apis.api_docs.get_continuation_token(app_name='gmail'))"
+              },
+              "function": "python_exec"
+            }
+          ],
+          "kind": "TOOL_ACTION"
+        },
+        "modal_action_sha256": "a7a3c47332162ae411d5c9da48b64658b053f7c4e51db244811430376d423f67",
+        "modal_count": 5,
+        "model_family": "Llama",
+        "pair_id": "APPWORLD__APPWORLD-NAT-036__LLAMA",
+        "pairwise_semantic_agreement": {
+          "denominator": 10,
+          "numerator": 10
+        },
+        "repeat_actions": [
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {
+                    "code": "apis.api_docs.show_api_descriptions(app_name='gmail', continuation_token=apis.api_docs.get_continuation_token(app_name='gmail'))"
+                  },
+                  "function": "python_exec"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 0,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {
+                    "code": "apis.api_docs.show_api_descriptions(app_name='gmail', continuation_token=apis.api_docs.get_continuation_token(app_name='gmail'))"
+                  },
+                  "function": "python_exec"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 1,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {
+                    "code": "apis.api_docs.show_api_descriptions(app_name='gmail', continuation_token=apis.api_docs.get_continuation_token(app_name='gmail'))"
+                  },
+                  "function": "python_exec"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 2,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {
+                    "code": "apis.api_docs.show_api_descriptions(app_name='gmail', continuation_token=apis.api_docs.get_continuation_token(app_name='gmail'))"
+                  },
+                  "function": "python_exec"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 3,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {
+                    "code": "apis.api_docs.show_api_descriptions(app_name='gmail', continuation_token=apis.api_docs.get_continuation_token(app_name='gmail'))"
+                  },
+                  "function": "python_exec"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 4,
+            "server_epoch": 1
+          }
+        ],
+        "repeats": 5,
+        "same_process_agreement": {
+          "denominator": 4,
+          "numerator": 4
+        },
+        "semantic_entropy_base2": -0.0,
+        "stability_class": "FULLY_STABLE"
+      }
+    },
+    {
+      "benchmark": "APPWORLD",
+      "classification": "STABLE_BACKEND_INVARIANT",
+      "model_family": "Qwen",
+      "pair_id": "APPWORLD__APPWORLD-NAT-036__QWEN",
+      "sglang": {
+        "backend": "SGLang",
+        "benchmark": "APPWORLD",
+        "consensus_fraction": 1.0,
+        "cross_restart_agreement": {
+          "denominator": 6,
+          "numerator": 6
+        },
+        "modal_action": {
+          "calls": [
+            {
+              "arguments": {
+                "code": "print(apis.api_docs.show_api_descriptions(app_name='calendar'))"
+              },
+              "function": "python_exec"
+            }
+          ],
+          "kind": "TOOL_ACTION"
+        },
+        "modal_action_sha256": "397026bc07d43eb1d28d85f51bc85b76938c4f3abd8a64354868e90cae98332e",
+        "modal_count": 5,
+        "model_family": "Qwen",
+        "pair_id": "APPWORLD__APPWORLD-NAT-036__QWEN",
+        "pairwise_semantic_agreement": {
+          "denominator": 10,
+          "numerator": 10
+        },
+        "repeat_actions": [
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {
+                    "code": "print(apis.api_docs.show_api_descriptions(app_name='calendar'))"
+                  },
+                  "function": "python_exec"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 0,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {
+                    "code": "print(apis.api_docs.show_api_descriptions(app_name='calendar'))"
+                  },
+                  "function": "python_exec"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 1,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {
+                    "code": "print(apis.api_docs.show_api_descriptions(app_name='calendar'))"
+                  },
+                  "function": "python_exec"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 2,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {
+                    "code": "print(apis.api_docs.show_api_descriptions(app_name='calendar'))"
+                  },
+                  "function": "python_exec"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 3,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {
+                    "code": "print(apis.api_docs.show_api_descriptions(app_name='calendar'))"
+                  },
+                  "function": "python_exec"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 4,
+            "server_epoch": 0
+          }
+        ],
+        "repeats": 5,
+        "same_process_agreement": {
+          "denominator": 4,
+          "numerator": 4
+        },
+        "semantic_entropy_base2": -0.0,
+        "stability_class": "FULLY_STABLE"
+      },
+      "vllm": {
+        "backend": "vLLM",
+        "benchmark": "APPWORLD",
+        "consensus_fraction": 1.0,
+        "cross_restart_agreement": {
+          "denominator": 6,
+          "numerator": 6
+        },
+        "modal_action": {
+          "calls": [
+            {
+              "arguments": {
+                "code": "print(apis.api_docs.show_api_descriptions(app_name='calendar'))"
+              },
+              "function": "python_exec"
+            }
+          ],
+          "kind": "TOOL_ACTION"
+        },
+        "modal_action_sha256": "397026bc07d43eb1d28d85f51bc85b76938c4f3abd8a64354868e90cae98332e",
+        "modal_count": 5,
+        "model_family": "Qwen",
+        "pair_id": "APPWORLD__APPWORLD-NAT-036__QWEN",
+        "pairwise_semantic_agreement": {
+          "denominator": 10,
+          "numerator": 10
+        },
+        "repeat_actions": [
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {
+                    "code": "print(apis.api_docs.show_api_descriptions(app_name='calendar'))"
+                  },
+                  "function": "python_exec"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 0,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {
+                    "code": "print(apis.api_docs.show_api_descriptions(app_name='calendar'))"
+                  },
+                  "function": "python_exec"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 1,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {
+                    "code": "print(apis.api_docs.show_api_descriptions(app_name='calendar'))"
+                  },
+                  "function": "python_exec"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 2,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {
+                    "code": "print(apis.api_docs.show_api_descriptions(app_name='calendar'))"
+                  },
+                  "function": "python_exec"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 3,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {
+                    "code": "print(apis.api_docs.show_api_descriptions(app_name='calendar'))"
+                  },
+                  "function": "python_exec"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 4,
+            "server_epoch": 1
+          }
+        ],
+        "repeats": 5,
+        "same_process_agreement": {
+          "denominator": 4,
+          "numerator": 4
+        },
+        "semantic_entropy_base2": -0.0,
+        "stability_class": "FULLY_STABLE"
+      }
+    },
+    {
+      "benchmark": "APPWORLD",
+      "classification": "STABLE_BACKEND_INVARIANT",
+      "model_family": "Qwen",
+      "pair_id": "APPWORLD__APPWORLD-NAT-042__QWEN",
+      "sglang": {
+        "backend": "SGLang",
+        "benchmark": "APPWORLD",
+        "consensus_fraction": 1.0,
+        "cross_restart_agreement": {
+          "denominator": 6,
+          "numerator": 6
+        },
+        "modal_action": {
+          "kind": "NO_TOOL_ACTION"
+        },
+        "modal_action_sha256": "b92214ca1631896d7564754f29acc10886a4e3e6f784910317f053550dc923d0",
+        "modal_count": 5,
+        "model_family": "Qwen",
+        "pair_id": "APPWORLD__APPWORLD-NAT-042__QWEN",
+        "pairwise_semantic_agreement": {
+          "denominator": 10,
+          "numerator": 10
+        },
+        "repeat_actions": [
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 0,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 1,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 2,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 3,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 4,
+            "server_epoch": 0
+          }
+        ],
+        "repeats": 5,
+        "same_process_agreement": {
+          "denominator": 4,
+          "numerator": 4
+        },
+        "semantic_entropy_base2": -0.0,
+        "stability_class": "FULLY_STABLE"
+      },
+      "vllm": {
+        "backend": "vLLM",
+        "benchmark": "APPWORLD",
+        "consensus_fraction": 1.0,
+        "cross_restart_agreement": {
+          "denominator": 6,
+          "numerator": 6
+        },
+        "modal_action": {
+          "kind": "NO_TOOL_ACTION"
+        },
+        "modal_action_sha256": "b92214ca1631896d7564754f29acc10886a4e3e6f784910317f053550dc923d0",
+        "modal_count": 5,
+        "model_family": "Qwen",
+        "pair_id": "APPWORLD__APPWORLD-NAT-042__QWEN",
+        "pairwise_semantic_agreement": {
+          "denominator": 10,
+          "numerator": 10
+        },
+        "repeat_actions": [
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 0,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 1,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 2,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 3,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 4,
+            "server_epoch": 0
+          }
+        ],
+        "repeats": 5,
+        "same_process_agreement": {
+          "denominator": 4,
+          "numerator": 4
+        },
+        "semantic_entropy_base2": -0.0,
+        "stability_class": "FULLY_STABLE"
+      }
+    },
+    {
+      "benchmark": "APPWORLD",
+      "classification": "STABLE_BACKEND_INVARIANT",
+      "model_family": "Llama",
+      "pair_id": "APPWORLD__APPWORLD-NAT-043__LLAMA",
+      "sglang": {
+        "backend": "SGLang",
+        "benchmark": "APPWORLD",
+        "consensus_fraction": 1.0,
+        "cross_restart_agreement": {
+          "denominator": 6,
+          "numerator": 6
+        },
+        "modal_action": {
+          "kind": "NO_TOOL_ACTION"
+        },
+        "modal_action_sha256": "b92214ca1631896d7564754f29acc10886a4e3e6f784910317f053550dc923d0",
+        "modal_count": 5,
+        "model_family": "Llama",
+        "pair_id": "APPWORLD__APPWORLD-NAT-043__LLAMA",
+        "pairwise_semantic_agreement": {
+          "denominator": 10,
+          "numerator": 10
+        },
+        "repeat_actions": [
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 0,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 1,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 2,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 3,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 4,
+            "server_epoch": 1
+          }
+        ],
+        "repeats": 5,
+        "same_process_agreement": {
+          "denominator": 4,
+          "numerator": 4
+        },
+        "semantic_entropy_base2": -0.0,
+        "stability_class": "FULLY_STABLE"
+      },
+      "vllm": {
+        "backend": "vLLM",
+        "benchmark": "APPWORLD",
+        "consensus_fraction": 1.0,
+        "cross_restart_agreement": {
+          "denominator": 6,
+          "numerator": 6
+        },
+        "modal_action": {
+          "kind": "NO_TOOL_ACTION"
+        },
+        "modal_action_sha256": "b92214ca1631896d7564754f29acc10886a4e3e6f784910317f053550dc923d0",
+        "modal_count": 5,
+        "model_family": "Llama",
+        "pair_id": "APPWORLD__APPWORLD-NAT-043__LLAMA",
+        "pairwise_semantic_agreement": {
+          "denominator": 10,
+          "numerator": 10
+        },
+        "repeat_actions": [
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 0,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 1,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 2,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 3,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 4,
+            "server_epoch": 1
+          }
+        ],
+        "repeats": 5,
+        "same_process_agreement": {
+          "denominator": 4,
+          "numerator": 4
+        },
+        "semantic_entropy_base2": -0.0,
+        "stability_class": "FULLY_STABLE"
+      }
+    },
+    {
+      "benchmark": "APPWORLD",
+      "classification": "STABLE_BACKEND_INVARIANT",
+      "model_family": "Llama",
+      "pair_id": "APPWORLD__APPWORLD-NAT-044__LLAMA",
+      "sglang": {
+        "backend": "SGLang",
+        "benchmark": "APPWORLD",
+        "consensus_fraction": 1.0,
+        "cross_restart_agreement": {
+          "denominator": 6,
+          "numerator": 6
+        },
+        "modal_action": {
+          "kind": "NO_TOOL_ACTION"
+        },
+        "modal_action_sha256": "b92214ca1631896d7564754f29acc10886a4e3e6f784910317f053550dc923d0",
+        "modal_count": 5,
+        "model_family": "Llama",
+        "pair_id": "APPWORLD__APPWORLD-NAT-044__LLAMA",
+        "pairwise_semantic_agreement": {
+          "denominator": 10,
+          "numerator": 10
+        },
+        "repeat_actions": [
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 0,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 1,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 2,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 3,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 4,
+            "server_epoch": 1
+          }
+        ],
+        "repeats": 5,
+        "same_process_agreement": {
+          "denominator": 4,
+          "numerator": 4
+        },
+        "semantic_entropy_base2": -0.0,
+        "stability_class": "FULLY_STABLE"
+      },
+      "vllm": {
+        "backend": "vLLM",
+        "benchmark": "APPWORLD",
+        "consensus_fraction": 1.0,
+        "cross_restart_agreement": {
+          "denominator": 6,
+          "numerator": 6
+        },
+        "modal_action": {
+          "kind": "NO_TOOL_ACTION"
+        },
+        "modal_action_sha256": "b92214ca1631896d7564754f29acc10886a4e3e6f784910317f053550dc923d0",
+        "modal_count": 5,
+        "model_family": "Llama",
+        "pair_id": "APPWORLD__APPWORLD-NAT-044__LLAMA",
+        "pairwise_semantic_agreement": {
+          "denominator": 10,
+          "numerator": 10
+        },
+        "repeat_actions": [
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 0,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 1,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 2,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 3,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 4,
+            "server_epoch": 0
+          }
+        ],
+        "repeats": 5,
+        "same_process_agreement": {
+          "denominator": 4,
+          "numerator": 4
+        },
+        "semantic_entropy_base2": -0.0,
+        "stability_class": "FULLY_STABLE"
+      }
+    },
+    {
+      "benchmark": "APPWORLD",
+      "classification": "STABLE_BACKEND_INVARIANT",
+      "model_family": "Qwen",
+      "pair_id": "APPWORLD__APPWORLD-NAT-044__QWEN",
+      "sglang": {
+        "backend": "SGLang",
+        "benchmark": "APPWORLD",
+        "consensus_fraction": 1.0,
+        "cross_restart_agreement": {
+          "denominator": 6,
+          "numerator": 6
+        },
+        "modal_action": {
+          "kind": "NO_TOOL_ACTION"
+        },
+        "modal_action_sha256": "b92214ca1631896d7564754f29acc10886a4e3e6f784910317f053550dc923d0",
+        "modal_count": 5,
+        "model_family": "Qwen",
+        "pair_id": "APPWORLD__APPWORLD-NAT-044__QWEN",
+        "pairwise_semantic_agreement": {
+          "denominator": 10,
+          "numerator": 10
+        },
+        "repeat_actions": [
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 0,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 1,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 2,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 3,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 4,
+            "server_epoch": 1
+          }
+        ],
+        "repeats": 5,
+        "same_process_agreement": {
+          "denominator": 4,
+          "numerator": 4
+        },
+        "semantic_entropy_base2": -0.0,
+        "stability_class": "FULLY_STABLE"
+      },
+      "vllm": {
+        "backend": "vLLM",
+        "benchmark": "APPWORLD",
+        "consensus_fraction": 1.0,
+        "cross_restart_agreement": {
+          "denominator": 6,
+          "numerator": 6
+        },
+        "modal_action": {
+          "kind": "NO_TOOL_ACTION"
+        },
+        "modal_action_sha256": "b92214ca1631896d7564754f29acc10886a4e3e6f784910317f053550dc923d0",
+        "modal_count": 5,
+        "model_family": "Qwen",
+        "pair_id": "APPWORLD__APPWORLD-NAT-044__QWEN",
+        "pairwise_semantic_agreement": {
+          "denominator": 10,
+          "numerator": 10
+        },
+        "repeat_actions": [
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 0,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 1,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 2,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 3,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 4,
+            "server_epoch": 1
+          }
+        ],
+        "repeats": 5,
+        "same_process_agreement": {
+          "denominator": 4,
+          "numerator": 4
+        },
+        "semantic_entropy_base2": -0.0,
+        "stability_class": "FULLY_STABLE"
+      }
+    },
+    {
+      "benchmark": "APPWORLD",
+      "classification": "STABLE_BACKEND_INVARIANT",
+      "model_family": "Llama",
+      "pair_id": "APPWORLD__APPWORLD-NAT-061__LLAMA",
+      "sglang": {
+        "backend": "SGLang",
+        "benchmark": "APPWORLD",
+        "consensus_fraction": 1.0,
+        "cross_restart_agreement": {
+          "denominator": 6,
+          "numerator": 6
+        },
+        "modal_action": {
+          "calls": [
+            {
+              "arguments": {
+                "code": "print(apis.supervisor.complete_task(**{'answer': '15'}))"
+              },
+              "function": "python_exec"
+            }
+          ],
+          "kind": "TOOL_ACTION"
+        },
+        "modal_action_sha256": "08035ad0793ceea09c45839c4ba57055835e19cd1c18a670b47b4e971f1cd7d3",
+        "modal_count": 5,
+        "model_family": "Llama",
+        "pair_id": "APPWORLD__APPWORLD-NAT-061__LLAMA",
+        "pairwise_semantic_agreement": {
+          "denominator": 10,
+          "numerator": 10
+        },
+        "repeat_actions": [
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {
+                    "code": "print(apis.supervisor.complete_task(**{'answer': '15'}))"
+                  },
+                  "function": "python_exec"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 0,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {
+                    "code": "print(apis.supervisor.complete_task(**{'answer': '15'}))"
+                  },
+                  "function": "python_exec"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 1,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {
+                    "code": "print(apis.supervisor.complete_task(**{'answer': '15'}))"
+                  },
+                  "function": "python_exec"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 2,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {
+                    "code": "print(apis.supervisor.complete_task(**{'answer': '15'}))"
+                  },
+                  "function": "python_exec"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 3,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {
+                    "code": "print(apis.supervisor.complete_task(**{'answer': '15'}))"
+                  },
+                  "function": "python_exec"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 4,
+            "server_epoch": 0
+          }
+        ],
+        "repeats": 5,
+        "same_process_agreement": {
+          "denominator": 4,
+          "numerator": 4
+        },
+        "semantic_entropy_base2": -0.0,
+        "stability_class": "FULLY_STABLE"
+      },
+      "vllm": {
+        "backend": "vLLM",
+        "benchmark": "APPWORLD",
+        "consensus_fraction": 1.0,
+        "cross_restart_agreement": {
+          "denominator": 6,
+          "numerator": 6
+        },
+        "modal_action": {
+          "calls": [
+            {
+              "arguments": {
+                "code": "print(apis.supervisor.complete_task(**{'answer': '15'}))"
+              },
+              "function": "python_exec"
+            }
+          ],
+          "kind": "TOOL_ACTION"
+        },
+        "modal_action_sha256": "08035ad0793ceea09c45839c4ba57055835e19cd1c18a670b47b4e971f1cd7d3",
+        "modal_count": 5,
+        "model_family": "Llama",
+        "pair_id": "APPWORLD__APPWORLD-NAT-061__LLAMA",
+        "pairwise_semantic_agreement": {
+          "denominator": 10,
+          "numerator": 10
+        },
+        "repeat_actions": [
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {
+                    "code": "print(apis.supervisor.complete_task(**{'answer': '15'}))"
+                  },
+                  "function": "python_exec"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 0,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {
+                    "code": "print(apis.supervisor.complete_task(**{'answer': '15'}))"
+                  },
+                  "function": "python_exec"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 1,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {
+                    "code": "print(apis.supervisor.complete_task(**{'answer': '15'}))"
+                  },
+                  "function": "python_exec"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 2,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {
+                    "code": "print(apis.supervisor.complete_task(**{'answer': '15'}))"
+                  },
+                  "function": "python_exec"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 3,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {
+                    "code": "print(apis.supervisor.complete_task(**{'answer': '15'}))"
+                  },
+                  "function": "python_exec"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 4,
+            "server_epoch": 0
+          }
+        ],
+        "repeats": 5,
+        "same_process_agreement": {
+          "denominator": 4,
+          "numerator": 4
+        },
+        "semantic_entropy_base2": -0.0,
+        "stability_class": "FULLY_STABLE"
+      }
+    },
+    {
+      "benchmark": "APPWORLD",
+      "classification": "STABLE_BACKEND_INVARIANT",
+      "model_family": "Llama",
+      "pair_id": "APPWORLD__APPWORLD-NAT-066__LLAMA",
+      "sglang": {
+        "backend": "SGLang",
+        "benchmark": "APPWORLD",
+        "consensus_fraction": 1.0,
+        "cross_restart_agreement": {
+          "denominator": 6,
+          "numerator": 6
+        },
+        "modal_action": {
+          "kind": "NO_TOOL_ACTION"
+        },
+        "modal_action_sha256": "b92214ca1631896d7564754f29acc10886a4e3e6f784910317f053550dc923d0",
+        "modal_count": 5,
+        "model_family": "Llama",
+        "pair_id": "APPWORLD__APPWORLD-NAT-066__LLAMA",
+        "pairwise_semantic_agreement": {
+          "denominator": 10,
+          "numerator": 10
+        },
+        "repeat_actions": [
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 0,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 1,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 2,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 3,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 4,
+            "server_epoch": 0
+          }
+        ],
+        "repeats": 5,
+        "same_process_agreement": {
+          "denominator": 4,
+          "numerator": 4
+        },
+        "semantic_entropy_base2": -0.0,
+        "stability_class": "FULLY_STABLE"
+      },
+      "vllm": {
+        "backend": "vLLM",
+        "benchmark": "APPWORLD",
+        "consensus_fraction": 1.0,
+        "cross_restart_agreement": {
+          "denominator": 6,
+          "numerator": 6
+        },
+        "modal_action": {
+          "kind": "NO_TOOL_ACTION"
+        },
+        "modal_action_sha256": "b92214ca1631896d7564754f29acc10886a4e3e6f784910317f053550dc923d0",
+        "modal_count": 5,
+        "model_family": "Llama",
+        "pair_id": "APPWORLD__APPWORLD-NAT-066__LLAMA",
+        "pairwise_semantic_agreement": {
+          "denominator": 10,
+          "numerator": 10
+        },
+        "repeat_actions": [
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 0,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 1,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 2,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 3,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 4,
+            "server_epoch": 1
+          }
+        ],
+        "repeats": 5,
+        "same_process_agreement": {
+          "denominator": 4,
+          "numerator": 4
+        },
+        "semantic_entropy_base2": -0.0,
+        "stability_class": "FULLY_STABLE"
+      }
+    },
+    {
+      "benchmark": "APPWORLD",
+      "classification": "STABLE_BACKEND_INVARIANT",
+      "model_family": "Llama",
+      "pair_id": "APPWORLD__APPWORLD-NAT-072__LLAMA",
+      "sglang": {
+        "backend": "SGLang",
+        "benchmark": "APPWORLD",
+        "consensus_fraction": 1.0,
+        "cross_restart_agreement": {
+          "denominator": 6,
+          "numerator": 6
+        },
+        "modal_action": {
+          "calls": [
+            {
+              "arguments": {
+                "code": "apis.supervisor.get_latest_result()"
+              },
+              "function": "python_exec"
+            }
+          ],
+          "kind": "TOOL_ACTION"
+        },
+        "modal_action_sha256": "815f6893026b70b0ffbc5f8f3c5070dda4533759681a0933a1225902ea391541",
+        "modal_count": 5,
+        "model_family": "Llama",
+        "pair_id": "APPWORLD__APPWORLD-NAT-072__LLAMA",
+        "pairwise_semantic_agreement": {
+          "denominator": 10,
+          "numerator": 10
+        },
+        "repeat_actions": [
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {
+                    "code": "apis.supervisor.get_latest_result()"
+                  },
+                  "function": "python_exec"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 0,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {
+                    "code": "apis.supervisor.get_latest_result()"
+                  },
+                  "function": "python_exec"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 1,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {
+                    "code": "apis.supervisor.get_latest_result()"
+                  },
+                  "function": "python_exec"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 2,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {
+                    "code": "apis.supervisor.get_latest_result()"
+                  },
+                  "function": "python_exec"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 3,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {
+                    "code": "apis.supervisor.get_latest_result()"
+                  },
+                  "function": "python_exec"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 4,
+            "server_epoch": 1
+          }
+        ],
+        "repeats": 5,
+        "same_process_agreement": {
+          "denominator": 4,
+          "numerator": 4
+        },
+        "semantic_entropy_base2": -0.0,
+        "stability_class": "FULLY_STABLE"
+      },
+      "vllm": {
+        "backend": "vLLM",
+        "benchmark": "APPWORLD",
+        "consensus_fraction": 1.0,
+        "cross_restart_agreement": {
+          "denominator": 6,
+          "numerator": 6
+        },
+        "modal_action": {
+          "calls": [
+            {
+              "arguments": {
+                "code": "apis.supervisor.get_latest_result()"
+              },
+              "function": "python_exec"
+            }
+          ],
+          "kind": "TOOL_ACTION"
+        },
+        "modal_action_sha256": "815f6893026b70b0ffbc5f8f3c5070dda4533759681a0933a1225902ea391541",
+        "modal_count": 5,
+        "model_family": "Llama",
+        "pair_id": "APPWORLD__APPWORLD-NAT-072__LLAMA",
+        "pairwise_semantic_agreement": {
+          "denominator": 10,
+          "numerator": 10
+        },
+        "repeat_actions": [
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {
+                    "code": "apis.supervisor.get_latest_result()"
+                  },
+                  "function": "python_exec"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 0,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {
+                    "code": "apis.supervisor.get_latest_result()"
+                  },
+                  "function": "python_exec"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 1,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {
+                    "code": "apis.supervisor.get_latest_result()"
+                  },
+                  "function": "python_exec"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 2,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {
+                    "code": "apis.supervisor.get_latest_result()"
+                  },
+                  "function": "python_exec"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 3,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {
+                    "code": "apis.supervisor.get_latest_result()"
+                  },
+                  "function": "python_exec"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 4,
+            "server_epoch": 1
+          }
+        ],
+        "repeats": 5,
+        "same_process_agreement": {
+          "denominator": 4,
+          "numerator": 4
+        },
+        "semantic_entropy_base2": -0.0,
+        "stability_class": "FULLY_STABLE"
+      }
+    },
+    {
+      "benchmark": "APPWORLD",
+      "classification": "STABLE_BACKEND_INVARIANT",
+      "model_family": "Qwen",
+      "pair_id": "APPWORLD__APPWORLD-NAT-072__QWEN",
+      "sglang": {
+        "backend": "SGLang",
+        "benchmark": "APPWORLD",
+        "consensus_fraction": 1.0,
+        "cross_restart_agreement": {
+          "denominator": 6,
+          "numerator": 6
+        },
+        "modal_action": {
+          "kind": "NO_TOOL_ACTION"
+        },
+        "modal_action_sha256": "b92214ca1631896d7564754f29acc10886a4e3e6f784910317f053550dc923d0",
+        "modal_count": 5,
+        "model_family": "Qwen",
+        "pair_id": "APPWORLD__APPWORLD-NAT-072__QWEN",
+        "pairwise_semantic_agreement": {
+          "denominator": 10,
+          "numerator": 10
+        },
+        "repeat_actions": [
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 0,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 1,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 2,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 3,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 4,
+            "server_epoch": 0
+          }
+        ],
+        "repeats": 5,
+        "same_process_agreement": {
+          "denominator": 4,
+          "numerator": 4
+        },
+        "semantic_entropy_base2": -0.0,
+        "stability_class": "FULLY_STABLE"
+      },
+      "vllm": {
+        "backend": "vLLM",
+        "benchmark": "APPWORLD",
+        "consensus_fraction": 1.0,
+        "cross_restart_agreement": {
+          "denominator": 6,
+          "numerator": 6
+        },
+        "modal_action": {
+          "kind": "NO_TOOL_ACTION"
+        },
+        "modal_action_sha256": "b92214ca1631896d7564754f29acc10886a4e3e6f784910317f053550dc923d0",
+        "modal_count": 5,
+        "model_family": "Qwen",
+        "pair_id": "APPWORLD__APPWORLD-NAT-072__QWEN",
+        "pairwise_semantic_agreement": {
+          "denominator": 10,
+          "numerator": 10
+        },
+        "repeat_actions": [
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 0,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 1,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 2,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 3,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 4,
+            "server_epoch": 1
+          }
+        ],
+        "repeats": 5,
+        "same_process_agreement": {
+          "denominator": 4,
+          "numerator": 4
+        },
+        "semantic_entropy_base2": -0.0,
+        "stability_class": "FULLY_STABLE"
+      }
+    },
+    {
+      "benchmark": "APPWORLD",
+      "classification": "STABLE_BACKEND_DIVERGENCE",
+      "model_family": "Llama",
+      "pair_id": "APPWORLD__APPWORLD-NAT-088__LLAMA",
+      "sglang": {
+        "backend": "SGLang",
+        "benchmark": "APPWORLD",
+        "consensus_fraction": 1.0,
+        "cross_restart_agreement": {
+          "denominator": 6,
+          "numerator": 6
+        },
+        "modal_action": {
+          "calls": [
+            {
+              "arguments": {
+                "code": "apis.supervisor.get_latest_environment_result()"
+              },
+              "function": "python_exec"
+            }
+          ],
+          "kind": "TOOL_ACTION"
+        },
+        "modal_action_sha256": "3c9fb8b9bdc57c23a918da196f6ef27f67159720dc178c953f205799b44a339e",
+        "modal_count": 5,
+        "model_family": "Llama",
+        "pair_id": "APPWORLD__APPWORLD-NAT-088__LLAMA",
+        "pairwise_semantic_agreement": {
+          "denominator": 10,
+          "numerator": 10
+        },
+        "repeat_actions": [
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {
+                    "code": "apis.supervisor.get_latest_environment_result()"
+                  },
+                  "function": "python_exec"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 0,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {
+                    "code": "apis.supervisor.get_latest_environment_result()"
+                  },
+                  "function": "python_exec"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 1,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {
+                    "code": "apis.supervisor.get_latest_environment_result()"
+                  },
+                  "function": "python_exec"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 2,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {
+                    "code": "apis.supervisor.get_latest_environment_result()"
+                  },
+                  "function": "python_exec"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 3,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {
+                    "code": "apis.supervisor.get_latest_environment_result()"
+                  },
+                  "function": "python_exec"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 4,
+            "server_epoch": 0
+          }
+        ],
+        "repeats": 5,
+        "same_process_agreement": {
+          "denominator": 4,
+          "numerator": 4
+        },
+        "semantic_entropy_base2": -0.0,
+        "stability_class": "FULLY_STABLE"
+      },
+      "vllm": {
+        "backend": "vLLM",
+        "benchmark": "APPWORLD",
+        "consensus_fraction": 1.0,
+        "cross_restart_agreement": {
+          "denominator": 6,
+          "numerator": 6
+        },
+        "modal_action": {
+          "calls": [
+            {
+              "arguments": {
+                "code": "apis.supervisor.get_latest_environment()"
+              },
+              "function": "python_exec"
+            }
+          ],
+          "kind": "TOOL_ACTION"
+        },
+        "modal_action_sha256": "98dbcb0f91637aaf99150c189925982f2dae26a0214f42bd09b75a60e98a3d44",
+        "modal_count": 5,
+        "model_family": "Llama",
+        "pair_id": "APPWORLD__APPWORLD-NAT-088__LLAMA",
+        "pairwise_semantic_agreement": {
+          "denominator": 10,
+          "numerator": 10
+        },
+        "repeat_actions": [
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {
+                    "code": "apis.supervisor.get_latest_environment()"
+                  },
+                  "function": "python_exec"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 0,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {
+                    "code": "apis.supervisor.get_latest_environment()"
+                  },
+                  "function": "python_exec"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 1,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {
+                    "code": "apis.supervisor.get_latest_environment()"
+                  },
+                  "function": "python_exec"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 2,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {
+                    "code": "apis.supervisor.get_latest_environment()"
+                  },
+                  "function": "python_exec"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 3,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {
+                    "code": "apis.supervisor.get_latest_environment()"
+                  },
+                  "function": "python_exec"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 4,
+            "server_epoch": 1
+          }
+        ],
+        "repeats": 5,
+        "same_process_agreement": {
+          "denominator": 4,
+          "numerator": 4
+        },
+        "semantic_entropy_base2": -0.0,
+        "stability_class": "FULLY_STABLE"
+      }
+    },
+    {
+      "benchmark": "APPWORLD",
+      "classification": "STABLE_BACKEND_INVARIANT",
+      "model_family": "Qwen",
+      "pair_id": "APPWORLD__APPWORLD-NAT-088__QWEN",
+      "sglang": {
+        "backend": "SGLang",
+        "benchmark": "APPWORLD",
+        "consensus_fraction": 1.0,
+        "cross_restart_agreement": {
+          "denominator": 6,
+          "numerator": 6
+        },
+        "modal_action": {
+          "kind": "NO_TOOL_ACTION"
+        },
+        "modal_action_sha256": "b92214ca1631896d7564754f29acc10886a4e3e6f784910317f053550dc923d0",
+        "modal_count": 5,
+        "model_family": "Qwen",
+        "pair_id": "APPWORLD__APPWORLD-NAT-088__QWEN",
+        "pairwise_semantic_agreement": {
+          "denominator": 10,
+          "numerator": 10
+        },
+        "repeat_actions": [
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 0,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 1,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 2,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 3,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 4,
+            "server_epoch": 1
+          }
+        ],
+        "repeats": 5,
+        "same_process_agreement": {
+          "denominator": 4,
+          "numerator": 4
+        },
+        "semantic_entropy_base2": -0.0,
+        "stability_class": "FULLY_STABLE"
+      },
+      "vllm": {
+        "backend": "vLLM",
+        "benchmark": "APPWORLD",
+        "consensus_fraction": 1.0,
+        "cross_restart_agreement": {
+          "denominator": 6,
+          "numerator": 6
+        },
+        "modal_action": {
+          "kind": "NO_TOOL_ACTION"
+        },
+        "modal_action_sha256": "b92214ca1631896d7564754f29acc10886a4e3e6f784910317f053550dc923d0",
+        "modal_count": 5,
+        "model_family": "Qwen",
+        "pair_id": "APPWORLD__APPWORLD-NAT-088__QWEN",
+        "pairwise_semantic_agreement": {
+          "denominator": 10,
+          "numerator": 10
+        },
+        "repeat_actions": [
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 0,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 1,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 2,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 3,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 4,
+            "server_epoch": 0
+          }
+        ],
+        "repeats": 5,
+        "same_process_agreement": {
+          "denominator": 4,
+          "numerator": 4
+        },
+        "semantic_entropy_base2": -0.0,
+        "stability_class": "FULLY_STABLE"
+      }
+    },
+    {
+      "benchmark": "APPWORLD",
+      "classification": "STABLE_BACKEND_INVARIANT",
+      "model_family": "Qwen",
+      "pair_id": "APPWORLD__APPWORLD-NAT-094__QWEN",
+      "sglang": {
+        "backend": "SGLang",
+        "benchmark": "APPWORLD",
+        "consensus_fraction": 1.0,
+        "cross_restart_agreement": {
+          "denominator": 6,
+          "numerator": 6
+        },
+        "modal_action": {
+          "kind": "NO_TOOL_ACTION"
+        },
+        "modal_action_sha256": "b92214ca1631896d7564754f29acc10886a4e3e6f784910317f053550dc923d0",
+        "modal_count": 5,
+        "model_family": "Qwen",
+        "pair_id": "APPWORLD__APPWORLD-NAT-094__QWEN",
+        "pairwise_semantic_agreement": {
+          "denominator": 10,
+          "numerator": 10
+        },
+        "repeat_actions": [
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 0,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 1,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 2,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 3,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 4,
+            "server_epoch": 1
+          }
+        ],
+        "repeats": 5,
+        "same_process_agreement": {
+          "denominator": 4,
+          "numerator": 4
+        },
+        "semantic_entropy_base2": -0.0,
+        "stability_class": "FULLY_STABLE"
+      },
+      "vllm": {
+        "backend": "vLLM",
+        "benchmark": "APPWORLD",
+        "consensus_fraction": 1.0,
+        "cross_restart_agreement": {
+          "denominator": 6,
+          "numerator": 6
+        },
+        "modal_action": {
+          "kind": "NO_TOOL_ACTION"
+        },
+        "modal_action_sha256": "b92214ca1631896d7564754f29acc10886a4e3e6f784910317f053550dc923d0",
+        "modal_count": 5,
+        "model_family": "Qwen",
+        "pair_id": "APPWORLD__APPWORLD-NAT-094__QWEN",
+        "pairwise_semantic_agreement": {
+          "denominator": 10,
+          "numerator": 10
+        },
+        "repeat_actions": [
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 0,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 1,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 2,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 3,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 4,
+            "server_epoch": 0
+          }
+        ],
+        "repeats": 5,
+        "same_process_agreement": {
+          "denominator": 4,
+          "numerator": 4
+        },
+        "semantic_entropy_base2": -0.0,
+        "stability_class": "FULLY_STABLE"
+      }
+    },
+    {
+      "benchmark": "APPWORLD",
+      "classification": "STABLE_BACKEND_INVARIANT",
+      "model_family": "Qwen",
+      "pair_id": "APPWORLD__APPWORLD-NAT-095__QWEN",
+      "sglang": {
+        "backend": "SGLang",
+        "benchmark": "APPWORLD",
+        "consensus_fraction": 1.0,
+        "cross_restart_agreement": {
+          "denominator": 6,
+          "numerator": 6
+        },
+        "modal_action": {
+          "calls": [
+            {
+              "arguments": {
+                "code": "print(\"Invalid credentials. Please check the username and password.\")"
+              },
+              "function": "python_exec"
+            }
+          ],
+          "kind": "TOOL_ACTION"
+        },
+        "modal_action_sha256": "f416d62bc1c47dc12c109a73247101e4774a0ded0263aa8e61de641f7b0d4ba9",
+        "modal_count": 5,
+        "model_family": "Qwen",
+        "pair_id": "APPWORLD__APPWORLD-NAT-095__QWEN",
+        "pairwise_semantic_agreement": {
+          "denominator": 10,
+          "numerator": 10
+        },
+        "repeat_actions": [
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {
+                    "code": "print(\"Invalid credentials. Please check the username and password.\")"
+                  },
+                  "function": "python_exec"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 0,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {
+                    "code": "print(\"Invalid credentials. Please check the username and password.\")"
+                  },
+                  "function": "python_exec"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 1,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {
+                    "code": "print(\"Invalid credentials. Please check the username and password.\")"
+                  },
+                  "function": "python_exec"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 2,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {
+                    "code": "print(\"Invalid credentials. Please check the username and password.\")"
+                  },
+                  "function": "python_exec"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 3,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {
+                    "code": "print(\"Invalid credentials. Please check the username and password.\")"
+                  },
+                  "function": "python_exec"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 4,
+            "server_epoch": 1
+          }
+        ],
+        "repeats": 5,
+        "same_process_agreement": {
+          "denominator": 4,
+          "numerator": 4
+        },
+        "semantic_entropy_base2": -0.0,
+        "stability_class": "FULLY_STABLE"
+      },
+      "vllm": {
+        "backend": "vLLM",
+        "benchmark": "APPWORLD",
+        "consensus_fraction": 1.0,
+        "cross_restart_agreement": {
+          "denominator": 6,
+          "numerator": 6
+        },
+        "modal_action": {
+          "calls": [
+            {
+              "arguments": {
+                "code": "print(\"Invalid credentials. Please check the username and password.\")"
+              },
+              "function": "python_exec"
+            }
+          ],
+          "kind": "TOOL_ACTION"
+        },
+        "modal_action_sha256": "f416d62bc1c47dc12c109a73247101e4774a0ded0263aa8e61de641f7b0d4ba9",
+        "modal_count": 5,
+        "model_family": "Qwen",
+        "pair_id": "APPWORLD__APPWORLD-NAT-095__QWEN",
+        "pairwise_semantic_agreement": {
+          "denominator": 10,
+          "numerator": 10
+        },
+        "repeat_actions": [
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {
+                    "code": "print(\"Invalid credentials. Please check the username and password.\")"
+                  },
+                  "function": "python_exec"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 0,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {
+                    "code": "print(\"Invalid credentials. Please check the username and password.\")"
+                  },
+                  "function": "python_exec"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 1,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {
+                    "code": "print(\"Invalid credentials. Please check the username and password.\")"
+                  },
+                  "function": "python_exec"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 2,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {
+                    "code": "print(\"Invalid credentials. Please check the username and password.\")"
+                  },
+                  "function": "python_exec"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 3,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {
+                    "code": "print(\"Invalid credentials. Please check the username and password.\")"
+                  },
+                  "function": "python_exec"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 4,
+            "server_epoch": 0
+          }
+        ],
+        "repeats": 5,
+        "same_process_agreement": {
+          "denominator": 4,
+          "numerator": 4
+        },
+        "semantic_entropy_base2": -0.0,
+        "stability_class": "FULLY_STABLE"
+      }
+    },
+    {
+      "benchmark": "APPWORLD",
+      "classification": "STABLE_BACKEND_INVARIANT",
+      "model_family": "Llama",
+      "pair_id": "APPWORLD__APPWORLD-NAT-098__LLAMA",
+      "sglang": {
+        "backend": "SGLang",
+        "benchmark": "APPWORLD",
+        "consensus_fraction": 1.0,
+        "cross_restart_agreement": {
+          "denominator": 6,
+          "numerator": 6
+        },
+        "modal_action": {
+          "kind": "NO_TOOL_ACTION"
+        },
+        "modal_action_sha256": "b92214ca1631896d7564754f29acc10886a4e3e6f784910317f053550dc923d0",
+        "modal_count": 5,
+        "model_family": "Llama",
+        "pair_id": "APPWORLD__APPWORLD-NAT-098__LLAMA",
+        "pairwise_semantic_agreement": {
+          "denominator": 10,
+          "numerator": 10
+        },
+        "repeat_actions": [
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 0,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 1,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 2,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 3,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 4,
+            "server_epoch": 1
+          }
+        ],
+        "repeats": 5,
+        "same_process_agreement": {
+          "denominator": 4,
+          "numerator": 4
+        },
+        "semantic_entropy_base2": -0.0,
+        "stability_class": "FULLY_STABLE"
+      },
+      "vllm": {
+        "backend": "vLLM",
+        "benchmark": "APPWORLD",
+        "consensus_fraction": 1.0,
+        "cross_restart_agreement": {
+          "denominator": 6,
+          "numerator": 6
+        },
+        "modal_action": {
+          "kind": "NO_TOOL_ACTION"
+        },
+        "modal_action_sha256": "b92214ca1631896d7564754f29acc10886a4e3e6f784910317f053550dc923d0",
+        "modal_count": 5,
+        "model_family": "Llama",
+        "pair_id": "APPWORLD__APPWORLD-NAT-098__LLAMA",
+        "pairwise_semantic_agreement": {
+          "denominator": 10,
+          "numerator": 10
+        },
+        "repeat_actions": [
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 0,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 1,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 2,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 3,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 4,
+            "server_epoch": 0
+          }
+        ],
+        "repeats": 5,
+        "same_process_agreement": {
+          "denominator": 4,
+          "numerator": 4
+        },
+        "semantic_entropy_base2": -0.0,
+        "stability_class": "FULLY_STABLE"
+      }
+    },
+    {
+      "benchmark": "TAU3",
+      "classification": "STABLE_BACKEND_INVARIANT",
+      "model_family": "Qwen",
+      "pair_id": "TAU3__05a4b9c0-48a7-436d-bde2-a8e7f575bfe3__QWEN",
+      "sglang": {
+        "backend": "SGLang",
+        "benchmark": "TAU3",
+        "consensus_fraction": 1.0,
+        "cross_restart_agreement": {
+          "denominator": 6,
+          "numerator": 6
+        },
+        "modal_action": {
+          "kind": "NO_TOOL_ACTION"
+        },
+        "modal_action_sha256": "b92214ca1631896d7564754f29acc10886a4e3e6f784910317f053550dc923d0",
+        "modal_count": 5,
+        "model_family": "Qwen",
+        "pair_id": "TAU3__05a4b9c0-48a7-436d-bde2-a8e7f575bfe3__QWEN",
+        "pairwise_semantic_agreement": {
+          "denominator": 10,
+          "numerator": 10
+        },
+        "repeat_actions": [
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 0,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 1,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 2,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 3,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 4,
+            "server_epoch": 0
+          }
+        ],
+        "repeats": 5,
+        "same_process_agreement": {
+          "denominator": 4,
+          "numerator": 4
+        },
+        "semantic_entropy_base2": -0.0,
+        "stability_class": "FULLY_STABLE"
+      },
+      "vllm": {
+        "backend": "vLLM",
+        "benchmark": "TAU3",
+        "consensus_fraction": 1.0,
+        "cross_restart_agreement": {
+          "denominator": 6,
+          "numerator": 6
+        },
+        "modal_action": {
+          "kind": "NO_TOOL_ACTION"
+        },
+        "modal_action_sha256": "b92214ca1631896d7564754f29acc10886a4e3e6f784910317f053550dc923d0",
+        "modal_count": 5,
+        "model_family": "Qwen",
+        "pair_id": "TAU3__05a4b9c0-48a7-436d-bde2-a8e7f575bfe3__QWEN",
+        "pairwise_semantic_agreement": {
+          "denominator": 10,
+          "numerator": 10
+        },
+        "repeat_actions": [
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 0,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 1,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 2,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 3,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 4,
+            "server_epoch": 0
+          }
+        ],
+        "repeats": 5,
+        "same_process_agreement": {
+          "denominator": 4,
+          "numerator": 4
+        },
+        "semantic_entropy_base2": -0.0,
+        "stability_class": "FULLY_STABLE"
+      }
+    },
+    {
+      "benchmark": "TAU3",
+      "classification": "STABLE_BACKEND_INVARIANT",
+      "model_family": "Llama",
+      "pair_id": "TAU3__254ebdff-e1f1-42d1-a5b9-9c82a8f96fe8__LLAMA",
+      "sglang": {
+        "backend": "SGLang",
+        "benchmark": "TAU3",
+        "consensus_fraction": 1.0,
+        "cross_restart_agreement": {
+          "denominator": 6,
+          "numerator": 6
+        },
+        "modal_action": {
+          "kind": "NO_TOOL_ACTION"
+        },
+        "modal_action_sha256": "b92214ca1631896d7564754f29acc10886a4e3e6f784910317f053550dc923d0",
+        "modal_count": 5,
+        "model_family": "Llama",
+        "pair_id": "TAU3__254ebdff-e1f1-42d1-a5b9-9c82a8f96fe8__LLAMA",
+        "pairwise_semantic_agreement": {
+          "denominator": 10,
+          "numerator": 10
+        },
+        "repeat_actions": [
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 0,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 1,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 2,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 3,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 4,
+            "server_epoch": 1
+          }
+        ],
+        "repeats": 5,
+        "same_process_agreement": {
+          "denominator": 4,
+          "numerator": 4
+        },
+        "semantic_entropy_base2": -0.0,
+        "stability_class": "FULLY_STABLE"
+      },
+      "vllm": {
+        "backend": "vLLM",
+        "benchmark": "TAU3",
+        "consensus_fraction": 1.0,
+        "cross_restart_agreement": {
+          "denominator": 6,
+          "numerator": 6
+        },
+        "modal_action": {
+          "kind": "NO_TOOL_ACTION"
+        },
+        "modal_action_sha256": "b92214ca1631896d7564754f29acc10886a4e3e6f784910317f053550dc923d0",
+        "modal_count": 5,
+        "model_family": "Llama",
+        "pair_id": "TAU3__254ebdff-e1f1-42d1-a5b9-9c82a8f96fe8__LLAMA",
+        "pairwise_semantic_agreement": {
+          "denominator": 10,
+          "numerator": 10
+        },
+        "repeat_actions": [
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 0,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 1,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 2,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 3,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 4,
+            "server_epoch": 1
+          }
+        ],
+        "repeats": 5,
+        "same_process_agreement": {
+          "denominator": 4,
+          "numerator": 4
+        },
+        "semantic_entropy_base2": -0.0,
+        "stability_class": "FULLY_STABLE"
+      }
+    },
+    {
+      "benchmark": "TAU3",
+      "classification": "STABLE_BACKEND_INVARIANT",
+      "model_family": "Qwen",
+      "pair_id": "TAU3__2ed5f78c-886f-4089-94e9-1a1d3c06907b__QWEN",
+      "sglang": {
+        "backend": "SGLang",
+        "benchmark": "TAU3",
+        "consensus_fraction": 1.0,
+        "cross_restart_agreement": {
+          "denominator": 6,
+          "numerator": 6
+        },
+        "modal_action": {
+          "kind": "NO_TOOL_ACTION"
+        },
+        "modal_action_sha256": "b92214ca1631896d7564754f29acc10886a4e3e6f784910317f053550dc923d0",
+        "modal_count": 5,
+        "model_family": "Qwen",
+        "pair_id": "TAU3__2ed5f78c-886f-4089-94e9-1a1d3c06907b__QWEN",
+        "pairwise_semantic_agreement": {
+          "denominator": 10,
+          "numerator": 10
+        },
+        "repeat_actions": [
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 0,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 1,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 2,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 3,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 4,
+            "server_epoch": 0
+          }
+        ],
+        "repeats": 5,
+        "same_process_agreement": {
+          "denominator": 4,
+          "numerator": 4
+        },
+        "semantic_entropy_base2": -0.0,
+        "stability_class": "FULLY_STABLE"
+      },
+      "vllm": {
+        "backend": "vLLM",
+        "benchmark": "TAU3",
+        "consensus_fraction": 1.0,
+        "cross_restart_agreement": {
+          "denominator": 6,
+          "numerator": 6
+        },
+        "modal_action": {
+          "kind": "NO_TOOL_ACTION"
+        },
+        "modal_action_sha256": "b92214ca1631896d7564754f29acc10886a4e3e6f784910317f053550dc923d0",
+        "modal_count": 5,
+        "model_family": "Qwen",
+        "pair_id": "TAU3__2ed5f78c-886f-4089-94e9-1a1d3c06907b__QWEN",
+        "pairwise_semantic_agreement": {
+          "denominator": 10,
+          "numerator": 10
+        },
+        "repeat_actions": [
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 0,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 1,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 2,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 3,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 4,
+            "server_epoch": 0
+          }
+        ],
+        "repeats": 5,
+        "same_process_agreement": {
+          "denominator": 4,
+          "numerator": 4
+        },
+        "semantic_entropy_base2": -0.0,
+        "stability_class": "FULLY_STABLE"
+      }
+    },
+    {
+      "benchmark": "TAU3",
+      "classification": "STABLE_BACKEND_INVARIANT",
+      "model_family": "Llama",
+      "pair_id": "TAU3__30099acb-90e2-4fb3-9473-852e6dd03f5f__LLAMA",
+      "sglang": {
+        "backend": "SGLang",
+        "benchmark": "TAU3",
+        "consensus_fraction": 1.0,
+        "cross_restart_agreement": {
+          "denominator": 6,
+          "numerator": 6
+        },
+        "modal_action": {
+          "kind": "NO_TOOL_ACTION"
+        },
+        "modal_action_sha256": "b92214ca1631896d7564754f29acc10886a4e3e6f784910317f053550dc923d0",
+        "modal_count": 5,
+        "model_family": "Llama",
+        "pair_id": "TAU3__30099acb-90e2-4fb3-9473-852e6dd03f5f__LLAMA",
+        "pairwise_semantic_agreement": {
+          "denominator": 10,
+          "numerator": 10
+        },
+        "repeat_actions": [
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 0,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 1,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 2,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 3,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 4,
+            "server_epoch": 1
+          }
+        ],
+        "repeats": 5,
+        "same_process_agreement": {
+          "denominator": 4,
+          "numerator": 4
+        },
+        "semantic_entropy_base2": -0.0,
+        "stability_class": "FULLY_STABLE"
+      },
+      "vllm": {
+        "backend": "vLLM",
+        "benchmark": "TAU3",
+        "consensus_fraction": 1.0,
+        "cross_restart_agreement": {
+          "denominator": 6,
+          "numerator": 6
+        },
+        "modal_action": {
+          "kind": "NO_TOOL_ACTION"
+        },
+        "modal_action_sha256": "b92214ca1631896d7564754f29acc10886a4e3e6f784910317f053550dc923d0",
+        "modal_count": 5,
+        "model_family": "Llama",
+        "pair_id": "TAU3__30099acb-90e2-4fb3-9473-852e6dd03f5f__LLAMA",
+        "pairwise_semantic_agreement": {
+          "denominator": 10,
+          "numerator": 10
+        },
+        "repeat_actions": [
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 0,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 1,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 2,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 3,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 4,
+            "server_epoch": 0
+          }
+        ],
+        "repeats": 5,
+        "same_process_agreement": {
+          "denominator": 4,
+          "numerator": 4
+        },
+        "semantic_entropy_base2": -0.0,
+        "stability_class": "FULLY_STABLE"
+      }
+    },
+    {
+      "benchmark": "TAU3",
+      "classification": "STABLE_BACKEND_INVARIANT",
+      "model_family": "Qwen",
+      "pair_id": "TAU3__30099acb-90e2-4fb3-9473-852e6dd03f5f__QWEN",
+      "sglang": {
+        "backend": "SGLang",
+        "benchmark": "TAU3",
+        "consensus_fraction": 1.0,
+        "cross_restart_agreement": {
+          "denominator": 6,
+          "numerator": 6
+        },
+        "modal_action": {
+          "kind": "NO_TOOL_ACTION"
+        },
+        "modal_action_sha256": "b92214ca1631896d7564754f29acc10886a4e3e6f784910317f053550dc923d0",
+        "modal_count": 5,
+        "model_family": "Qwen",
+        "pair_id": "TAU3__30099acb-90e2-4fb3-9473-852e6dd03f5f__QWEN",
+        "pairwise_semantic_agreement": {
+          "denominator": 10,
+          "numerator": 10
+        },
+        "repeat_actions": [
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 0,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 1,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 2,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 3,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 4,
+            "server_epoch": 0
+          }
+        ],
+        "repeats": 5,
+        "same_process_agreement": {
+          "denominator": 4,
+          "numerator": 4
+        },
+        "semantic_entropy_base2": -0.0,
+        "stability_class": "FULLY_STABLE"
+      },
+      "vllm": {
+        "backend": "vLLM",
+        "benchmark": "TAU3",
+        "consensus_fraction": 1.0,
+        "cross_restart_agreement": {
+          "denominator": 6,
+          "numerator": 6
+        },
+        "modal_action": {
+          "kind": "NO_TOOL_ACTION"
+        },
+        "modal_action_sha256": "b92214ca1631896d7564754f29acc10886a4e3e6f784910317f053550dc923d0",
+        "modal_count": 5,
+        "model_family": "Qwen",
+        "pair_id": "TAU3__30099acb-90e2-4fb3-9473-852e6dd03f5f__QWEN",
+        "pairwise_semantic_agreement": {
+          "denominator": 10,
+          "numerator": 10
+        },
+        "repeat_actions": [
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 0,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 1,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 2,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 3,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 4,
+            "server_epoch": 0
+          }
+        ],
+        "repeats": 5,
+        "same_process_agreement": {
+          "denominator": 4,
+          "numerator": 4
+        },
+        "semantic_entropy_base2": -0.0,
+        "stability_class": "FULLY_STABLE"
+      }
+    },
+    {
+      "benchmark": "TAU3",
+      "classification": "STABLE_BACKEND_INVARIANT",
+      "model_family": "Llama",
+      "pair_id": "TAU3__3457ff1f-539b-4ba6-ab15-cdbcb4b07229__LLAMA",
+      "sglang": {
+        "backend": "SGLang",
+        "benchmark": "TAU3",
+        "consensus_fraction": 1.0,
+        "cross_restart_agreement": {
+          "denominator": 6,
+          "numerator": 6
+        },
+        "modal_action": {
+          "calls": [
+            {
+              "arguments": {},
+              "function": "run_speed_test"
+            }
+          ],
+          "kind": "TOOL_ACTION"
+        },
+        "modal_action_sha256": "ece03b763bc4ed679e3dea39d0b98dc8fa11e8d6d406040c9a2893c7c9110424",
+        "modal_count": 5,
+        "model_family": "Llama",
+        "pair_id": "TAU3__3457ff1f-539b-4ba6-ab15-cdbcb4b07229__LLAMA",
+        "pairwise_semantic_agreement": {
+          "denominator": 10,
+          "numerator": 10
+        },
+        "repeat_actions": [
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {},
+                  "function": "run_speed_test"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 0,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {},
+                  "function": "run_speed_test"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 1,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {},
+                  "function": "run_speed_test"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 2,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {},
+                  "function": "run_speed_test"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 3,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {},
+                  "function": "run_speed_test"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 4,
+            "server_epoch": 1
+          }
+        ],
+        "repeats": 5,
+        "same_process_agreement": {
+          "denominator": 4,
+          "numerator": 4
+        },
+        "semantic_entropy_base2": -0.0,
+        "stability_class": "FULLY_STABLE"
+      },
+      "vllm": {
+        "backend": "vLLM",
+        "benchmark": "TAU3",
+        "consensus_fraction": 1.0,
+        "cross_restart_agreement": {
+          "denominator": 6,
+          "numerator": 6
+        },
+        "modal_action": {
+          "calls": [
+            {
+              "arguments": {},
+              "function": "run_speed_test"
+            }
+          ],
+          "kind": "TOOL_ACTION"
+        },
+        "modal_action_sha256": "ece03b763bc4ed679e3dea39d0b98dc8fa11e8d6d406040c9a2893c7c9110424",
+        "modal_count": 5,
+        "model_family": "Llama",
+        "pair_id": "TAU3__3457ff1f-539b-4ba6-ab15-cdbcb4b07229__LLAMA",
+        "pairwise_semantic_agreement": {
+          "denominator": 10,
+          "numerator": 10
+        },
+        "repeat_actions": [
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {},
+                  "function": "run_speed_test"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 0,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {},
+                  "function": "run_speed_test"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 1,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {},
+                  "function": "run_speed_test"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 2,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {},
+                  "function": "run_speed_test"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 3,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {},
+                  "function": "run_speed_test"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 4,
+            "server_epoch": 0
+          }
+        ],
+        "repeats": 5,
+        "same_process_agreement": {
+          "denominator": 4,
+          "numerator": 4
+        },
+        "semantic_entropy_base2": -0.0,
+        "stability_class": "FULLY_STABLE"
+      }
+    },
+    {
+      "benchmark": "TAU3",
+      "classification": "STABLE_BACKEND_INVARIANT",
+      "model_family": "Llama",
+      "pair_id": "TAU3__427ff18a-0d8c-486f-bab0-417de318c9c2__LLAMA",
+      "sglang": {
+        "backend": "SGLang",
+        "benchmark": "TAU3",
+        "consensus_fraction": 1.0,
+        "cross_restart_agreement": {
+          "denominator": 6,
+          "numerator": 6
+        },
+        "modal_action": {
+          "kind": "NO_TOOL_ACTION"
+        },
+        "modal_action_sha256": "b92214ca1631896d7564754f29acc10886a4e3e6f784910317f053550dc923d0",
+        "modal_count": 5,
+        "model_family": "Llama",
+        "pair_id": "TAU3__427ff18a-0d8c-486f-bab0-417de318c9c2__LLAMA",
+        "pairwise_semantic_agreement": {
+          "denominator": 10,
+          "numerator": 10
+        },
+        "repeat_actions": [
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 0,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 1,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 2,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 3,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 4,
+            "server_epoch": 0
+          }
+        ],
+        "repeats": 5,
+        "same_process_agreement": {
+          "denominator": 4,
+          "numerator": 4
+        },
+        "semantic_entropy_base2": -0.0,
+        "stability_class": "FULLY_STABLE"
+      },
+      "vllm": {
+        "backend": "vLLM",
+        "benchmark": "TAU3",
+        "consensus_fraction": 1.0,
+        "cross_restart_agreement": {
+          "denominator": 6,
+          "numerator": 6
+        },
+        "modal_action": {
+          "kind": "NO_TOOL_ACTION"
+        },
+        "modal_action_sha256": "b92214ca1631896d7564754f29acc10886a4e3e6f784910317f053550dc923d0",
+        "modal_count": 5,
+        "model_family": "Llama",
+        "pair_id": "TAU3__427ff18a-0d8c-486f-bab0-417de318c9c2__LLAMA",
+        "pairwise_semantic_agreement": {
+          "denominator": 10,
+          "numerator": 10
+        },
+        "repeat_actions": [
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 0,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 1,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 2,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 3,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 4,
+            "server_epoch": 1
+          }
+        ],
+        "repeats": 5,
+        "same_process_agreement": {
+          "denominator": 4,
+          "numerator": 4
+        },
+        "semantic_entropy_base2": -0.0,
+        "stability_class": "FULLY_STABLE"
+      }
+    },
+    {
+      "benchmark": "TAU3",
+      "classification": "STABLE_BACKEND_INVARIANT",
+      "model_family": "Qwen",
+      "pair_id": "TAU3__5141914b-43d3-4c2b-9e70-cb74cee76d08__QWEN",
+      "sglang": {
+        "backend": "SGLang",
+        "benchmark": "TAU3",
+        "consensus_fraction": 1.0,
+        "cross_restart_agreement": {
+          "denominator": 6,
+          "numerator": 6
+        },
+        "modal_action": {
+          "kind": "NO_TOOL_ACTION"
+        },
+        "modal_action_sha256": "b92214ca1631896d7564754f29acc10886a4e3e6f784910317f053550dc923d0",
+        "modal_count": 5,
+        "model_family": "Qwen",
+        "pair_id": "TAU3__5141914b-43d3-4c2b-9e70-cb74cee76d08__QWEN",
+        "pairwise_semantic_agreement": {
+          "denominator": 10,
+          "numerator": 10
+        },
+        "repeat_actions": [
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 0,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 1,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 2,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 3,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 4,
+            "server_epoch": 0
+          }
+        ],
+        "repeats": 5,
+        "same_process_agreement": {
+          "denominator": 4,
+          "numerator": 4
+        },
+        "semantic_entropy_base2": -0.0,
+        "stability_class": "FULLY_STABLE"
+      },
+      "vllm": {
+        "backend": "vLLM",
+        "benchmark": "TAU3",
+        "consensus_fraction": 1.0,
+        "cross_restart_agreement": {
+          "denominator": 6,
+          "numerator": 6
+        },
+        "modal_action": {
+          "kind": "NO_TOOL_ACTION"
+        },
+        "modal_action_sha256": "b92214ca1631896d7564754f29acc10886a4e3e6f784910317f053550dc923d0",
+        "modal_count": 5,
+        "model_family": "Qwen",
+        "pair_id": "TAU3__5141914b-43d3-4c2b-9e70-cb74cee76d08__QWEN",
+        "pairwise_semantic_agreement": {
+          "denominator": 10,
+          "numerator": 10
+        },
+        "repeat_actions": [
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 0,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 1,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 2,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 3,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 4,
+            "server_epoch": 0
+          }
+        ],
+        "repeats": 5,
+        "same_process_agreement": {
+          "denominator": 4,
+          "numerator": 4
+        },
+        "semantic_entropy_base2": -0.0,
+        "stability_class": "FULLY_STABLE"
+      }
+    },
+    {
+      "benchmark": "TAU3",
+      "classification": "STABLE_BACKEND_INVARIANT",
+      "model_family": "Llama",
+      "pair_id": "TAU3__5a17bc76-e1be-40c2-90f9-5bb7d109fc42__LLAMA",
+      "sglang": {
+        "backend": "SGLang",
+        "benchmark": "TAU3",
+        "consensus_fraction": 1.0,
+        "cross_restart_agreement": {
+          "denominator": 6,
+          "numerator": 6
+        },
+        "modal_action": {
+          "calls": [
+            {
+              "arguments": {
+                "item_ids": [
+                  "9949163720"
+                ],
+                "new_item_ids": [
+                  "1355937109"
+                ],
+                "order_id": "#W9810810",
+                "payment_method_id": "gift_card_7252880"
+              },
+              "function": "modify_pending_order_items"
+            }
+          ],
+          "kind": "TOOL_ACTION"
+        },
+        "modal_action_sha256": "cbd124f43b4447b9da85b693af2871e5fe5010ba6781d955423506225f51fe58",
+        "modal_count": 5,
+        "model_family": "Llama",
+        "pair_id": "TAU3__5a17bc76-e1be-40c2-90f9-5bb7d109fc42__LLAMA",
+        "pairwise_semantic_agreement": {
+          "denominator": 10,
+          "numerator": 10
+        },
+        "repeat_actions": [
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {
+                    "item_ids": [
+                      "9949163720"
+                    ],
+                    "new_item_ids": [
+                      "1355937109"
+                    ],
+                    "order_id": "#W9810810",
+                    "payment_method_id": "gift_card_7252880"
+                  },
+                  "function": "modify_pending_order_items"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 0,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {
+                    "item_ids": [
+                      "9949163720"
+                    ],
+                    "new_item_ids": [
+                      "1355937109"
+                    ],
+                    "order_id": "#W9810810",
+                    "payment_method_id": "gift_card_7252880"
+                  },
+                  "function": "modify_pending_order_items"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 1,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {
+                    "item_ids": [
+                      "9949163720"
+                    ],
+                    "new_item_ids": [
+                      "1355937109"
+                    ],
+                    "order_id": "#W9810810",
+                    "payment_method_id": "gift_card_7252880"
+                  },
+                  "function": "modify_pending_order_items"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 2,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {
+                    "item_ids": [
+                      "9949163720"
+                    ],
+                    "new_item_ids": [
+                      "1355937109"
+                    ],
+                    "order_id": "#W9810810",
+                    "payment_method_id": "gift_card_7252880"
+                  },
+                  "function": "modify_pending_order_items"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 3,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {
+                    "item_ids": [
+                      "9949163720"
+                    ],
+                    "new_item_ids": [
+                      "1355937109"
+                    ],
+                    "order_id": "#W9810810",
+                    "payment_method_id": "gift_card_7252880"
+                  },
+                  "function": "modify_pending_order_items"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 4,
+            "server_epoch": 0
+          }
+        ],
+        "repeats": 5,
+        "same_process_agreement": {
+          "denominator": 4,
+          "numerator": 4
+        },
+        "semantic_entropy_base2": -0.0,
+        "stability_class": "FULLY_STABLE"
+      },
+      "vllm": {
+        "backend": "vLLM",
+        "benchmark": "TAU3",
+        "consensus_fraction": 1.0,
+        "cross_restart_agreement": {
+          "denominator": 6,
+          "numerator": 6
+        },
+        "modal_action": {
+          "calls": [
+            {
+              "arguments": {
+                "item_ids": [
+                  "9949163720"
+                ],
+                "new_item_ids": [
+                  "1355937109"
+                ],
+                "order_id": "#W9810810",
+                "payment_method_id": "gift_card_7252880"
+              },
+              "function": "modify_pending_order_items"
+            }
+          ],
+          "kind": "TOOL_ACTION"
+        },
+        "modal_action_sha256": "cbd124f43b4447b9da85b693af2871e5fe5010ba6781d955423506225f51fe58",
+        "modal_count": 5,
+        "model_family": "Llama",
+        "pair_id": "TAU3__5a17bc76-e1be-40c2-90f9-5bb7d109fc42__LLAMA",
+        "pairwise_semantic_agreement": {
+          "denominator": 10,
+          "numerator": 10
+        },
+        "repeat_actions": [
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {
+                    "item_ids": [
+                      "9949163720"
+                    ],
+                    "new_item_ids": [
+                      "1355937109"
+                    ],
+                    "order_id": "#W9810810",
+                    "payment_method_id": "gift_card_7252880"
+                  },
+                  "function": "modify_pending_order_items"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 0,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {
+                    "item_ids": [
+                      "9949163720"
+                    ],
+                    "new_item_ids": [
+                      "1355937109"
+                    ],
+                    "order_id": "#W9810810",
+                    "payment_method_id": "gift_card_7252880"
+                  },
+                  "function": "modify_pending_order_items"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 1,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {
+                    "item_ids": [
+                      "9949163720"
+                    ],
+                    "new_item_ids": [
+                      "1355937109"
+                    ],
+                    "order_id": "#W9810810",
+                    "payment_method_id": "gift_card_7252880"
+                  },
+                  "function": "modify_pending_order_items"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 2,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {
+                    "item_ids": [
+                      "9949163720"
+                    ],
+                    "new_item_ids": [
+                      "1355937109"
+                    ],
+                    "order_id": "#W9810810",
+                    "payment_method_id": "gift_card_7252880"
+                  },
+                  "function": "modify_pending_order_items"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 3,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {
+                    "item_ids": [
+                      "9949163720"
+                    ],
+                    "new_item_ids": [
+                      "1355937109"
+                    ],
+                    "order_id": "#W9810810",
+                    "payment_method_id": "gift_card_7252880"
+                  },
+                  "function": "modify_pending_order_items"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 4,
+            "server_epoch": 1
+          }
+        ],
+        "repeats": 5,
+        "same_process_agreement": {
+          "denominator": 4,
+          "numerator": 4
+        },
+        "semantic_entropy_base2": -0.0,
+        "stability_class": "FULLY_STABLE"
+      }
+    },
+    {
+      "benchmark": "TAU3",
+      "classification": "STABLE_BACKEND_INVARIANT",
+      "model_family": "Qwen",
+      "pair_id": "TAU3__62f649ab-ab0f-4e1a-b668-a55014c93cc0__QWEN",
+      "sglang": {
+        "backend": "SGLang",
+        "benchmark": "TAU3",
+        "consensus_fraction": 1.0,
+        "cross_restart_agreement": {
+          "denominator": 6,
+          "numerator": 6
+        },
+        "modal_action": {
+          "kind": "NO_TOOL_ACTION"
+        },
+        "modal_action_sha256": "b92214ca1631896d7564754f29acc10886a4e3e6f784910317f053550dc923d0",
+        "modal_count": 5,
+        "model_family": "Qwen",
+        "pair_id": "TAU3__62f649ab-ab0f-4e1a-b668-a55014c93cc0__QWEN",
+        "pairwise_semantic_agreement": {
+          "denominator": 10,
+          "numerator": 10
+        },
+        "repeat_actions": [
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 0,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 1,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 2,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 3,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 4,
+            "server_epoch": 0
+          }
+        ],
+        "repeats": 5,
+        "same_process_agreement": {
+          "denominator": 4,
+          "numerator": 4
+        },
+        "semantic_entropy_base2": -0.0,
+        "stability_class": "FULLY_STABLE"
+      },
+      "vllm": {
+        "backend": "vLLM",
+        "benchmark": "TAU3",
+        "consensus_fraction": 1.0,
+        "cross_restart_agreement": {
+          "denominator": 6,
+          "numerator": 6
+        },
+        "modal_action": {
+          "kind": "NO_TOOL_ACTION"
+        },
+        "modal_action_sha256": "b92214ca1631896d7564754f29acc10886a4e3e6f784910317f053550dc923d0",
+        "modal_count": 5,
+        "model_family": "Qwen",
+        "pair_id": "TAU3__62f649ab-ab0f-4e1a-b668-a55014c93cc0__QWEN",
+        "pairwise_semantic_agreement": {
+          "denominator": 10,
+          "numerator": 10
+        },
+        "repeat_actions": [
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 0,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 1,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 2,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 3,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 4,
+            "server_epoch": 1
+          }
+        ],
+        "repeats": 5,
+        "same_process_agreement": {
+          "denominator": 4,
+          "numerator": 4
+        },
+        "semantic_entropy_base2": -0.0,
+        "stability_class": "FULLY_STABLE"
+      }
+    },
+    {
+      "benchmark": "TAU3",
+      "classification": "STABLE_BACKEND_INVARIANT",
+      "model_family": "Qwen",
+      "pair_id": "TAU3__6fe69f33-6a4a-4f53-ae91-fda73c013358__QWEN",
+      "sglang": {
+        "backend": "SGLang",
+        "benchmark": "TAU3",
+        "consensus_fraction": 1.0,
+        "cross_restart_agreement": {
+          "denominator": 6,
+          "numerator": 6
+        },
+        "modal_action": {
+          "kind": "NO_TOOL_ACTION"
+        },
+        "modal_action_sha256": "b92214ca1631896d7564754f29acc10886a4e3e6f784910317f053550dc923d0",
+        "modal_count": 5,
+        "model_family": "Qwen",
+        "pair_id": "TAU3__6fe69f33-6a4a-4f53-ae91-fda73c013358__QWEN",
+        "pairwise_semantic_agreement": {
+          "denominator": 10,
+          "numerator": 10
+        },
+        "repeat_actions": [
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 0,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 1,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 2,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 3,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 4,
+            "server_epoch": 1
+          }
+        ],
+        "repeats": 5,
+        "same_process_agreement": {
+          "denominator": 4,
+          "numerator": 4
+        },
+        "semantic_entropy_base2": -0.0,
+        "stability_class": "FULLY_STABLE"
+      },
+      "vllm": {
+        "backend": "vLLM",
+        "benchmark": "TAU3",
+        "consensus_fraction": 1.0,
+        "cross_restart_agreement": {
+          "denominator": 6,
+          "numerator": 6
+        },
+        "modal_action": {
+          "kind": "NO_TOOL_ACTION"
+        },
+        "modal_action_sha256": "b92214ca1631896d7564754f29acc10886a4e3e6f784910317f053550dc923d0",
+        "modal_count": 5,
+        "model_family": "Qwen",
+        "pair_id": "TAU3__6fe69f33-6a4a-4f53-ae91-fda73c013358__QWEN",
+        "pairwise_semantic_agreement": {
+          "denominator": 10,
+          "numerator": 10
+        },
+        "repeat_actions": [
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 0,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 1,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 2,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 3,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 4,
+            "server_epoch": 1
+          }
+        ],
+        "repeats": 5,
+        "same_process_agreement": {
+          "denominator": 4,
+          "numerator": 4
+        },
+        "semantic_entropy_base2": -0.0,
+        "stability_class": "FULLY_STABLE"
+      }
+    },
+    {
+      "benchmark": "TAU3",
+      "classification": "STABLE_BACKEND_DIVERGENCE",
+      "model_family": "Llama",
+      "pair_id": "TAU3__7e882479-72f7-49b8-9160-97c6b86d1f42__LLAMA",
+      "sglang": {
+        "backend": "SGLang",
+        "benchmark": "TAU3",
+        "consensus_fraction": 1.0,
+        "cross_restart_agreement": {
+          "denominator": 6,
+          "numerator": 6
+        },
+        "modal_action": {
+          "kind": "NO_TOOL_ACTION"
+        },
+        "modal_action_sha256": "b92214ca1631896d7564754f29acc10886a4e3e6f784910317f053550dc923d0",
+        "modal_count": 5,
+        "model_family": "Llama",
+        "pair_id": "TAU3__7e882479-72f7-49b8-9160-97c6b86d1f42__LLAMA",
+        "pairwise_semantic_agreement": {
+          "denominator": 10,
+          "numerator": 10
+        },
+        "repeat_actions": [
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 0,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 1,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 2,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 3,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 4,
+            "server_epoch": 1
+          }
+        ],
+        "repeats": 5,
+        "same_process_agreement": {
+          "denominator": 4,
+          "numerator": 4
+        },
+        "semantic_entropy_base2": -0.0,
+        "stability_class": "FULLY_STABLE"
+      },
+      "vllm": {
+        "backend": "vLLM",
+        "benchmark": "TAU3",
+        "consensus_fraction": 1.0,
+        "cross_restart_agreement": {
+          "denominator": 6,
+          "numerator": 6
+        },
+        "modal_action": {
+          "calls": [
+            {
+              "arguments": {
+                "order_id": "12345"
+              },
+              "function": "get_order_details"
+            }
+          ],
+          "kind": "TOOL_ACTION"
+        },
+        "modal_action_sha256": "8a22f971efce8b65ee43325637d6a9ea77c75fec776a9589c9cb7e63b8c84f23",
+        "modal_count": 5,
+        "model_family": "Llama",
+        "pair_id": "TAU3__7e882479-72f7-49b8-9160-97c6b86d1f42__LLAMA",
+        "pairwise_semantic_agreement": {
+          "denominator": 10,
+          "numerator": 10
+        },
+        "repeat_actions": [
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {
+                    "order_id": "12345"
+                  },
+                  "function": "get_order_details"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 0,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {
+                    "order_id": "12345"
+                  },
+                  "function": "get_order_details"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 1,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {
+                    "order_id": "12345"
+                  },
+                  "function": "get_order_details"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 2,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {
+                    "order_id": "12345"
+                  },
+                  "function": "get_order_details"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 3,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {
+                    "order_id": "12345"
+                  },
+                  "function": "get_order_details"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 4,
+            "server_epoch": 0
+          }
+        ],
+        "repeats": 5,
+        "same_process_agreement": {
+          "denominator": 4,
+          "numerator": 4
+        },
+        "semantic_entropy_base2": -0.0,
+        "stability_class": "FULLY_STABLE"
+      }
+    },
+    {
+      "benchmark": "TAU3",
+      "classification": "STABLE_BACKEND_INVARIANT",
+      "model_family": "Qwen",
+      "pair_id": "TAU3__7e882479-72f7-49b8-9160-97c6b86d1f42__QWEN",
+      "sglang": {
+        "backend": "SGLang",
+        "benchmark": "TAU3",
+        "consensus_fraction": 1.0,
+        "cross_restart_agreement": {
+          "denominator": 6,
+          "numerator": 6
+        },
+        "modal_action": {
+          "kind": "NO_TOOL_ACTION"
+        },
+        "modal_action_sha256": "b92214ca1631896d7564754f29acc10886a4e3e6f784910317f053550dc923d0",
+        "modal_count": 5,
+        "model_family": "Qwen",
+        "pair_id": "TAU3__7e882479-72f7-49b8-9160-97c6b86d1f42__QWEN",
+        "pairwise_semantic_agreement": {
+          "denominator": 10,
+          "numerator": 10
+        },
+        "repeat_actions": [
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 0,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 1,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 2,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 3,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 4,
+            "server_epoch": 0
+          }
+        ],
+        "repeats": 5,
+        "same_process_agreement": {
+          "denominator": 4,
+          "numerator": 4
+        },
+        "semantic_entropy_base2": -0.0,
+        "stability_class": "FULLY_STABLE"
+      },
+      "vllm": {
+        "backend": "vLLM",
+        "benchmark": "TAU3",
+        "consensus_fraction": 1.0,
+        "cross_restart_agreement": {
+          "denominator": 6,
+          "numerator": 6
+        },
+        "modal_action": {
+          "kind": "NO_TOOL_ACTION"
+        },
+        "modal_action_sha256": "b92214ca1631896d7564754f29acc10886a4e3e6f784910317f053550dc923d0",
+        "modal_count": 5,
+        "model_family": "Qwen",
+        "pair_id": "TAU3__7e882479-72f7-49b8-9160-97c6b86d1f42__QWEN",
+        "pairwise_semantic_agreement": {
+          "denominator": 10,
+          "numerator": 10
+        },
+        "repeat_actions": [
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 0,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 1,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 2,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 3,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 4,
+            "server_epoch": 0
+          }
+        ],
+        "repeats": 5,
+        "same_process_agreement": {
+          "denominator": 4,
+          "numerator": 4
+        },
+        "semantic_entropy_base2": -0.0,
+        "stability_class": "FULLY_STABLE"
+      }
+    },
+    {
+      "benchmark": "TAU3",
+      "classification": "STABLE_BACKEND_INVARIANT",
+      "model_family": "Llama",
+      "pair_id": "TAU3__91602215-ccca-4600-ba13-aef44780d8f6__LLAMA",
+      "sglang": {
+        "backend": "SGLang",
+        "benchmark": "TAU3",
+        "consensus_fraction": 1.0,
+        "cross_restart_agreement": {
+          "denominator": 6,
+          "numerator": 6
+        },
+        "modal_action": {
+          "calls": [
+            {
+              "arguments": {},
+              "function": "toggle_airplane_mode"
+            }
+          ],
+          "kind": "TOOL_ACTION"
+        },
+        "modal_action_sha256": "a690c76d0d55f40cd125057652fa922f70980aeef919862a93477efacb1759d8",
+        "modal_count": 5,
+        "model_family": "Llama",
+        "pair_id": "TAU3__91602215-ccca-4600-ba13-aef44780d8f6__LLAMA",
+        "pairwise_semantic_agreement": {
+          "denominator": 10,
+          "numerator": 10
+        },
+        "repeat_actions": [
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {},
+                  "function": "toggle_airplane_mode"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 0,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {},
+                  "function": "toggle_airplane_mode"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 1,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {},
+                  "function": "toggle_airplane_mode"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 2,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {},
+                  "function": "toggle_airplane_mode"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 3,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {},
+                  "function": "toggle_airplane_mode"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 4,
+            "server_epoch": 1
+          }
+        ],
+        "repeats": 5,
+        "same_process_agreement": {
+          "denominator": 4,
+          "numerator": 4
+        },
+        "semantic_entropy_base2": -0.0,
+        "stability_class": "FULLY_STABLE"
+      },
+      "vllm": {
+        "backend": "vLLM",
+        "benchmark": "TAU3",
+        "consensus_fraction": 1.0,
+        "cross_restart_agreement": {
+          "denominator": 6,
+          "numerator": 6
+        },
+        "modal_action": {
+          "calls": [
+            {
+              "arguments": {},
+              "function": "toggle_airplane_mode"
+            }
+          ],
+          "kind": "TOOL_ACTION"
+        },
+        "modal_action_sha256": "a690c76d0d55f40cd125057652fa922f70980aeef919862a93477efacb1759d8",
+        "modal_count": 5,
+        "model_family": "Llama",
+        "pair_id": "TAU3__91602215-ccca-4600-ba13-aef44780d8f6__LLAMA",
+        "pairwise_semantic_agreement": {
+          "denominator": 10,
+          "numerator": 10
+        },
+        "repeat_actions": [
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {},
+                  "function": "toggle_airplane_mode"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 0,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {},
+                  "function": "toggle_airplane_mode"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 1,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {},
+                  "function": "toggle_airplane_mode"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 2,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {},
+                  "function": "toggle_airplane_mode"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 3,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "calls": [
+                {
+                  "arguments": {},
+                  "function": "toggle_airplane_mode"
+                }
+              ],
+              "kind": "TOOL_ACTION"
+            },
+            "repeat": 4,
+            "server_epoch": 1
+          }
+        ],
+        "repeats": 5,
+        "same_process_agreement": {
+          "denominator": 4,
+          "numerator": 4
+        },
+        "semantic_entropy_base2": -0.0,
+        "stability_class": "FULLY_STABLE"
+      }
+    },
+    {
+      "benchmark": "TAU3",
+      "classification": "STABLE_BACKEND_INVARIANT",
+      "model_family": "Qwen",
+      "pair_id": "TAU3__91602215-ccca-4600-ba13-aef44780d8f6__QWEN",
+      "sglang": {
+        "backend": "SGLang",
+        "benchmark": "TAU3",
+        "consensus_fraction": 1.0,
+        "cross_restart_agreement": {
+          "denominator": 6,
+          "numerator": 6
+        },
+        "modal_action": {
+          "kind": "NO_TOOL_ACTION"
+        },
+        "modal_action_sha256": "b92214ca1631896d7564754f29acc10886a4e3e6f784910317f053550dc923d0",
+        "modal_count": 5,
+        "model_family": "Qwen",
+        "pair_id": "TAU3__91602215-ccca-4600-ba13-aef44780d8f6__QWEN",
+        "pairwise_semantic_agreement": {
+          "denominator": 10,
+          "numerator": 10
+        },
+        "repeat_actions": [
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 0,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 1,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 2,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 3,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 4,
+            "server_epoch": 0
+          }
+        ],
+        "repeats": 5,
+        "same_process_agreement": {
+          "denominator": 4,
+          "numerator": 4
+        },
+        "semantic_entropy_base2": -0.0,
+        "stability_class": "FULLY_STABLE"
+      },
+      "vllm": {
+        "backend": "vLLM",
+        "benchmark": "TAU3",
+        "consensus_fraction": 1.0,
+        "cross_restart_agreement": {
+          "denominator": 6,
+          "numerator": 6
+        },
+        "modal_action": {
+          "kind": "NO_TOOL_ACTION"
+        },
+        "modal_action_sha256": "b92214ca1631896d7564754f29acc10886a4e3e6f784910317f053550dc923d0",
+        "modal_count": 5,
+        "model_family": "Qwen",
+        "pair_id": "TAU3__91602215-ccca-4600-ba13-aef44780d8f6__QWEN",
+        "pairwise_semantic_agreement": {
+          "denominator": 10,
+          "numerator": 10
+        },
+        "repeat_actions": [
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 0,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 1,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 2,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 3,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 4,
+            "server_epoch": 0
+          }
+        ],
+        "repeats": 5,
+        "same_process_agreement": {
+          "denominator": 4,
+          "numerator": 4
+        },
+        "semantic_entropy_base2": -0.0,
+        "stability_class": "FULLY_STABLE"
+      }
+    },
+    {
+      "benchmark": "TAU3",
+      "classification": "STABLE_BACKEND_INVARIANT",
+      "model_family": "Qwen",
+      "pair_id": "TAU3__b84d97c6-7d59-493b-8e16-4732556839e1__QWEN",
+      "sglang": {
+        "backend": "SGLang",
+        "benchmark": "TAU3",
+        "consensus_fraction": 1.0,
+        "cross_restart_agreement": {
+          "denominator": 6,
+          "numerator": 6
+        },
+        "modal_action": {
+          "kind": "NO_TOOL_ACTION"
+        },
+        "modal_action_sha256": "b92214ca1631896d7564754f29acc10886a4e3e6f784910317f053550dc923d0",
+        "modal_count": 5,
+        "model_family": "Qwen",
+        "pair_id": "TAU3__b84d97c6-7d59-493b-8e16-4732556839e1__QWEN",
+        "pairwise_semantic_agreement": {
+          "denominator": 10,
+          "numerator": 10
+        },
+        "repeat_actions": [
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 0,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 1,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 2,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 3,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 4,
+            "server_epoch": 0
+          }
+        ],
+        "repeats": 5,
+        "same_process_agreement": {
+          "denominator": 4,
+          "numerator": 4
+        },
+        "semantic_entropy_base2": -0.0,
+        "stability_class": "FULLY_STABLE"
+      },
+      "vllm": {
+        "backend": "vLLM",
+        "benchmark": "TAU3",
+        "consensus_fraction": 1.0,
+        "cross_restart_agreement": {
+          "denominator": 6,
+          "numerator": 6
+        },
+        "modal_action": {
+          "kind": "NO_TOOL_ACTION"
+        },
+        "modal_action_sha256": "b92214ca1631896d7564754f29acc10886a4e3e6f784910317f053550dc923d0",
+        "modal_count": 5,
+        "model_family": "Qwen",
+        "pair_id": "TAU3__b84d97c6-7d59-493b-8e16-4732556839e1__QWEN",
+        "pairwise_semantic_agreement": {
+          "denominator": 10,
+          "numerator": 10
+        },
+        "repeat_actions": [
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 0,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 1,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 2,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 3,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 4,
+            "server_epoch": 0
+          }
+        ],
+        "repeats": 5,
+        "same_process_agreement": {
+          "denominator": 4,
+          "numerator": 4
+        },
+        "semantic_entropy_base2": -0.0,
+        "stability_class": "FULLY_STABLE"
+      }
+    },
+    {
+      "benchmark": "TAU3",
+      "classification": "STABLE_BACKEND_INVARIANT",
+      "model_family": "Llama",
+      "pair_id": "TAU3__c3008eca-6ae4-4f7d-a156-5919175c9fa2__LLAMA",
+      "sglang": {
+        "backend": "SGLang",
+        "benchmark": "TAU3",
+        "consensus_fraction": 1.0,
+        "cross_restart_agreement": {
+          "denominator": 6,
+          "numerator": 6
+        },
+        "modal_action": {
+          "kind": "NO_TOOL_ACTION"
+        },
+        "modal_action_sha256": "b92214ca1631896d7564754f29acc10886a4e3e6f784910317f053550dc923d0",
+        "modal_count": 5,
+        "model_family": "Llama",
+        "pair_id": "TAU3__c3008eca-6ae4-4f7d-a156-5919175c9fa2__LLAMA",
+        "pairwise_semantic_agreement": {
+          "denominator": 10,
+          "numerator": 10
+        },
+        "repeat_actions": [
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 0,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 1,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 2,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 3,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 4,
+            "server_epoch": 1
+          }
+        ],
+        "repeats": 5,
+        "same_process_agreement": {
+          "denominator": 4,
+          "numerator": 4
+        },
+        "semantic_entropy_base2": -0.0,
+        "stability_class": "FULLY_STABLE"
+      },
+      "vllm": {
+        "backend": "vLLM",
+        "benchmark": "TAU3",
+        "consensus_fraction": 1.0,
+        "cross_restart_agreement": {
+          "denominator": 6,
+          "numerator": 6
+        },
+        "modal_action": {
+          "kind": "NO_TOOL_ACTION"
+        },
+        "modal_action_sha256": "b92214ca1631896d7564754f29acc10886a4e3e6f784910317f053550dc923d0",
+        "modal_count": 5,
+        "model_family": "Llama",
+        "pair_id": "TAU3__c3008eca-6ae4-4f7d-a156-5919175c9fa2__LLAMA",
+        "pairwise_semantic_agreement": {
+          "denominator": 10,
+          "numerator": 10
+        },
+        "repeat_actions": [
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 0,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 1,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 2,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 3,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 4,
+            "server_epoch": 1
+          }
+        ],
+        "repeats": 5,
+        "same_process_agreement": {
+          "denominator": 4,
+          "numerator": 4
+        },
+        "semantic_entropy_base2": -0.0,
+        "stability_class": "FULLY_STABLE"
+      }
+    },
+    {
+      "benchmark": "TAU3",
+      "classification": "STABLE_BACKEND_INVARIANT",
+      "model_family": "Llama",
+      "pair_id": "TAU3__e373c162-0ec0-482e-9936-13f30180f4b8__LLAMA",
+      "sglang": {
+        "backend": "SGLang",
+        "benchmark": "TAU3",
+        "consensus_fraction": 1.0,
+        "cross_restart_agreement": {
+          "denominator": 6,
+          "numerator": 6
+        },
+        "modal_action": {
+          "kind": "NO_TOOL_ACTION"
+        },
+        "modal_action_sha256": "b92214ca1631896d7564754f29acc10886a4e3e6f784910317f053550dc923d0",
+        "modal_count": 5,
+        "model_family": "Llama",
+        "pair_id": "TAU3__e373c162-0ec0-482e-9936-13f30180f4b8__LLAMA",
+        "pairwise_semantic_agreement": {
+          "denominator": 10,
+          "numerator": 10
+        },
+        "repeat_actions": [
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 0,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 1,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 2,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 3,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 4,
+            "server_epoch": 1
+          }
+        ],
+        "repeats": 5,
+        "same_process_agreement": {
+          "denominator": 4,
+          "numerator": 4
+        },
+        "semantic_entropy_base2": -0.0,
+        "stability_class": "FULLY_STABLE"
+      },
+      "vllm": {
+        "backend": "vLLM",
+        "benchmark": "TAU3",
+        "consensus_fraction": 1.0,
+        "cross_restart_agreement": {
+          "denominator": 6,
+          "numerator": 6
+        },
+        "modal_action": {
+          "kind": "NO_TOOL_ACTION"
+        },
+        "modal_action_sha256": "b92214ca1631896d7564754f29acc10886a4e3e6f784910317f053550dc923d0",
+        "modal_count": 5,
+        "model_family": "Llama",
+        "pair_id": "TAU3__e373c162-0ec0-482e-9936-13f30180f4b8__LLAMA",
+        "pairwise_semantic_agreement": {
+          "denominator": 10,
+          "numerator": 10
+        },
+        "repeat_actions": [
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 0,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 1,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 2,
+            "server_epoch": 1
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 3,
+            "server_epoch": 0
+          },
+          {
+            "action": {
+              "kind": "NO_TOOL_ACTION"
+            },
+            "repeat": 4,
+            "server_epoch": 0
+          }
+        ],
+        "repeats": 5,
+        "same_process_agreement": {
+          "denominator": 4,
+          "numerator": 4
+        },
+        "semantic_entropy_base2": -0.0,
+        "stability_class": "FULLY_STABLE"
+      }
+    }
+  ],
+  "primary_pairs": 36,
+  "schema_version": "paritymem.icassp_e1.cross_backend_modal.v1"
+}

@@ -1,0 +1,125 @@
+{
+  "schema_version": "paritymem.paper_p2_s0.adjudication_sources.v1",
+  "sources": [
+    {
+      "bytes": 55351,
+      "path": "/data5/hanwen/llm_file/Meta-Llama-3.1-8B-Instruct/tokenizer_config.json",
+      "project": "meta-llama/Meta-Llama-3.1-8B-Instruct",
+      "role": "exact chat template",
+      "sha256": "177c7b61e616fecb84c17ce0591acb92c6c4d60e9ac5ababfb940ff23bbcd424",
+      "version_or_revision": "8c22764a7e3675c50d4c7c9a4edb474456022b16"
+    },
+    {
+      "bytes": 51963,
+      "path": "/data9/amx/fourth/_envs/prointent_sglang_auto_r2/lib/python3.11/site-packages/sglang/srt/entrypoints/openai/serving_chat.py",
+      "project": "SGLang",
+      "role": "transport ID construction",
+      "sha256": "062262ee3f1faeaa26bc1a1756cdebecd9e2f602ea66fb6d7c648c4731c85cb3",
+      "version_or_revision": "0.5.6.post2"
+    },
+    {
+      "bytes": 7873,
+      "path": "/data9/amx/fourth/_envs/prointent_sglang_auto_r2/lib/python3.11/site-packages/sglang/srt/function_call/function_call_parser.py",
+      "project": "SGLang",
+      "role": "parser registry",
+      "sha256": "886f94bf6703a0cd3494a3341f73d9bced1913fa79aafd4d994533b09985ea02",
+      "version_or_revision": "0.5.6.post2"
+    },
+    {
+      "bytes": 3374,
+      "path": "/data9/amx/fourth/_envs/prointent_sglang_auto_r2/lib/python3.11/site-packages/sglang/srt/function_call/llama32_detector.py",
+      "project": "SGLang",
+      "role": "Llama output parser",
+      "sha256": "2eb382457a52cbacd7228f35a94e751a863da36188bdac0b4b08b7cf9f9d94e2",
+      "version_or_revision": "0.5.6.post2"
+    },
+    {
+      "bytes": 4317,
+      "path": "/data9/amx/fourth/_envs/prointent_sglang_auto_r2/lib/python3.11/site-packages/sglang/srt/function_call/mistral_detector.py",
+      "project": "SGLang",
+      "role": "Mistral output parser",
+      "sha256": "5507fabb62cf2728cfc6b325de3c2ee1b85580c3118ecd4e4da6f72c928aa3b6",
+      "version_or_revision": "0.5.6.post2"
+    },
+    {
+      "bytes": 4775,
+      "path": "/data9/amx/fourth/_envs/prointent_sglang_auto_r2/lib/python3.11/site-packages/sglang/srt/function_call/qwen25_detector.py",
+      "project": "SGLang",
+      "role": "Qwen output parser",
+      "sha256": "e4ebe052024b4236819932ee3d54941fe2db9bb9107711ec33514d1d68c3c9e4",
+      "version_or_revision": "0.5.6.post2"
+    },
+    {
+      "bytes": 211457,
+      "path": "/data9/amx/fourth/_envs/prointent_sglang_auto_r2/lib/python3.11/site-packages/transformers/tokenization_utils_base.py",
+      "project": "Transformers",
+      "role": "apply_chat_template",
+      "sha256": "e71871474be2b1aa32f3a147dc31fe0a195fd402a27c37d30d666035fcccd891",
+      "version_or_revision": "4.57.1"
+    },
+    {
+      "bytes": 9732,
+      "path": "/data9/amx/fourth/_models/huggingface/models--Qwen--Qwen3-14B/snapshots/40c069824f4251a91eefaf281ebe4c544efd3e18/tokenizer_config.json",
+      "project": "Qwen/Qwen3-14B",
+      "role": "exact chat template",
+      "sha256": "d5d09f07b48c3086c508b30d1c9114bd1189145b74e982a265350c923acd8101",
+      "version_or_revision": "40c069824f4251a91eefaf281ebe4c544efd3e18"
+    },
+    {
+      "bytes": 140874,
+      "path": "/data9/amx/fourth/paritymem/artifacts/gate_h2b_m2/remote_static_candidate/tokenizer_config.json",
+      "project": "mistralai/Mistral-7B-Instruct-v0.3",
+      "role": "exact chat template",
+      "sha256": "0533dec9cfe319163801b6618d0f3ec9cfa126b6288e3df5deca6e32acb09cd2",
+      "version_or_revision": "c170c708c41dac9275d15a8fff4eca08d52bab71"
+    },
+    {
+      "bytes": 4647,
+      "path": "/data9/amx/miniconda3/envs/m2s_vllm128/lib/python3.11/site-packages/vllm/tool_parsers/__init__.py",
+      "project": "vLLM",
+      "role": "parser registry",
+      "sha256": "252b7e19efaa9bb6600e1edea38b1424df458a4c38941c56754633d265f52c48",
+      "version_or_revision": "0.23.0"
+    },
+    {
+      "bytes": 13942,
+      "path": "/data9/amx/miniconda3/envs/m2s_vllm128/lib/python3.11/site-packages/vllm/tool_parsers/llama_tool_parser.py",
+      "project": "vLLM",
+      "role": "Llama parser",
+      "sha256": "1adf1f8ea897611fed5df3484b367ded431624d1a4e6e9f07d62e6c0dd417f2c",
+      "version_or_revision": "0.23.0"
+    },
+    {
+      "bytes": 39334,
+      "path": "/data9/amx/miniconda3/envs/m2s_vllm128/lib/python3.11/site-packages/vllm/tool_parsers/mistral_tool_parser.py",
+      "project": "vLLM",
+      "role": "Mistral parser",
+      "sha256": "912dd5c016d68239c862033717c3d4d505c95c79db4355ec90b04676a948aee5",
+      "version_or_revision": "0.23.0"
+    },
+    {
+      "bytes": 8944,
+      "path": "/data9/amx/miniconda3/envs/m2s_vllm128/lib/python3.11/site-packages/vllm/tool_parsers/olmo3_tool_parser.py",
+      "project": "vLLM",
+      "role": "OLMo parser",
+      "sha256": "7d4533dd62a33200e7260b189ac9864608faa19b033a916db0f0dcd1b83f8472",
+      "version_or_revision": "0.23.0"
+    },
+    {
+      "bytes": 2638,
+      "path": "/data9/wangjia/MLLM_Collections/allenai/Olmo-3-7B-Instruct-SFT/chat_template.jinja",
+      "project": "allenai/Olmo-3-7B-Instruct-SFT",
+      "role": "exact external chat template",
+      "sha256": "edbb35ef1219ad2273f716feed08f535a868e167be5b5518adc37ab2bcb8afe6",
+      "version_or_revision": "e1452fc572d51966ff4aaeb25118b891eb93e549"
+    },
+    {
+      "bytes": 4318,
+      "path": "/data9/wangjia/MLLM_Collections/allenai/Olmo-3-7B-Instruct-SFT/tokenizer_config.json",
+      "project": "allenai/Olmo-3-7B-Instruct-SFT",
+      "role": "exact tokenizer metadata",
+      "sha256": "f7a2753a4ff30657e452c8fef02b9a99a3b900ceb4c65a1e3fbea6a3bfab07a6",
+      "version_or_revision": "e1452fc572d51966ff4aaeb25118b891eb93e549"
+    }
+  ]
+}

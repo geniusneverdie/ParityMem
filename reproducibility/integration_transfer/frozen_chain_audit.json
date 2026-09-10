@@ -1,0 +1,129 @@
+{
+  "call_counts": {
+    "benchmark_scientific": 0,
+    "gpu": 0,
+    "http_model": 0,
+    "model": 0
+  },
+  "generated_at_utc": "2026-08-13T02:59:35.877442+00:00",
+  "manifests": {
+    "p0": {
+      "entries": 51,
+      "failures": [],
+      "file_sha256": "62d7bea2b6adad070412eaf07370f20ae05e2570fd7818c8647a5ce1a6cafbd5",
+      "path": "artifacts/paper_p0/source_manifest.sha256",
+      "status": "PASS"
+    },
+    "p1": {
+      "entries": 198,
+      "failures": [],
+      "file_sha256": "37a75c4a57f499d15ab674168e5c833f5f36d63690d991d4b2c564da043b729c",
+      "path": "artifacts/paper_p1/source_manifest.sha256",
+      "status": "PASS"
+    },
+    "p2_r0": {
+      "entries": 38,
+      "failures": [],
+      "file_sha256": "e67e340d22ba4a3b9df6209d070fe85fb7c2d8a4b5bceedcee2284f8878471c6",
+      "path": "artifacts/paper_p2_r0/source_manifest.sha256",
+      "status": "PASS"
+    },
+    "p2_r1": {
+      "entries": 65,
+      "failures": [],
+      "file_sha256": "e648803c5feceaaf6562477a69dc8539c815177c949b709dcdebc7bc9a29947f",
+      "path": "artifacts/paper_p2_r1/source_manifest.sha256",
+      "status": "PASS"
+    },
+    "p2_r1_i0": {
+      "entries": 42,
+      "failures": [],
+      "file_sha256": "bd6896503c03e0006eb2ebb2a94a79ca9bb514eba1fac4cf4a7bc4b63f1766b9",
+      "path": "artifacts/paper_p2_r1_i0/source_manifest.sha256",
+      "status": "PASS"
+    },
+    "p2_s0": {
+      "entries": 105,
+      "failures": [],
+      "file_sha256": "d87d21387ebda9bd1dcc382dc23579b0590fdd94892d4607c07f08ca78f4fcbe",
+      "path": "artifacts/paper_p2_s0/source_manifest.sha256",
+      "status": "PASS"
+    },
+    "p3_e0": {
+      "entries": 55,
+      "failures": [],
+      "file_sha256": "48dd9d9d3dcc260d6a4278bb66f90edad5380aebe4252a23e293b142ca653e18",
+      "path": "artifacts/paper_p3_e0/source_manifest.sha256",
+      "status": "PASS"
+    }
+  },
+  "p3_frozen_gaps": {
+    "ABLATION_REDUNDANCY": "YES",
+    "BASELINE_COMPETITIVENESS_GAP": "NO",
+    "COMPOUND_DEFECT_GAP": "YES",
+    "CONTRACT_NOISE_GAP": "YES",
+    "HARDCODING_GAP": "NO",
+    "REPAIR_TRANSFER_GAP": "YES",
+    "SCALABILITY_GAP": "NO"
+  },
+  "schema_version": "paritymem.paper_p4_e0.frozen_chain.v1",
+  "stages": [
+    {
+      "artifact": "artifacts/paper_p0/paper_p0_decision.json",
+      "expected": "PAPER_EVIDENCE_ASSEMBLY_PASS",
+      "gate": "P0",
+      "observed": "PAPER_EVIDENCE_ASSEMBLY_PASS",
+      "sha256": "adb6d0c141a5b540cc245f96ee0613d3a605a9a12ead98fa192409c2778f2bd6",
+      "status": "PASS"
+    },
+    {
+      "artifact": "artifacts/paper_p1/paper_p1_decision.json",
+      "expected": "PAPER_EXPERIMENTAL_HARDENING_PASS",
+      "gate": "P1",
+      "observed": "PAPER_EXPERIMENTAL_HARDENING_PASS",
+      "sha256": "b8df5607304d2e4dff9ea6942973396c3f34e708721abc95acaa4cef740633a1",
+      "status": "PASS"
+    },
+    {
+      "artifact": "artifacts/paper_p2_r0/gate_p2_r0_decision.json",
+      "expected": "RELATED_WORK_DRIVEN_EXTERNAL_VALIDATION_PASS",
+      "gate": "P2-R0",
+      "observed": "RELATED_WORK_DRIVEN_EXTERNAL_VALIDATION_PASS",
+      "sha256": "f725ee743a74ab84680328033a6acff348d5bcae5549cd0f40fdc1c93e6dd9eb",
+      "status": "PASS"
+    },
+    {
+      "artifact": "artifacts/paper_p2_r1/gate_p2_r1_decision.json",
+      "expected": "STATIC_CONFORMANCE_PREDICTION_CONFIRMED_MODEL_CONTINUATION_PENDING",
+      "gate": "P2-R1",
+      "observed": "STATIC_CONFORMANCE_PREDICTION_CONFIRMED_MODEL_CONTINUATION_PENDING",
+      "sha256": "bb0cfaa71a3a766b4bc6ea6518b9c5ab93a634aee7e431fc663a90497967f1c0",
+      "status": "PASS"
+    },
+    {
+      "artifact": "artifacts/paper_p2_r1_i0/gate_p2_r1_i0_decision.json",
+      "expected": "PENDING_VLLM_MODEL_CONTINUATION_RESOLVED",
+      "gate": "P2-R1-I0",
+      "observed": "PENDING_VLLM_MODEL_CONTINUATION_RESOLVED",
+      "sha256": "06c5fc4511c8bc3faa4e7944db871af6abfd79c97e965619a9996fff7c1ddffa",
+      "status": "PASS"
+    },
+    {
+      "artifact": "artifacts/paper_p2_s0/paper_p2_s0_decision.json",
+      "expected": "PARITYMEM_SUBMISSION_READY",
+      "gate": "P2-S0",
+      "observed": "PARITYMEM_SUBMISSION_READY",
+      "sha256": "f935c1786b9e0da0eb3e6e149e9566d99a6f49094c17d2e335747a1f28ea8b40",
+      "status": "PASS"
+    },
+    {
+      "artifact": "artifacts/paper_p3_e0/gate_p3_e0_decision.json",
+      "expected": "FINAL_EXPERIMENTAL_EXPANSION_COMPLETE",
+      "gate": "P3-E0",
+      "observed": "FINAL_EXPERIMENTAL_EXPANSION_COMPLETE",
+      "sha256": "683b294dc3c3b487d2f1128df402fe8f11ea0cb8cd42e341e33d0d9af8c9b12b",
+      "status": "PASS"
+    }
+  ],
+  "status": "PASS"
+}

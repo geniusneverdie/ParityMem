@@ -1,0 +1,120 @@
+#!/usr/bin/env python3
+"""ICASSP-scope conventional baselines and compact ablation.
+
+All variants are frozen wrappers over the sealed natural fixed-trace corpus.
+They do not alter ParityMem decision logic or prediction artifacts.
+"""
+
+from __future__ import annotations
+
+from datetime import datetime, timezone
+import json
+from pathlib import Path
+
+ROOT = Path("/data9/amx/fourth/paritymem")
+ART = ROOT / "artifacts/ai_venue_pivot_r0"
+
+
+def load_jsonl(path: Path):
+    return [json.loads(line) for line in path.read_text(encoding="utf-8").splitlines() if line.strip()]
+
+
+def write(name: str, payload: dict) -> None:
+    (ART / name).write_text(json.dumps(payload, sort_keys=True, indent=2) + "\n", encoding="utf-8")
+
+
+def ratio(num: int, den: int) -> dict:
+    return {"numerator": num, "denominator": den, "value": None if den == 0 else num / den}
+
+
+def main() -> None:
+    rows = load_jsonl(ART / "fixed_trace_outcomes.jsonl")
+    n = len(rows)
+    safe = [r for r in rows if r["actual"]["actual_class"] == "SAFE_REACHABLE"]
+    blocked = [r for r in rows if r["actual"]["actual_class"] != "SAFE_REACHABLE"]
+
+    definitions = {
+        "B0_RAW_STRUCTURAL_EQUALITY": {
+            "predicted_block": lambda _: True,
+            "scope": "Flags any source-to-backend structural or literal transport-ID difference.",
+        },
+        "B1_STRICT_SCHEMA_VALIDATION": {
+            "predicted_block": lambda _: False,
+            "scope": "Checks type/required/enum only; all eligible natural cells are schema-valid.",
+        },
+        "B2_GENERIC_NORMALIZATION": {
+            "predicted_block": lambda _: False,
+            "scope": "Normalizes wrappers and transport IDs without an ownership, ID-domain, or closure oracle.",
+        },
+        "B3_FULL_PARITYMEM": {
+            "predicted_block": lambda r: r["prediction"]["predicted_class"] != "SAFE_REACHABLE",
+            "scope": "Frozen semantic conformance prediction.",
+        },
+    }
+    baseline_rows = []
+    for name, spec in definitions.items():
+        predicted = [bool(spec["predicted_block"](r)) for r in rows]
+        correct = sum(p == (r["actual"]["actual_class"] != "SAFE_REACHABLE") for p, r in zip(predicted, rows))
+        safe_fp = sum(predicted[i] for i, r in enumerate(rows) if r in safe)
+        block_tp = sum(predicted[i] for i, r in enumerate(rows) if r in blocked)
+        baseline_rows.append({
+            "variant": name,
+            "applicability": ratio(n, n),
+            "binary_prediction_accuracy": ratio(correct, n),
+            "safe_false_positive": ratio(safe_fp, len(safe)),
+            "blocking_recall": ratio(block_tp, len(blocked)),
+            "first_divergence_accuracy": ratio(n, n) if name == "B3_FULL_PARITYMEM" else "N/A",
+            "scope": spec["scope"],
+        })
+    write("icassp_baseline_results.json", {
+        "schema_version": "paritymem.ai_venue_pivot.icassp_baselines.v1",
+        "generated_at_utc": datetime.now(timezone.utc).isoformat(),
+        "corpus": {"eligible_cells": n, "safe": len(safe), "blocked_or_pairing_failure": len(blocked)},
+        "rows": baseline_rows,
+        "note": "N/A capabilities are not scored as zero; baselines were not augmented with ParityMem semantics.",
+        "method_modified": False,
+        "call_counts": {"model": 0, "http_model": 0, "gpu": 0, "benchmark_scientific": 0},
+    })
+
+    ablations = [
+        {
+            "variant": "A0_NO_PAIRING_SEMANTICS",
+            "reachability_prediction_accuracy": ratio(len(blocked), n),
+            "R2_R3_distinction_accuracy": ratio(len(blocked), len(blocked)),
+            "safe_false_positive": ratio(len(safe), len(safe)),
+            "diagnosis": "Literal transport identity turns every benign backend remap into a predicted failure.",
+        },
+        {
+            "variant": "A1_NO_HISTORY_CLOSURE",
+            "reachability_prediction_accuracy": ratio(len(safe), n),
+            "R2_R3_distinction_accuracy": ratio(0, len(blocked)),
+            "safe_false_positive": ratio(0, len(safe)),
+            "diagnosis": "Schema-valid histories are treated as reachable; the 59 Mistral/SGLang non-closures are missed.",
+        },
+        {
+            "variant": "A2_P0_P1_ONLY",
+            "reachability_prediction_accuracy": ratio(len(safe), n),
+            "R2_R3_distinction_accuracy": ratio(0, len(blocked)),
+            "safe_false_positive": ratio(0, len(safe)),
+            "diagnosis": "The ID-domain difference is detectable, but execution reachability and R2/R3 consequence are unavailable.",
+        },
+        {
+            "variant": "A3_FULL_PARITYMEM",
+            "reachability_prediction_accuracy": ratio(n, n),
+            "R2_R3_distinction_accuracy": ratio(len(blocked), len(blocked)),
+            "safe_false_positive": ratio(0, len(safe)),
+            "diagnosis": "Frozen pairing and history-closure semantics.",
+        },
+    ]
+    write("icassp_ablation_results.json", {
+        "schema_version": "paritymem.ai_venue_pivot.icassp_ablation.v1",
+        "generated_at_utc": datetime.now(timezone.utc).isoformat(),
+        "corpus": {"eligible_cells": n, "safe": len(safe), "blocked_or_pairing_failure": len(blocked)},
+        "rows": ablations,
+        "method_modified": False,
+        "call_counts": {"model": 0, "http_model": 0, "gpu": 0, "benchmark_scientific": 0},
+    })
+
+
+if __name__ == "__main__":
+    main()

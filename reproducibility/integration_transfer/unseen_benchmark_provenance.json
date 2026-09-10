@@ -1,0 +1,59 @@
+{
+  "benchmarks": [
+    {
+      "baseline_git_status_porcelain": "",
+      "benchmark_id": "TAU3",
+      "bic_eligibility": "FULL_BIC",
+      "commit_date": "2026-08-12T10:45:11-07:00",
+      "exact_commit": "79975ac5741e23fbb1d2ac44262d62398a6d87bd",
+      "license": "MIT",
+      "license_sha256": "e67c5aa0074dfcaefd3c3a1aedb94cb539234aecd15d5a972574e3200e6252fe",
+      "new_weight_required": false,
+      "project": "sierra-research/tau2-bench",
+      "repo_url": "https://github.com/sierra-research/tau2-bench",
+      "source_path": "external_unseen_benchmarks/tau3_bench",
+      "stateful_multi_turn": true,
+      "tree_hash": "a3ef944b5ad6c4ec41c589c4af8fa2c630b17723"
+    },
+    {
+      "baseline_git_status_porcelain": "",
+      "benchmark_id": "TOOL_SANDBOX",
+      "bic_eligibility": "FULL_BIC",
+      "commit_date": "2025-11-06T23:37:39-08:00",
+      "exact_commit": "165848b9a78cead7ca7fe7c89c688b58e6501219",
+      "license": "Apple Sample Code License",
+      "license_sha256": "2283d5566b38210fbfb9fcb06619f1d0a8101bff9df974ea8afc3393508e9015",
+      "new_weight_required": false,
+      "project": "apple/ToolSandbox",
+      "repo_url": "https://github.com/apple/ToolSandbox",
+      "source_path": "external_unseen_benchmarks/toolsandbox",
+      "stateful_multi_turn": true,
+      "tree_hash": "060c6eb2a9d4370c56586d4340401d87fa155eda"
+    },
+    {
+      "baseline_git_status_porcelain": "",
+      "benchmark_id": "APPWORLD",
+      "bic_eligibility": "PARTIAL_BIC",
+      "commit_date": "2026-02-17T14:41:39-08:00",
+      "exact_commit": "a072b7a86e7c1d5b1d7175659d750ebb9b79f10a",
+      "license": "Apache-2.0",
+      "license_sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "new_weight_required": false,
+      "project": "StonyBrookNLP/appworld",
+      "repo_url": "https://github.com/StonyBrookNLP/appworld",
+      "source_path": "external_unseen_benchmarks/appworld",
+      "stateful_multi_turn": true,
+      "tree_hash": "cea4de61c6ff596c2fd99071f6a3a3944f060a94"
+    }
+  ],
+  "call_counts": {
+    "benchmark_scientific": 0,
+    "gpu": 0,
+    "http_model": 0,
+    "model": 0
+  },
+  "frozen_before_results": true,
+  "generated_at_utc": "2026-08-13T02:59:35.931320+00:00",
+  "payload_sha256": "19f65b7c60e859eedabe7faec189cc798be2b5c54eaed769f6d06cde6c92052d",
+  "schema_version": "paritymem.paper_p4_e0.provenance.v1"
+}

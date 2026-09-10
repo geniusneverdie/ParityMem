@@ -1,0 +1,337 @@
+#!/usr/bin/env python3
+"""Freeze AI-VENUE-PIVOT-R0 provenance, natural sample, eligibility and predictions.
+
+This is an experiment-only runner. It never imports or mutates ParityMem decision
+logic and only projects already-frozen official natural histories into each model's
+official tool-history representation.
+"""
+
+from __future__ import annotations
+
+from datetime import datetime, timezone
+import hashlib
+import json
+from pathlib import Path
+import re
+import subprocess
+
+from transformers import AutoTokenizer
+
+
+ROOT = Path("/data9/amx/fourth/paritymem")
+ART = ROOT / "artifacts/ai_venue_pivot_r0"
+TAU_ROOT = ROOT / "external_unseen_benchmarks/tau3_bench"
+APP_ROOT = ROOT / "external_natural_data/p5_appworld/experiments/outputs"
+FINAL_MANIFEST = ROOT / "artifacts/final_evidence/source_manifest.sha256"
+METHOD_MANIFEST = ROOT / "artifacts/paper_p1/frozen_method_manifest.sha256"
+MODELS = {
+    "Qwen": {
+        "repo_id": "Qwen/Qwen3-14B",
+        "revision": "40c069824f4251a91eefaf281ebe4c544efd3e18",
+        "path": Path("/data9/amx/fourth/_models/huggingface/models--Qwen--Qwen3-14B/snapshots/40c069824f4251a91eefaf281ebe4c544efd3e18"),
+    },
+    "Llama": {
+        "repo_id": "meta-llama/Meta-Llama-3.1-8B-Instruct",
+        "revision": "8c22764a7e3675c50d4c7c9a4edb474456022b16",
+        "path": Path("/data5/hanwen/llm_file/Meta-Llama-3.1-8B-Instruct"),
+    },
+    "Mistral": {
+        "repo_id": "mistralai/Mistral-7B-Instruct-v0.3",
+        "revision": "c170c708c41dac9275d15a8fff4eca08d52bab71",
+        "path": ROOT / "runs/paper_p2_r1/mistral_exact_snapshot",
+    },
+}
+BACKENDS = {
+    "SGLang": {"version": "0.5.6.post2", "kind": "installed_exact_release"},
+    "vLLM": {
+        "version": "0.23.0",
+        "kind": "official_exact_release_abi_compatible_container",
+        "image": "vllm/vllm-openai@sha256:3a1e7f5904e1a1192a02aa0086ceaffc33985d7044c7bb25b3a43d61bdbe3ac0",
+    },
+}
+ZERO = {"model": 0, "http_model": 0, "gpu": 0, "benchmark_scientific": 0}
+
+
+def now() -> str:
+    return datetime.now(timezone.utc).isoformat()
+
+
+def canonical(value: object) -> bytes:
+    return json.dumps(value, sort_keys=True, separators=(",", ":"), ensure_ascii=False).encode() + b"\n"
+
+
+def sha_bytes(value: bytes) -> str:
+    return hashlib.sha256(value).hexdigest()
+
+
+def file_sha(path: Path) -> str:
+    return sha_bytes(path.read_bytes())
+
+
+def stable(value: object) -> str:
+    return sha_bytes(canonical(value))
+
+
+def write(path: Path, value: object) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    if path.exists():
+        raise RuntimeError(f"OUTPUT_COLLISION:{path}")
+    path.write_bytes(json.dumps(value, indent=2, sort_keys=True, ensure_ascii=False).encode() + b"\n")
+
+
+def freeze(path: Path, value: dict) -> None:
+    payload = dict(value)
+    payload["payload_sha256"] = stable(value)
+    write(path, payload)
+
+
+def check_manifest(path: Path) -> dict:
+    proc = subprocess.run(["sha256sum", "-c", str(path)], cwd=ROOT, text=True,
+                          stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    lines = [line for line in proc.stdout.splitlines() if line.strip()]
+    return {"path": str(path.relative_to(ROOT)), "file_sha256": file_sha(path),
+            "entries": len(lines), "all_match": proc.returncode == 0 and all(line.endswith(": OK") for line in lines),
+            "stdout_sha256": sha_bytes(proc.stdout.encode()), "stderr_sha256": sha_bytes(proc.stderr.encode())}
+
+
+def arg_schema(value: object) -> dict:
+    if isinstance(value, bool):
+        return {"type": "boolean"}
+    if isinstance(value, int):
+        return {"type": "integer"}
+    if isinstance(value, float):
+        return {"type": "number"}
+    if isinstance(value, list):
+        return {"type": "array"}
+    if isinstance(value, dict):
+        return {"type": "object"}
+    return {"type": "string"}
+
+
+def tools_from_calls(calls: list[dict]) -> list[dict]:
+    merged: dict[str, dict[str, dict]] = {}
+    required: dict[str, set[str]] = {}
+    for call in calls:
+        name = call["name"]
+        args = call.get("arguments") or {}
+        merged.setdefault(name, {})
+        required.setdefault(name, set())
+        for key, value in args.items():
+            merged[name].setdefault(key, arg_schema(value))
+            required[name].add(key)
+    return [{"type": "function", "function": {"name": name,
+             "description": f"Official natural-trace tool {name}.",
+             "parameters": {"type": "object", "properties": props,
+                            "required": sorted(required[name]), "additionalProperties": True}}}
+            for name, props in sorted(merged.items())]
+
+
+def nearest_text_user(messages: list[dict], before: int) -> str:
+    for idx in range(before - 1, -1, -1):
+        msg = messages[idx]
+        if msg.get("role") == "user" and isinstance(msg.get("content"), str) and msg["content"].strip():
+            return msg["content"].strip()
+    return "Continue the recorded official interaction."
+
+
+def tau_projection(row: dict) -> tuple[dict | None, str | None]:
+    source = TAU_ROOT / row["source_file"]
+    payload = json.loads(source.read_text())
+    simulation = payload["simulations"][row["simulation_index"]]
+    messages = simulation["messages"]
+    selected = None
+    for idx, msg in enumerate(messages):
+        if msg.get("role") != "assistant" or not (msg.get("tool_calls") or []):
+            continue
+        results = []
+        cursor = idx + 1
+        while cursor < len(messages) and messages[cursor].get("role") == "tool":
+            results.append(messages[cursor])
+            cursor += 1
+        if results:
+            selected = (idx, msg, results)
+    if selected is None:
+        return None, "NO_ASSISTANT_TOOL_RESULT_BLOCK"
+    idx, assistant, results = selected
+    native_calls = [{"source_id": str(call.get("id") or ""), "name": call["name"],
+                     "arguments": call.get("arguments") or {}} for call in assistant.get("tool_calls") or []]
+    result_by_id = {str(item.get("id") or item.get("tool_call_id") or ""): item for item in results}
+    canonical_results = []
+    for call in native_calls:
+        item = result_by_id.get(call["source_id"])
+        if item is None:
+            return None, "NATURAL_PAIRING_INCOMPLETE"
+        canonical_results.append({"source_id": call["source_id"], "content": item.get("content", "")})
+    projection = {
+        "benchmark": "TAU3", "trace_id": row["trace_id"], "source_path": str(source.relative_to(ROOT)),
+        "source_sha256": file_sha(source), "source_simulation_index": row["simulation_index"],
+        "source_message_index": idx, "user_content": nearest_text_user(messages, idx),
+        "assistant_content": assistant.get("content") or "", "native_calls": native_calls,
+        "native_results": canonical_results, "tools": tools_from_calls(native_calls),
+        "projection_policy": "last complete assistant-authored tool-call/result block plus nearest prior natural user turn",
+        "natural_trace_unchanged": True,
+    }
+    projection["semantic_hash"] = stable({k: projection[k] for k in ["user_content", "assistant_content", "native_calls", "native_results"]})
+    return projection, None
+
+
+INTERACTION = re.compile(r"### Environment Interaction (\d+)\s*[-]+\s*```python\s*(.*?)```\s*```\s*(.*?)```", re.DOTALL)
+
+
+def app_projection(row: dict) -> tuple[dict | None, str | None]:
+    task = APP_ROOT / row["relative_task_path"]
+    env_path = task / "logs/environment_io.md"
+    if not env_path.exists():
+        return None, "MISSING_OFFICIAL_ENVIRONMENT_LOG"
+    interactions = []
+    for match in INTERACTION.finditer(env_path.read_text(errors="replace")):
+        code, output = match.group(2).strip(), match.group(3).strip()
+        if code and "No code available to execute" not in output:
+            interactions.append((int(match.group(1)), code, output))
+    if not interactions:
+        return None, "NO_EXECUTED_NATURAL_INTERACTION"
+    index, code, output = interactions[-1]
+    source_id = f"appw{index:05d}"
+    call = {"source_id": source_id, "name": "python_exec", "arguments": {"code": code}}
+    projection = {
+        "benchmark": "APPWORLD", "trace_id": row["trace_id"], "source_path": str(env_path.relative_to(ROOT)),
+        "source_sha256": file_sha(env_path), "source_interaction_index": index,
+        "user_content": "Continue the official recorded AppWorld interaction from its latest environment result.",
+        "assistant_content": "", "native_calls": [call],
+        "native_results": [{"source_id": source_id, "content": output}], "tools": tools_from_calls([call]),
+        "projection_policy": "latest complete official code-agent environment interaction represented as python_exec tool history",
+        "natural_trace_unchanged": True,
+    }
+    projection["semantic_hash"] = stable({k: projection[k] for k in ["assistant_content", "native_calls", "native_results"]})
+    return projection, None
+
+
+def raw_model_output(model: str, projection: dict) -> str:
+    calls = [{"name": item["name"], "arguments": item["arguments"]} for item in projection["native_calls"]]
+    prefix = projection["assistant_content"]
+    if model == "Qwen":
+        body = "\n".join("<tool_call>\n" + json.dumps(item, ensure_ascii=False, separators=(",", ":")) + "\n</tool_call>" for item in calls)
+    elif model == "Llama":
+        body = "<|python_tag|>" + ";".join(json.dumps(item, ensure_ascii=False, separators=(",", ":")) for item in calls)
+    else:
+        body = "[TOOL_CALLS] " + json.dumps(calls, ensure_ascii=False, separators=(",", ":"))
+    return prefix + body
+
+
+def prediction(model: str, backend: str, projection: dict) -> dict:
+    count = len(projection["native_calls"])
+    mixed = bool(projection["assistant_content"].strip())
+    if model == "Llama" and count > 1:
+        return {"predicted_class": "BLOCKING_NON_CLOSURE", "predicted_reachability": "BLOCKED",
+                "predicted_first_divergence": "Llama template multi-tool cardinality guard",
+                "predicted_contract_layer": "conversation-history closure", "predicted_severity": "R3"}
+    if model == "Mistral" and backend == "SGLang":
+        return {"predicted_class": "PAIRING_FAILURE", "predicted_reachability": "BLOCKED",
+                "predicted_first_divergence": "SGLang generated 29-character tool-call ID versus Mistral 9-character ID guard",
+                "predicted_contract_layer": "identifier domain / history closure", "predicted_severity": "R3"}
+    if model == "Mistral" and mixed:
+        return {"predicted_class": "R2_SEMANTIC_ALTERATION", "predicted_reachability": "REACHABLE",
+                "predicted_first_divergence": "Mistral tool-call template branch omits assistant text",
+                "predicted_contract_layer": "model-visible semantic history", "predicted_severity": "R2"}
+    return {"predicted_class": "SAFE_REACHABLE", "predicted_reachability": "REACHABLE",
+            "predicted_first_divergence": "NONE", "predicted_contract_layer": "NONE", "predicted_severity": "R0"}
+
+
+def sample(pool: list[dict], benchmark: str, count: int, seed: str) -> list[dict]:
+    return sorted(pool, key=lambda row: sha_bytes(f"{seed}|{benchmark}|{row['trace_id']}".encode()))[:count]
+
+
+def main() -> None:
+    if ART.exists():
+        raise RuntimeError("AI_VENUE_PIVOT_NAMESPACE_EXISTS")
+    ART.mkdir(parents=True)
+    final_decision = json.loads((ROOT / "artifacts/final_evidence/final_evidence_decision.json").read_text())
+    paper_decision = json.loads((ROOT / "artifacts/paper_final/paper_final_decision.json").read_text())
+    manifests = [check_manifest(FINAL_MANIFEST), check_manifest(ROOT / "artifacts/paper_final/source_manifest.sha256"), check_manifest(METHOD_MANIFEST)]
+    if final_decision.get("formal_state") != "FINAL_EXPERIMENTAL_EVIDENCE_FROZEN" or paper_decision.get("formal_state") != "FINAL_EVIDENCE_INTEGRATION_COMPLETE" or not all(x["all_match"] for x in manifests):
+        raise RuntimeError("FROZEN_CHAIN_MISMATCH")
+    method_lines = [line for line in METHOD_MANIFEST.read_text().splitlines() if line.strip()]
+    if len(method_lines) != 59:
+        raise RuntimeError("CORE_METHOD_DENOMINATOR_MISMATCH")
+    freeze(ART / "frozen_chain_audit.json", {
+        "schema_version": "paritymem.ai_venue_pivot.frozen_chain.v1", "generated_at_utc": now(),
+        "final_evidence_state": final_decision["formal_state"], "paper_state": paper_decision["formal_state"],
+        "manifests": manifests, "core_method_files": 59, "core_method_modified": False,
+        "paper_final_modified": False, "call_counts": ZERO, "status": "PASS",
+    })
+    (ART / "frozen_method_manifest.sha256").write_bytes(METHOD_MANIFEST.read_bytes())
+    freeze(ART / "venue_constraints.json", {
+        "schema_version": "paritymem.ai_venue_pivot.venue_constraints.v1", "frozen_at_utc": now(), "current_date": "2026-08-14",
+        "ICASSP_2027": {"paper_deadline": "2026-09-16", "regular_paper": "up to four pages technical content; optional fifth page limited to references, funding acknowledgements, and Compliance with Ethical Standards", "technical_area": "Machine Learning and Generative AI", "official_sources": ["https://2027.ieeeicassp.org/call-for-papers/", "https://2027.ieeeicassp.org/authors/publishing-and-paper-presentation-options/"]},
+        "AAMAS_2027": {"abstract_deadline": "2026-10-01", "paper_deadline": "2026-10-08", "deadline_timezone": "AoE", "main_paper": "maximum eight pages; references additional", "review": "double blind", "preferred_area": "Generative and Agentic AI (GAAI)", "scope_evidence": ["agent architectures and workflows", "runtime support and infrastructure", "interaction protocols and multi-turn behavior", "evaluation and failure handling"], "ai_use_policy": "AI-assisted hypothesis, methodology, or experimental-design use must be detailed in the paper or supplement with tools/versions/prompts and remains author-accountable", "official_sources": ["https://warwick.ac.uk/fac/sci/dcs/aamas2027/calls/", "https://warwick.ac.uk/fac/sci/dcs/aamas2027/calls/instructions/"]},
+    })
+    final_manifest_sha = file_sha(FINAL_MANIFEST)
+    seed_material = final_manifest_sha + "ICASSP_NATURAL_BACKEND_V1"
+    seed = sha_bytes(seed_material.encode())
+    tau_pool = json.loads((ROOT / "artifacts/paper_p4_e0/natural_trace_registry.json").read_text())["traces"]
+    app_pool = json.loads((ROOT / "artifacts/paper_p5_e0/appworld_natural_trace_registry.json").read_text())["traces"]
+    chosen_tau, chosen_app = sample(tau_pool, "TAU3", 30, seed), sample(app_pool, "APPWORLD", 30, seed)
+    chosen = [("TAU3", row) for row in chosen_tau] + [("APPWORLD", row) for row in chosen_app]
+    projections: dict[str, dict] = {}
+    sample_rows = []
+    for benchmark, row in chosen:
+        projected, reason = tau_projection(row) if benchmark == "TAU3" else app_projection(row)
+        sample_rows.append({"benchmark": benchmark, "trace_id": row["trace_id"], "source_registry_row": row,
+                            "projection_available": projected is not None, "projection_reason": reason,
+                            "selection_score": sha_bytes(f"{seed}|{benchmark}|{row['trace_id']}".encode()), "projection": projected})
+        if projected:
+            projections[f"{benchmark}:{row['trace_id']}"] = projected
+    continuation_subset = {benchmark: [row["trace_id"] for row in sorted(rows, key=lambda row: sha_bytes(f"{seed}|ACTUAL|{benchmark}|{row['trace_id']}".encode()))[:20]] for benchmark, rows in [("TAU3", chosen_tau), ("APPWORLD", chosen_app)]}
+    freeze(ART / "natural_trace_sample_registry.json", {
+        "schema_version": "paritymem.ai_venue_pivot.natural_sample.v1", "generated_at_utc": now(),
+        "final_evidence_manifest_file_sha256": final_manifest_sha, "seed_material": seed_material, "seed": seed,
+        "pool": {"TAU3": len(tau_pool), "APPWORLD": len(app_pool)}, "sample": {"TAU3": 30, "APPWORLD": 30, "total": 60},
+        "selection_before_conformance_results": True, "rows": sample_rows, "call_counts": ZERO,
+    })
+    freeze(ART / "actual_continuation_registry.json", {
+        "schema_version": "paritymem.ai_venue_pivot.actual_registry.v1", "generated_at_utc": now(),
+        "frozen_before_predictions_and_outcomes": True, "selection_rule": "20 lowest deterministic ACTUAL-domain hashes per benchmark from the frozen 60-trace sample",
+        "trace_subset": continuation_subset, "trace_count": 40, "maximum_cells": 240,
+        "actual_calls_only_if_prediction_safe_and_fixed_trace_reachable": True,
+        "within_backend_stability_selection": "10 lowest deterministic STABILITY-domain hashes among actual eligible trace-model pairs; each backend 3 repeats",
+        "hard_ceilings": {"model_calls": 300, "http_calls": 300, "models": 3, "backends": 2}, "call_counts_at_freeze": ZERO,
+    })
+    tokenizers = {name: AutoTokenizer.from_pretrained(meta["path"], local_files_only=True, trust_remote_code=False) for name, meta in MODELS.items()}
+    eligibility, predictions = [], []
+    for sample_row in sample_rows:
+        key = f"{sample_row['benchmark']}:{sample_row['trace_id']}"
+        projection = projections.get(key)
+        for model, meta in MODELS.items():
+            token_count, base_eligible, reason = None, projection is not None, sample_row["projection_reason"]
+            raw_output = raw_model_output(model, projection) if projection else None
+            if projection:
+                calls = [{"id": f"nat{index:06d}", "type": "function", "function": {"name": item["name"], "arguments": item["arguments"]}} for index, item in enumerate(projection["native_calls"])]
+                history = [{"role": "system", "content": "Continue this official natural agent history."}, {"role": "user", "content": projection["user_content"]}, {"role": "assistant", "content": projection["assistant_content"], "tool_calls": calls}]
+                history += [{"role": "tool", "tool_call_id": calls[i]["id"], "content": result["content"]} for i, result in enumerate(projection["native_results"])]
+                try:
+                    kwargs = {"enable_thinking": False} if model == "Qwen" else {}
+                    token_count = len(tokenizers[model].apply_chat_template(history, tools=projection["tools"], tokenize=True, add_generation_prompt=True, **kwargs))
+                    if token_count + 128 > 4096:
+                        base_eligible, reason = False, "CANONICAL_HISTORY_EXCEEDS_FROZEN_4096_CONTEXT"
+                except Exception as exc:
+                    base_eligible, reason = False, f"CANONICAL_TEMPLATE_INELIGIBLE:{type(exc).__name__}:{exc}"
+            for backend in BACKENDS:
+                cell_id = f"{sample_row['benchmark']}__{sample_row['trace_id']}__{model.upper()}__{backend.upper()}"
+                entry = {"cell_id": cell_id, "benchmark": sample_row["benchmark"], "trace_id": sample_row["trace_id"], "model_family": model, "model": meta["repo_id"], "model_revision": meta["revision"], "backend": backend, "backend_version": BACKENDS[backend]["version"], "eligibility": "ELIGIBLE" if base_eligible else "NOT_APPLICABLE", "reason": reason, "canonical_prompt_tokens": token_count, "trace_semantic_hash": projection["semantic_hash"] if projection else None, "natural_projection": projection, "raw_model_output": raw_output, "actual_subset_trace": sample_row["trace_id"] in continuation_subset[sample_row["benchmark"]]}
+                eligibility.append(entry)
+                if base_eligible:
+                    pred = prediction(model, backend, projection)
+                    pred.update({k: entry[k] for k in ["cell_id", "benchmark", "trace_id", "model_family", "model", "model_revision", "backend", "backend_version", "trace_semantic_hash", "actual_subset_trace"]})
+                    pred["supporting_frozen_evidence"] = ("P2-R1 F1" if model == "Llama" and len(projection["native_calls"]) > 1 else "P2-R1 F2" if model == "Mistral" and backend == "SGLang" else "P2-R1 F4" if model == "Mistral" and projection["assistant_content"].strip() else "P2-R1 Qwen benign / frozen template contract")
+                    pred["prediction_hash"] = stable(pred)
+                    predictions.append(pred)
+    freeze(ART / "natural_trace_eligibility.json", {"schema_version": "paritymem.ai_venue_pivot.eligibility.v1", "generated_at_utc": now(), "theoretical_cells": 360, "eligible_cells": sum(row["eligibility"] == "ELIGIBLE" for row in eligibility), "not_applicable_cells": sum(row["eligibility"] != "ELIGIBLE" for row in eligibility), "rows": eligibility, "call_counts": ZERO})
+    pred_path = ART / "preexecution_predictions.jsonl"
+    pred_path.write_bytes(b"".join(canonical(row) for row in predictions))
+    pred_sha = file_sha(pred_path)
+    (ART / "prediction_manifest.sha256").write_text(f"{pred_sha}  artifacts/ai_venue_pivot_r0/preexecution_predictions.jsonl\n")
+    print(json.dumps({"status": "PREDICTIONS_SEALED", "sample": 60, "eligible_cells": len(predictions), "prediction_sha256": pred_sha, "actual_subset_traces": 40, "classes": {name: sum(row["predicted_class"] == name for row in predictions) for name in ["SAFE_REACHABLE", "BLOCKING_NON_CLOSURE", "R2_SEMANTIC_ALTERATION", "PAIRING_FAILURE", "UNRESOLVED"]}, "call_counts": ZERO}, sort_keys=True))
+
+
+if __name__ == "__main__":
+    main()

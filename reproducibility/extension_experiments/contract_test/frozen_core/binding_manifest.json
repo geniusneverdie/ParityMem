@@ -1,0 +1,704 @@
+{
+  "frozen_files_checked": 59,
+  "all_frozen_files_match": true,
+  "frozen_status": [
+    {
+      "path": "docs/BENCHMARK_INTERFACE_CONTRACT.md",
+      "sha256": "d9cdecd218d53c21709666441ce5118d2f0b21a5895ca6dc83960332138fcdde",
+      "matches_frozen": true
+    },
+    {
+      "path": "docs/CONTRACT_IR_SPEC.md",
+      "sha256": "8426228ba34acc0ed82bdcab176135ff3997b78eb76c0854727759bb7c016c89",
+      "matches_frozen": true
+    },
+    {
+      "path": "docs/CONVERSATION_HISTORY_CLOSURE_CONTRACT.md",
+      "sha256": "916557a08a3a4d4fb7fc7d7e43d8a5569383f715c8e7b15fb9261383520e292b",
+      "matches_frozen": true
+    },
+    {
+      "path": "docs/ENVIRONMENT_TRANSITION_JOURNAL_SPEC.md",
+      "sha256": "e40e05561b740930aa21778890b77c2d1e8e7607f51a281176655603c36ea13c",
+      "matches_frozen": true
+    },
+    {
+      "path": "docs/MODEL_OUTPUT_CONTRACT_BOUNDARY.md",
+      "sha256": "cfc4f4372990d26e271d891c7444a6d5728e446b7c51fd72adb7b83a9cf405e6",
+      "matches_frozen": true
+    },
+    {
+      "path": "docs/MUTATION_LIFECYCLE_CONTRACT.md",
+      "sha256": "723712fe479171f14e06475898e47000239c823131a80b18c567e449273eb565",
+      "matches_frozen": true
+    },
+    {
+      "path": "docs/PAIRING_PRESERVING_HISTORY_CLOSURE.md",
+      "sha256": "7aa30d1a6512585b2aa6dacb3e74febdf9f5c8721cbb7f0048c8cbf74b4b2558",
+      "matches_frozen": true
+    },
+    {
+      "path": "docs/REAL_WORLD_DEFECT_SEVERITY.md",
+      "sha256": "ec8f5dfbd8b35dc3f50e6edac29582bd3bf61d48b80bfdcab127951bc9110e11",
+      "matches_frozen": true
+    },
+    {
+      "path": "docs/REAL_WORLD_DEFECT_TAXONOMY.md",
+      "sha256": "21b8db7c9f9147b85f21e85ac4b7a35e06f669543a6dccb36c6fc38e8f2ebe64",
+      "matches_frozen": true
+    },
+    {
+      "path": "docs/TOOL_CALL_IDENTITY_CONTRACT.md",
+      "sha256": "c2c78ce1df38393806a68bc280ee0d96618e32ac38a0996bdae39b89148f68ea",
+      "matches_frozen": true
+    },
+    {
+      "path": "paritymem/adapters/__init__.py",
+      "sha256": "618a30b08a13453b3993676944a915de279ad5c48e4be156bac40b88db9ef972",
+      "matches_frozen": true
+    },
+    {
+      "path": "paritymem/adapters/common.py",
+      "sha256": "2f6ed508d28d7b53792b4cc6752706faaa15df041bdcbb3f959df59e1030805f",
+      "matches_frozen": true
+    },
+    {
+      "path": "paritymem/adapters/memory_agent_bench.py",
+      "sha256": "5c09aedb8c155c81ab63799aa78a0d6cce21597761fc69e9b56277bf8cf5ba0b",
+      "matches_frozen": true
+    },
+    {
+      "path": "paritymem/adapters/pm_bench.py",
+      "sha256": "07276172d6ad0cdba6a87f2ee153078f41b20ac54e4396b1f3c183b5e4ba20ed",
+      "matches_frozen": true
+    },
+    {
+      "path": "paritymem/adapters/state_bench.py",
+      "sha256": "f9d5182622761cb75eb54bb401aca9226a98c960df4940364064da51f810c046",
+      "matches_frozen": true
+    },
+    {
+      "path": "paritymem/admission/__init__.py",
+      "sha256": "ff9e1b8cf6d56ae5446098c96b54e10a7e83bc9f0715590a53e20902cc9e1240",
+      "matches_frozen": true
+    },
+    {
+      "path": "paritymem/admission/contract_ir_counter.py",
+      "sha256": "379c187e4facaa76386716546c62c3a20bcec3666558897a6044b181d1366076",
+      "matches_frozen": true
+    },
+    {
+      "path": "paritymem/admission/server_equivalent_counter.py",
+      "sha256": "e1e0ede4efc00a47edac866b73f73416547037ca196401fee9ed4da965222571",
+      "matches_frozen": true
+    },
+    {
+      "path": "paritymem/audit/__init__.py",
+      "sha256": "9c7a70652c175d3a4ed9711aa880218c5a0f30b21e25d6d55ecc458bc1a0bf87",
+      "matches_frozen": true
+    },
+    {
+      "path": "paritymem/audit/bounded.py",
+      "sha256": "39f433c2463ca3ea8c298687940402194ae6c890a3387c7560fe11f6634d24b7",
+      "matches_frozen": true
+    },
+    {
+      "path": "paritymem/audit/cleanup.py",
+      "sha256": "719a655e0ae5e8d7e2ec07932958be081d2f1b78982ebdc54b678d9db9836e3a",
+      "matches_frozen": true
+    },
+    {
+      "path": "paritymem/audit/inventory.py",
+      "sha256": "53330ced9da74d31a39649c417a08866b607a48911e82722213ad738e619b3e5",
+      "matches_frozen": true
+    },
+    {
+      "path": "paritymem/audit/io.py",
+      "sha256": "f8a141bde7e73abb8e6ce75d765a6d15081b317f16c1ae8ece21f135059963dc",
+      "matches_frozen": true
+    },
+    {
+      "path": "paritymem/audit/ledger.py",
+      "sha256": "928e3533a2aad9deb74909d27c320c824cb1722a42b5eede7eb78b803efe8b88",
+      "matches_frozen": true
+    },
+    {
+      "path": "paritymem/audit/output_budget.py",
+      "sha256": "b2cfa6f6c2def3d10ea82750a737e45b8b0a45283c9c599e26535ee5f3973c66",
+      "matches_frozen": true
+    },
+    {
+      "path": "paritymem/audit/recovery.py",
+      "sha256": "ed6892ff8c7f8c3db3e37ada70f458a23b57cb95cd9f1013fc4654baff574bf4",
+      "matches_frozen": true
+    },
+    {
+      "path": "paritymem/contract_ir/__init__.py",
+      "sha256": "a1384ada79fa4be3fe7aaae7130a188af37364dc55a54e5182b1c9fbc4825fa1",
+      "matches_frozen": true
+    },
+    {
+      "path": "paritymem/contract_ir/compiler.py",
+      "sha256": "cf17ee5450879c7a5ea0ef80de9f6f7215b78b9c1fcd0b2b2df08a0ef05af764",
+      "matches_frozen": true
+    },
+    {
+      "path": "paritymem/contract_ir/equivalence.py",
+      "sha256": "b550ae27eb8d7150ffe78170231a5992ff6643909b0928ade707e3880a2a3bd2",
+      "matches_frozen": true
+    },
+    {
+      "path": "paritymem/contract_ir/execution_oracle.py",
+      "sha256": "83aa4dde2c3712e58bef3e949e5a2e24d06a77d91693a6f1aba99de0d07ddb62",
+      "matches_frozen": true
+    },
+    {
+      "path": "paritymem/contract_ir/metamorphic.py",
+      "sha256": "39549bdb119b0746a4c99072a89bce01aca96e5d0ff6eb64a57e6dfe71060214",
+      "matches_frozen": true
+    },
+    {
+      "path": "paritymem/contract_ir/nodes.py",
+      "sha256": "38ec6dcaad01ce70b1e57f60cc446a02e541debe406f360c617b4263d2caac83",
+      "matches_frozen": true
+    },
+    {
+      "path": "paritymem/contract_ir/operators.py",
+      "sha256": "8269c45de67dbc5988bc6b64bcfa907788985b997fe3370542341cab156c1383",
+      "matches_frozen": true
+    },
+    {
+      "path": "paritymem/contract_ir/provenance.py",
+      "sha256": "fadf38b3d67aae9f911a1c688cb1d9f3d0e2c25699071d22c45aac073c0bed31",
+      "matches_frozen": true
+    },
+    {
+      "path": "paritymem/contract_ir/renderers.py",
+      "sha256": "40e84d6e2828c070049c078703c7670a9003306c97d10f294fd7147b4c89736b",
+      "matches_frozen": true
+    },
+    {
+      "path": "paritymem/contract_ir/schema.py",
+      "sha256": "6c37fc8436766e9ef938d8d29b097c8772737c028cce904abd3c82486028a766",
+      "matches_frozen": true
+    },
+    {
+      "path": "paritymem/contracts/__init__.py",
+      "sha256": "f8f7d3455277b220195492a2cb8febe75238240b88e01b2585210b138cb6efd6",
+      "matches_frozen": true
+    },
+    {
+      "path": "paritymem/contracts/schema.py",
+      "sha256": "d64f6df3a6336b18cfc3905568f422295cf1e30430c124db41eef4bb88c8b95e",
+      "matches_frozen": true
+    },
+    {
+      "path": "paritymem/extractors/__init__.py",
+      "sha256": "2d30f9fc6c1d0ddad26ab4c439c9205beb72ceccda28d6bdbc7b04e0b957fa42",
+      "matches_frozen": true
+    },
+    {
+      "path": "paritymem/extractors/contracts.py",
+      "sha256": "e88821fca983895a67ed0ec13d4b47e4f38246aa65896257330541ec071ed35a",
+      "matches_frozen": true
+    },
+    {
+      "path": "paritymem/h2b_h0/__init__.py",
+      "sha256": "edd16ac3da0695562e59d88a3f318777e01e8ea24cef72fe08640d29583dd318",
+      "matches_frozen": true
+    },
+    {
+      "path": "paritymem/h2b_h0/closure.py",
+      "sha256": "e43fc2be84f98f0ee65e719269b422d248104422ae95fedb8b5b74ab1d2d1451",
+      "matches_frozen": true
+    },
+    {
+      "path": "paritymem/h2b_h1/__init__.py",
+      "sha256": "946eb7bbf65536b4c7098538c9b23d95ff0d6f2d0cd148bb9fe53e13b76bdcd1",
+      "matches_frozen": true
+    },
+    {
+      "path": "paritymem/h2b_h1/identity.py",
+      "sha256": "07c6ffdf3ddfc37fce754fc1a7668f614839d91e11991b0941ba02e212268d3c",
+      "matches_frozen": true
+    },
+    {
+      "path": "paritymem/metamorphic/__init__.py",
+      "sha256": "7727da437605b2ef1325ccfe3b308e641ffa44badf3fada3a694b5460695b25f",
+      "matches_frozen": true
+    },
+    {
+      "path": "paritymem/metamorphic/registry.py",
+      "sha256": "923ac686b11567c06d3cec15d1242d586ff8014b695ffdde28d09777b9c5bfc9",
+      "matches_frozen": true
+    },
+    {
+      "path": "paritymem/mutations/__init__.py",
+      "sha256": "3939e7050e1c9a29014e72e8589a5470be27f323a8a3fa69d9e8837ff28cb1b4",
+      "matches_frozen": true
+    },
+    {
+      "path": "paritymem/mutations/lifecycle.py",
+      "sha256": "ac9fa59656d79e0074e578b3264d5855be97ef2462238bb54d46a84d95c19341",
+      "matches_frozen": true
+    },
+    {
+      "path": "paritymem/mutations/operators.py",
+      "sha256": "1bd5e2cac45f6b65df790ab70b9d231540897e8d1d3e22e1a07bff1132a18ad3",
+      "matches_frozen": true
+    },
+    {
+      "path": "paritymem/mutations/registry.py",
+      "sha256": "7ebdf896ff287f8bd2a4571edef12c76a90d415994cd3cd7b49ca1cfad02b306",
+      "matches_frozen": true
+    },
+    {
+      "path": "paritymem/parity/__init__.py",
+      "sha256": "bb828deec37e9416c4ad8e2afd15992f77b939394c55fa2abaff5bc33db5255c",
+      "matches_frozen": true
+    },
+    {
+      "path": "paritymem/parity/checker.py",
+      "sha256": "7b8093ad92077a387c370e19868b030a0a914a89d32a6b15a53257209176fa8c",
+      "matches_frozen": true
+    },
+    {
+      "path": "paritymem/provenance/__init__.py",
+      "sha256": "5893e95821c8838427f94bafce233731d1b1566d2437d4bc9867e76da52ffb42",
+      "matches_frozen": true
+    },
+    {
+      "path": "paritymem/provenance/schema.py",
+      "sha256": "e8e6605fdaf7e3e99db9441c208fc35220723dc2fba18dafb2573b49280724cb",
+      "matches_frozen": true
+    },
+    {
+      "path": "paritymem/runtime_semantics/__init__.py",
+      "sha256": "c281b7b34dd2b411474498e08152c47d193eb0a1a08092190695e4517de8ec1c",
+      "matches_frozen": true
+    },
+    {
+      "path": "paritymem/runtime_semantics/model_output.py",
+      "sha256": "c47f9e6cfd5aa5c1342cc0f36a485842ab5e108eced8d7eb3f20f50ff4d4092c",
+      "matches_frozen": true
+    },
+    {
+      "path": "paritymem/runtime_semantics/transition_journal.py",
+      "sha256": "91a844c3437c2ba78d24a8f5cfcb14954f286b9df6c31ac09be6a86291269126",
+      "matches_frozen": true
+    },
+    {
+      "path": "paritymem/trace/__init__.py",
+      "sha256": "ae3ba2b4666482c57512378e8b1d8992a5015d7083c347bd931950565fa250b3",
+      "matches_frozen": true
+    },
+    {
+      "path": "paritymem/trace/events.py",
+      "sha256": "76b04d725c40fa3ea122fb7f8cbafc5b025efe0c4f2c605fdb448d334c2c6817",
+      "matches_frozen": true
+    }
+  ],
+  "copied_files": [
+    {
+      "source_path": "docs/BENCHMARK_INTERFACE_CONTRACT.md",
+      "package_path": "reproducibility/full_core/docs/BENCHMARK_INTERFACE_CONTRACT.md",
+      "sha256": "d9cdecd218d53c21709666441ce5118d2f0b21a5895ca6dc83960332138fcdde",
+      "binding": "frozen_manifest"
+    },
+    {
+      "source_path": "docs/CONTRACT_IR_SPEC.md",
+      "package_path": "reproducibility/full_core/docs/CONTRACT_IR_SPEC.md",
+      "sha256": "8426228ba34acc0ed82bdcab176135ff3997b78eb76c0854727759bb7c016c89",
+      "binding": "frozen_manifest"
+    },
+    {
+      "source_path": "docs/CONVERSATION_HISTORY_CLOSURE_CONTRACT.md",
+      "package_path": "reproducibility/full_core/docs/CONVERSATION_HISTORY_CLOSURE_CONTRACT.md",
+      "sha256": "916557a08a3a4d4fb7fc7d7e43d8a5569383f715c8e7b15fb9261383520e292b",
+      "binding": "frozen_manifest"
+    },
+    {
+      "source_path": "docs/ENVIRONMENT_TRANSITION_JOURNAL_SPEC.md",
+      "package_path": "reproducibility/full_core/docs/ENVIRONMENT_TRANSITION_JOURNAL_SPEC.md",
+      "sha256": "e40e05561b740930aa21778890b77c2d1e8e7607f51a281176655603c36ea13c",
+      "binding": "frozen_manifest"
+    },
+    {
+      "source_path": "docs/MODEL_OUTPUT_CONTRACT_BOUNDARY.md",
+      "package_path": "reproducibility/full_core/docs/MODEL_OUTPUT_CONTRACT_BOUNDARY.md",
+      "sha256": "cfc4f4372990d26e271d891c7444a6d5728e446b7c51fd72adb7b83a9cf405e6",
+      "binding": "frozen_manifest"
+    },
+    {
+      "source_path": "docs/MUTATION_LIFECYCLE_CONTRACT.md",
+      "package_path": "reproducibility/full_core/docs/MUTATION_LIFECYCLE_CONTRACT.md",
+      "sha256": "723712fe479171f14e06475898e47000239c823131a80b18c567e449273eb565",
+      "binding": "frozen_manifest"
+    },
+    {
+      "source_path": "docs/PAIRING_PRESERVING_HISTORY_CLOSURE.md",
+      "package_path": "reproducibility/full_core/docs/PAIRING_PRESERVING_HISTORY_CLOSURE.md",
+      "sha256": "7aa30d1a6512585b2aa6dacb3e74febdf9f5c8721cbb7f0048c8cbf74b4b2558",
+      "binding": "frozen_manifest"
+    },
+    {
+      "source_path": "docs/REAL_WORLD_DEFECT_SEVERITY.md",
+      "package_path": "reproducibility/full_core/docs/REAL_WORLD_DEFECT_SEVERITY.md",
+      "sha256": "ec8f5dfbd8b35dc3f50e6edac29582bd3bf61d48b80bfdcab127951bc9110e11",
+      "binding": "frozen_manifest"
+    },
+    {
+      "source_path": "docs/REAL_WORLD_DEFECT_TAXONOMY.md",
+      "package_path": "reproducibility/full_core/docs/REAL_WORLD_DEFECT_TAXONOMY.md",
+      "sha256": "21b8db7c9f9147b85f21e85ac4b7a35e06f669543a6dccb36c6fc38e8f2ebe64",
+      "binding": "frozen_manifest"
+    },
+    {
+      "source_path": "docs/TOOL_CALL_IDENTITY_CONTRACT.md",
+      "package_path": "reproducibility/full_core/docs/TOOL_CALL_IDENTITY_CONTRACT.md",
+      "sha256": "c2c78ce1df38393806a68bc280ee0d96618e32ac38a0996bdae39b89148f68ea",
+      "binding": "frozen_manifest"
+    },
+    {
+      "source_path": "paritymem/contract_ir/__init__.py",
+      "package_path": "reproducibility/full_core/vendor/paritymem/contract_ir/__init__.py",
+      "sha256": "a1384ada79fa4be3fe7aaae7130a188af37364dc55a54e5182b1c9fbc4825fa1",
+      "binding": "frozen_manifest"
+    },
+    {
+      "source_path": "paritymem/contract_ir/compiler.py",
+      "package_path": "reproducibility/full_core/vendor/paritymem/contract_ir/compiler.py",
+      "sha256": "cf17ee5450879c7a5ea0ef80de9f6f7215b78b9c1fcd0b2b2df08a0ef05af764",
+      "binding": "frozen_manifest"
+    },
+    {
+      "source_path": "paritymem/contract_ir/equivalence.py",
+      "package_path": "reproducibility/full_core/vendor/paritymem/contract_ir/equivalence.py",
+      "sha256": "b550ae27eb8d7150ffe78170231a5992ff6643909b0928ade707e3880a2a3bd2",
+      "binding": "frozen_manifest"
+    },
+    {
+      "source_path": "paritymem/contract_ir/execution_oracle.py",
+      "package_path": "reproducibility/full_core/vendor/paritymem/contract_ir/execution_oracle.py",
+      "sha256": "83aa4dde2c3712e58bef3e949e5a2e24d06a77d91693a6f1aba99de0d07ddb62",
+      "binding": "frozen_manifest"
+    },
+    {
+      "source_path": "paritymem/contract_ir/metamorphic.py",
+      "package_path": "reproducibility/full_core/vendor/paritymem/contract_ir/metamorphic.py",
+      "sha256": "39549bdb119b0746a4c99072a89bce01aca96e5d0ff6eb64a57e6dfe71060214",
+      "binding": "frozen_manifest"
+    },
+    {
+      "source_path": "paritymem/contract_ir/nodes.py",
+      "package_path": "reproducibility/full_core/vendor/paritymem/contract_ir/nodes.py",
+      "sha256": "38ec6dcaad01ce70b1e57f60cc446a02e541debe406f360c617b4263d2caac83",
+      "binding": "frozen_manifest"
+    },
+    {
+      "source_path": "paritymem/contract_ir/operators.py",
+      "package_path": "reproducibility/full_core/vendor/paritymem/contract_ir/operators.py",
+      "sha256": "8269c45de67dbc5988bc6b64bcfa907788985b997fe3370542341cab156c1383",
+      "binding": "frozen_manifest"
+    },
+    {
+      "source_path": "paritymem/contract_ir/provenance.py",
+      "package_path": "reproducibility/full_core/vendor/paritymem/contract_ir/provenance.py",
+      "sha256": "fadf38b3d67aae9f911a1c688cb1d9f3d0e2c25699071d22c45aac073c0bed31",
+      "binding": "frozen_manifest"
+    },
+    {
+      "source_path": "paritymem/contract_ir/renderers.py",
+      "package_path": "reproducibility/full_core/vendor/paritymem/contract_ir/renderers.py",
+      "sha256": "40e84d6e2828c070049c078703c7670a9003306c97d10f294fd7147b4c89736b",
+      "binding": "frozen_manifest"
+    },
+    {
+      "source_path": "paritymem/contract_ir/schema.py",
+      "package_path": "reproducibility/full_core/vendor/paritymem/contract_ir/schema.py",
+      "sha256": "6c37fc8436766e9ef938d8d29b097c8772737c028cce904abd3c82486028a766",
+      "binding": "frozen_manifest"
+    },
+    {
+      "source_path": "paritymem/h2b_h0/__init__.py",
+      "package_path": "reproducibility/full_core/vendor/paritymem/h2b_h0/__init__.py",
+      "sha256": "edd16ac3da0695562e59d88a3f318777e01e8ea24cef72fe08640d29583dd318",
+      "binding": "frozen_manifest"
+    },
+    {
+      "source_path": "paritymem/h2b_h0/closure.py",
+      "package_path": "reproducibility/full_core/vendor/paritymem/h2b_h0/closure.py",
+      "sha256": "e43fc2be84f98f0ee65e719269b422d248104422ae95fedb8b5b74ab1d2d1451",
+      "binding": "frozen_manifest"
+    },
+    {
+      "source_path": "paritymem/h2b_h1/__init__.py",
+      "package_path": "reproducibility/full_core/vendor/paritymem/h2b_h1/__init__.py",
+      "sha256": "946eb7bbf65536b4c7098538c9b23d95ff0d6f2d0cd148bb9fe53e13b76bdcd1",
+      "binding": "frozen_manifest"
+    },
+    {
+      "source_path": "paritymem/h2b_h1/identity.py",
+      "package_path": "reproducibility/full_core/vendor/paritymem/h2b_h1/identity.py",
+      "sha256": "07c6ffdf3ddfc37fce754fc1a7668f614839d91e11991b0941ba02e212268d3c",
+      "binding": "frozen_manifest"
+    },
+    {
+      "source_path": "paritymem/__init__.py",
+      "package_path": "reproducibility/full_core/vendor/paritymem/__init__.py",
+      "sha256": "f7ce7f408a8c011bc8683e1cab0cee897db4328fc13358471ddb934fd8981812",
+      "binding": "current_source_snapshot_package_initializer"
+    },
+    {
+      "source_path": "scripts/paper_p1_holdout_predict.py",
+      "package_path": "reproducibility/full_core/paper_p1_holdout_predict.py.txt",
+      "sha256": "be30afaaae996b637d9e849b090368e9e88587582a1eb3f56e72e49070aa6e1a",
+      "binding": "source_snapshot"
+    },
+    {
+      "source_path": "artifacts/paper_p1/holdout_inputs.jsonl",
+      "package_path": "reproducibility/full_core/holdout_inputs.jsonl",
+      "sha256": "6905c2f7e8e8d26e1697e41c6c4ec1b140ce5bfe61b793404411c35f96fb8323",
+      "binding": "source_snapshot"
+    },
+    {
+      "source_path": "artifacts/paper_p1/holdout_gold.jsonl",
+      "package_path": "reproducibility/full_core/holdout_gold.jsonl",
+      "sha256": "62a7bb3ae9a0a60e250ac16303bf3ace028caa5001e0e95123da91f24e9422e2",
+      "binding": "source_snapshot"
+    },
+    {
+      "source_path": "artifacts/paper_p1/holdout_predictions.jsonl",
+      "package_path": "reproducibility/full_core/holdout_predictions.jsonl",
+      "sha256": "43501464c80a24351544b08f22ea66551c399ded233fa0aa1be5065f24634dfa",
+      "binding": "source_snapshot"
+    },
+    {
+      "source_path": "artifacts/icassp_e1/frozen_method_manifest.sha256",
+      "package_path": "reproducibility/full_core/frozen_method_manifest.sha256",
+      "sha256": "d3d1c050b007f2be84145c8622bd27fc4ecc58f52049f32b6feaaa925edfd69c",
+      "binding": "source_snapshot"
+    },
+    {
+      "source_path": "paritymem/adapters/__init__.py",
+      "package_path": "reproducibility/full_core/vendor/paritymem/adapters/__init__.py",
+      "sha256": "618a30b08a13453b3993676944a915de279ad5c48e4be156bac40b88db9ef972",
+      "binding": "frozen_manifest"
+    },
+    {
+      "source_path": "paritymem/adapters/common.py",
+      "package_path": "reproducibility/full_core/vendor/paritymem/adapters/common.py",
+      "sha256": "2f6ed508d28d7b53792b4cc6752706faaa15df041bdcbb3f959df59e1030805f",
+      "binding": "frozen_manifest"
+    },
+    {
+      "source_path": "paritymem/adapters/memory_agent_bench.py",
+      "package_path": "reproducibility/full_core/vendor/paritymem/adapters/memory_agent_bench.py",
+      "sha256": "5c09aedb8c155c81ab63799aa78a0d6cce21597761fc69e9b56277bf8cf5ba0b",
+      "binding": "frozen_manifest"
+    },
+    {
+      "source_path": "paritymem/adapters/pm_bench.py",
+      "package_path": "reproducibility/full_core/vendor/paritymem/adapters/pm_bench.py",
+      "sha256": "07276172d6ad0cdba6a87f2ee153078f41b20ac54e4396b1f3c183b5e4ba20ed",
+      "binding": "frozen_manifest"
+    },
+    {
+      "source_path": "paritymem/adapters/state_bench.py",
+      "package_path": "reproducibility/full_core/vendor/paritymem/adapters/state_bench.py",
+      "sha256": "f9d5182622761cb75eb54bb401aca9226a98c960df4940364064da51f810c046",
+      "binding": "frozen_manifest"
+    },
+    {
+      "source_path": "paritymem/admission/__init__.py",
+      "package_path": "reproducibility/full_core/vendor/paritymem/admission/__init__.py",
+      "sha256": "ff9e1b8cf6d56ae5446098c96b54e10a7e83bc9f0715590a53e20902cc9e1240",
+      "binding": "frozen_manifest"
+    },
+    {
+      "source_path": "paritymem/admission/contract_ir_counter.py",
+      "package_path": "reproducibility/full_core/vendor/paritymem/admission/contract_ir_counter.py",
+      "sha256": "379c187e4facaa76386716546c62c3a20bcec3666558897a6044b181d1366076",
+      "binding": "frozen_manifest"
+    },
+    {
+      "source_path": "paritymem/admission/server_equivalent_counter.py",
+      "package_path": "reproducibility/full_core/vendor/paritymem/admission/server_equivalent_counter.py",
+      "sha256": "e1e0ede4efc00a47edac866b73f73416547037ca196401fee9ed4da965222571",
+      "binding": "frozen_manifest"
+    },
+    {
+      "source_path": "paritymem/audit/__init__.py",
+      "package_path": "reproducibility/full_core/vendor/paritymem/audit/__init__.py",
+      "sha256": "9c7a70652c175d3a4ed9711aa880218c5a0f30b21e25d6d55ecc458bc1a0bf87",
+      "binding": "frozen_manifest"
+    },
+    {
+      "source_path": "paritymem/audit/bounded.py",
+      "package_path": "reproducibility/full_core/vendor/paritymem/audit/bounded.py",
+      "sha256": "39f433c2463ca3ea8c298687940402194ae6c890a3387c7560fe11f6634d24b7",
+      "binding": "frozen_manifest"
+    },
+    {
+      "source_path": "paritymem/audit/cleanup.py",
+      "package_path": "reproducibility/full_core/vendor/paritymem/audit/cleanup.py",
+      "sha256": "719a655e0ae5e8d7e2ec07932958be081d2f1b78982ebdc54b678d9db9836e3a",
+      "binding": "frozen_manifest"
+    },
+    {
+      "source_path": "paritymem/audit/inventory.py",
+      "package_path": "reproducibility/full_core/vendor/paritymem/audit/inventory.py",
+      "sha256": "53330ced9da74d31a39649c417a08866b607a48911e82722213ad738e619b3e5",
+      "binding": "frozen_manifest"
+    },
+    {
+      "source_path": "paritymem/audit/io.py",
+      "package_path": "reproducibility/full_core/vendor/paritymem/audit/io.py",
+      "sha256": "f8a141bde7e73abb8e6ce75d765a6d15081b317f16c1ae8ece21f135059963dc",
+      "binding": "frozen_manifest"
+    },
+    {
+      "source_path": "paritymem/audit/ledger.py",
+      "package_path": "reproducibility/full_core/vendor/paritymem/audit/ledger.py",
+      "sha256": "928e3533a2aad9deb74909d27c320c824cb1722a42b5eede7eb78b803efe8b88",
+      "binding": "frozen_manifest"
+    },
+    {
+      "source_path": "paritymem/audit/output_budget.py",
+      "package_path": "reproducibility/full_core/vendor/paritymem/audit/output_budget.py",
+      "sha256": "b2cfa6f6c2def3d10ea82750a737e45b8b0a45283c9c599e26535ee5f3973c66",
+      "binding": "frozen_manifest"
+    },
+    {
+      "source_path": "paritymem/audit/recovery.py",
+      "package_path": "reproducibility/full_core/vendor/paritymem/audit/recovery.py",
+      "sha256": "ed6892ff8c7f8c3db3e37ada70f458a23b57cb95cd9f1013fc4654baff574bf4",
+      "binding": "frozen_manifest"
+    },
+    {
+      "source_path": "paritymem/contracts/__init__.py",
+      "package_path": "reproducibility/full_core/vendor/paritymem/contracts/__init__.py",
+      "sha256": "f8f7d3455277b220195492a2cb8febe75238240b88e01b2585210b138cb6efd6",
+      "binding": "frozen_manifest"
+    },
+    {
+      "source_path": "paritymem/contracts/schema.py",
+      "package_path": "reproducibility/full_core/vendor/paritymem/contracts/schema.py",
+      "sha256": "d64f6df3a6336b18cfc3905568f422295cf1e30430c124db41eef4bb88c8b95e",
+      "binding": "frozen_manifest"
+    },
+    {
+      "source_path": "paritymem/extractors/__init__.py",
+      "package_path": "reproducibility/full_core/vendor/paritymem/extractors/__init__.py",
+      "sha256": "2d30f9fc6c1d0ddad26ab4c439c9205beb72ceccda28d6bdbc7b04e0b957fa42",
+      "binding": "frozen_manifest"
+    },
+    {
+      "source_path": "paritymem/extractors/contracts.py",
+      "package_path": "reproducibility/full_core/vendor/paritymem/extractors/contracts.py",
+      "sha256": "e88821fca983895a67ed0ec13d4b47e4f38246aa65896257330541ec071ed35a",
+      "binding": "frozen_manifest"
+    },
+    {
+      "source_path": "paritymem/metamorphic/__init__.py",
+      "package_path": "reproducibility/full_core/vendor/paritymem/metamorphic/__init__.py",
+      "sha256": "7727da437605b2ef1325ccfe3b308e641ffa44badf3fada3a694b5460695b25f",
+      "binding": "frozen_manifest"
+    },
+    {
+      "source_path": "paritymem/metamorphic/registry.py",
+      "package_path": "reproducibility/full_core/vendor/paritymem/metamorphic/registry.py",
+      "sha256": "923ac686b11567c06d3cec15d1242d586ff8014b695ffdde28d09777b9c5bfc9",
+      "binding": "frozen_manifest"
+    },
+    {
+      "source_path": "paritymem/mutations/__init__.py",
+      "package_path": "reproducibility/full_core/vendor/paritymem/mutations/__init__.py",
+      "sha256": "3939e7050e1c9a29014e72e8589a5470be27f323a8a3fa69d9e8837ff28cb1b4",
+      "binding": "frozen_manifest"
+    },
+    {
+      "source_path": "paritymem/mutations/lifecycle.py",
+      "package_path": "reproducibility/full_core/vendor/paritymem/mutations/lifecycle.py",
+      "sha256": "ac9fa59656d79e0074e578b3264d5855be97ef2462238bb54d46a84d95c19341",
+      "binding": "frozen_manifest"
+    },
+    {
+      "source_path": "paritymem/mutations/operators.py",
+      "package_path": "reproducibility/full_core/vendor/paritymem/mutations/operators.py",
+      "sha256": "1bd5e2cac45f6b65df790ab70b9d231540897e8d1d3e22e1a07bff1132a18ad3",
+      "binding": "frozen_manifest"
+    },
+    {
+      "source_path": "paritymem/mutations/registry.py",
+      "package_path": "reproducibility/full_core/vendor/paritymem/mutations/registry.py",
+      "sha256": "7ebdf896ff287f8bd2a4571edef12c76a90d415994cd3cd7b49ca1cfad02b306",
+      "binding": "frozen_manifest"
+    },
+    {
+      "source_path": "paritymem/parity/__init__.py",
+      "package_path": "reproducibility/full_core/vendor/paritymem/parity/__init__.py",
+      "sha256": "bb828deec37e9416c4ad8e2afd15992f77b939394c55fa2abaff5bc33db5255c",
+      "binding": "frozen_manifest"
+    },
+    {
+      "source_path": "paritymem/parity/checker.py",
+      "package_path": "reproducibility/full_core/vendor/paritymem/parity/checker.py",
+      "sha256": "7b8093ad92077a387c370e19868b030a0a914a89d32a6b15a53257209176fa8c",
+      "binding": "frozen_manifest"
+    },
+    {
+      "source_path": "paritymem/provenance/__init__.py",
+      "package_path": "reproducibility/full_core/vendor/paritymem/provenance/__init__.py",
+      "sha256": "5893e95821c8838427f94bafce233731d1b1566d2437d4bc9867e76da52ffb42",
+      "binding": "frozen_manifest"
+    },
+    {
+      "source_path": "paritymem/provenance/schema.py",
+      "package_path": "reproducibility/full_core/vendor/paritymem/provenance/schema.py",
+      "sha256": "e8e6605fdaf7e3e99db9441c208fc35220723dc2fba18dafb2573b49280724cb",
+      "binding": "frozen_manifest"
+    },
+    {
+      "source_path": "paritymem/runtime_semantics/__init__.py",
+      "package_path": "reproducibility/full_core/vendor/paritymem/runtime_semantics/__init__.py",
+      "sha256": "c281b7b34dd2b411474498e08152c47d193eb0a1a08092190695e4517de8ec1c",
+      "binding": "frozen_manifest"
+    },
+    {
+      "source_path": "paritymem/runtime_semantics/model_output.py",
+      "package_path": "reproducibility/full_core/vendor/paritymem/runtime_semantics/model_output.py",
+      "sha256": "c47f9e6cfd5aa5c1342cc0f36a485842ab5e108eced8d7eb3f20f50ff4d4092c",
+      "binding": "frozen_manifest"
+    },
+    {
+      "source_path": "paritymem/runtime_semantics/transition_journal.py",
+      "package_path": "reproducibility/full_core/vendor/paritymem/runtime_semantics/transition_journal.py",
+      "sha256": "91a844c3437c2ba78d24a8f5cfcb14954f286b9df6c31ac09be6a86291269126",
+      "binding": "frozen_manifest"
+    },
+    {
+      "source_path": "paritymem/trace/__init__.py",
+      "package_path": "reproducibility/full_core/vendor/paritymem/trace/__init__.py",
+      "sha256": "ae3ba2b4666482c57512378e8b1d8992a5015d7083c347bd931950565fa250b3",
+      "binding": "frozen_manifest"
+    },
+    {
+      "source_path": "paritymem/trace/events.py",
+      "package_path": "reproducibility/full_core/vendor/paritymem/trace/events.py",
+      "sha256": "76b04d725c40fa3ea122fb7f8cbafc5b025efe0c4f2c605fdb448d334c2c6817",
+      "binding": "frozen_manifest"
+    }
+  ],
+  "portable_runner_sha256": "c3582e6ba13ce2511683553be2d72a33ae80f86a6a1d35ab2f59493d305455b0",
+  "runner_function_asts_unchanged": true,
+  "portability_change": "Only repository import root changed to local vendor directory.",
+  "scope": "Original controlled-validation predictor and unchanged P0-P3/identity core; fixture inputs include recorded semantic, execution, scoring and closure evidence. This is computational replay of the controlled study, not a new prospective consumer experiment.",
+  "active_runtime_modules": [
+    "contract_ir.equivalence",
+    "contract_ir.nodes",
+    "contract_ir.schema",
+    "h2b_h1.identity"
+  ],
+  "source_tree_note": "The complete 59-file frozen source set is included. The portable controlled runner explicitly uses P0-P3 ContractIR modules; other modules remain available for source inspection."
+}

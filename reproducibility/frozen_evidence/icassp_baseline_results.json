@@ -1,0 +1,123 @@
+{
+  "call_counts": {
+    "benchmark_scientific": 0,
+    "gpu": 0,
+    "http_model": 0,
+    "model": 0
+  },
+  "corpus": {
+    "blocked_or_pairing_failure": 59,
+    "eligible_cells": 354,
+    "safe": 295
+  },
+  "generated_at_utc": "2026-08-14T08:05:24.054968+00:00",
+  "method_modified": false,
+  "note": "N/A capabilities are not scored as zero; baselines were not augmented with ParityMem semantics.",
+  "rows": [
+    {
+      "applicability": {
+        "denominator": 354,
+        "numerator": 354,
+        "value": 1.0
+      },
+      "binary_prediction_accuracy": {
+        "denominator": 354,
+        "numerator": 59,
+        "value": 0.16666666666666666
+      },
+      "blocking_recall": {
+        "denominator": 59,
+        "numerator": 59,
+        "value": 1.0
+      },
+      "first_divergence_accuracy": "N/A",
+      "safe_false_positive": {
+        "denominator": 295,
+        "numerator": 295,
+        "value": 1.0
+      },
+      "scope": "Flags any source-to-backend structural or literal transport-ID difference.",
+      "variant": "B0_RAW_STRUCTURAL_EQUALITY"
+    },
+    {
+      "applicability": {
+        "denominator": 354,
+        "numerator": 354,
+        "value": 1.0
+      },
+      "binary_prediction_accuracy": {
+        "denominator": 354,
+        "numerator": 295,
+        "value": 0.8333333333333334
+      },
+      "blocking_recall": {
+        "denominator": 59,
+        "numerator": 0,
+        "value": 0.0
+      },
+      "first_divergence_accuracy": "N/A",
+      "safe_false_positive": {
+        "denominator": 295,
+        "numerator": 0,
+        "value": 0.0
+      },
+      "scope": "Checks type/required/enum only; all eligible natural cells are schema-valid.",
+      "variant": "B1_STRICT_SCHEMA_VALIDATION"
+    },
+    {
+      "applicability": {
+        "denominator": 354,
+        "numerator": 354,
+        "value": 1.0
+      },
+      "binary_prediction_accuracy": {
+        "denominator": 354,
+        "numerator": 295,
+        "value": 0.8333333333333334
+      },
+      "blocking_recall": {
+        "denominator": 59,
+        "numerator": 0,
+        "value": 0.0
+      },
+      "first_divergence_accuracy": "N/A",
+      "safe_false_positive": {
+        "denominator": 295,
+        "numerator": 0,
+        "value": 0.0
+      },
+      "scope": "Normalizes wrappers and transport IDs without an ownership, ID-domain, or closure oracle.",
+      "variant": "B2_GENERIC_NORMALIZATION"
+    },
+    {
+      "applicability": {
+        "denominator": 354,
+        "numerator": 354,
+        "value": 1.0
+      },
+      "binary_prediction_accuracy": {
+        "denominator": 354,
+        "numerator": 354,
+        "value": 1.0
+      },
+      "blocking_recall": {
+        "denominator": 59,
+        "numerator": 59,
+        "value": 1.0
+      },
+      "first_divergence_accuracy": {
+        "denominator": 354,
+        "numerator": 354,
+        "value": 1.0
+      },
+      "safe_false_positive": {
+        "denominator": 295,
+        "numerator": 0,
+        "value": 0.0
+      },
+      "scope": "Frozen semantic conformance prediction.",
+      "variant": "B3_FULL_PARITYMEM"
+    }
+  ],
+  "schema_version": "paritymem.ai_venue_pivot.icassp_baselines.v1"
+}

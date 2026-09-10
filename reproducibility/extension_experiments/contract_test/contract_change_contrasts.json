@@ -1,0 +1,290 @@
+[
+  {
+    "trace_id": "Mistral_trace_6_0",
+    "contract_a": "Mistral_6",
+    "contract_b": "Mistral_9",
+    "correct": true
+  },
+  {
+    "trace_id": "Mistral_trace_6_0",
+    "contract_a": "Mistral_6",
+    "contract_b": "Mistral_12",
+    "correct": true
+  },
+  {
+    "trace_id": "Mistral_trace_6_1",
+    "contract_a": "Mistral_6",
+    "contract_b": "Mistral_9",
+    "correct": true
+  },
+  {
+    "trace_id": "Mistral_trace_6_1",
+    "contract_a": "Mistral_6",
+    "contract_b": "Mistral_12",
+    "correct": true
+  },
+  {
+    "trace_id": "Mistral_trace_6_2",
+    "contract_a": "Mistral_6",
+    "contract_b": "Mistral_9",
+    "correct": true
+  },
+  {
+    "trace_id": "Mistral_trace_6_2",
+    "contract_a": "Mistral_6",
+    "contract_b": "Mistral_12",
+    "correct": true
+  },
+  {
+    "trace_id": "Mistral_trace_6_3",
+    "contract_a": "Mistral_6",
+    "contract_b": "Mistral_9",
+    "correct": true
+  },
+  {
+    "trace_id": "Mistral_trace_6_3",
+    "contract_a": "Mistral_6",
+    "contract_b": "Mistral_12",
+    "correct": true
+  },
+  {
+    "trace_id": "Mistral_trace_9_0",
+    "contract_a": "Mistral_6",
+    "contract_b": "Mistral_9",
+    "correct": true
+  },
+  {
+    "trace_id": "Mistral_trace_9_0",
+    "contract_a": "Mistral_9",
+    "contract_b": "Mistral_12",
+    "correct": true
+  },
+  {
+    "trace_id": "Mistral_trace_9_1",
+    "contract_a": "Mistral_6",
+    "contract_b": "Mistral_9",
+    "correct": true
+  },
+  {
+    "trace_id": "Mistral_trace_9_1",
+    "contract_a": "Mistral_9",
+    "contract_b": "Mistral_12",
+    "correct": true
+  },
+  {
+    "trace_id": "Mistral_trace_9_2",
+    "contract_a": "Mistral_6",
+    "contract_b": "Mistral_9",
+    "correct": true
+  },
+  {
+    "trace_id": "Mistral_trace_9_2",
+    "contract_a": "Mistral_9",
+    "contract_b": "Mistral_12",
+    "correct": true
+  },
+  {
+    "trace_id": "Mistral_trace_9_3",
+    "contract_a": "Mistral_6",
+    "contract_b": "Mistral_9",
+    "correct": true
+  },
+  {
+    "trace_id": "Mistral_trace_9_3",
+    "contract_a": "Mistral_9",
+    "contract_b": "Mistral_12",
+    "correct": true
+  },
+  {
+    "trace_id": "Mistral_trace_12_0",
+    "contract_a": "Mistral_6",
+    "contract_b": "Mistral_12",
+    "correct": true
+  },
+  {
+    "trace_id": "Mistral_trace_12_0",
+    "contract_a": "Mistral_9",
+    "contract_b": "Mistral_12",
+    "correct": true
+  },
+  {
+    "trace_id": "Mistral_trace_12_1",
+    "contract_a": "Mistral_6",
+    "contract_b": "Mistral_12",
+    "correct": true
+  },
+  {
+    "trace_id": "Mistral_trace_12_1",
+    "contract_a": "Mistral_9",
+    "contract_b": "Mistral_12",
+    "correct": true
+  },
+  {
+    "trace_id": "Mistral_trace_12_2",
+    "contract_a": "Mistral_6",
+    "contract_b": "Mistral_12",
+    "correct": true
+  },
+  {
+    "trace_id": "Mistral_trace_12_2",
+    "contract_a": "Mistral_9",
+    "contract_b": "Mistral_12",
+    "correct": true
+  },
+  {
+    "trace_id": "Mistral_trace_12_3",
+    "contract_a": "Mistral_6",
+    "contract_b": "Mistral_12",
+    "correct": true
+  },
+  {
+    "trace_id": "Mistral_trace_12_3",
+    "contract_a": "Mistral_9",
+    "contract_b": "Mistral_12",
+    "correct": true
+  },
+  {
+    "trace_id": "Llama_trace_1_0",
+    "contract_a": "Llama_1",
+    "contract_b": "Llama_2",
+    "correct": true
+  },
+  {
+    "trace_id": "Llama_trace_1_0",
+    "contract_a": "Llama_1",
+    "contract_b": "Llama_3",
+    "correct": true
+  },
+  {
+    "trace_id": "Llama_trace_1_1",
+    "contract_a": "Llama_1",
+    "contract_b": "Llama_2",
+    "correct": true
+  },
+  {
+    "trace_id": "Llama_trace_1_1",
+    "contract_a": "Llama_1",
+    "contract_b": "Llama_3",
+    "correct": true
+  },
+  {
+    "trace_id": "Llama_trace_1_2",
+    "contract_a": "Llama_1",
+    "contract_b": "Llama_2",
+    "correct": true
+  },
+  {
+    "trace_id": "Llama_trace_1_2",
+    "contract_a": "Llama_1",
+    "contract_b": "Llama_3",
+    "correct": true
+  },
+  {
+    "trace_id": "Llama_trace_1_3",
+    "contract_a": "Llama_1",
+    "contract_b": "Llama_2",
+    "correct": true
+  },
+  {
+    "trace_id": "Llama_trace_1_3",
+    "contract_a": "Llama_1",
+    "contract_b": "Llama_3",
+    "correct": true
+  },
+  {
+    "trace_id": "Llama_trace_2_0",
+    "contract_a": "Llama_1",
+    "contract_b": "Llama_2",
+    "correct": true
+  },
+  {
+    "trace_id": "Llama_trace_2_0",
+    "contract_a": "Llama_2",
+    "contract_b": "Llama_3",
+    "correct": true
+  },
+  {
+    "trace_id": "Llama_trace_2_1",
+    "contract_a": "Llama_1",
+    "contract_b": "Llama_2",
+    "correct": true
+  },
+  {
+    "trace_id": "Llama_trace_2_1",
+    "contract_a": "Llama_2",
+    "contract_b": "Llama_3",
+    "correct": true
+  },
+  {
+    "trace_id": "Llama_trace_2_2",
+    "contract_a": "Llama_1",
+    "contract_b": "Llama_2",
+    "correct": true
+  },
+  {
+    "trace_id": "Llama_trace_2_2",
+    "contract_a": "Llama_2",
+    "contract_b": "Llama_3",
+    "correct": true
+  },
+  {
+    "trace_id": "Llama_trace_2_3",
+    "contract_a": "Llama_1",
+    "contract_b": "Llama_2",
+    "correct": true
+  },
+  {
+    "trace_id": "Llama_trace_2_3",
+    "contract_a": "Llama_2",
+    "contract_b": "Llama_3",
+    "correct": true
+  },
+  {
+    "trace_id": "Llama_trace_3_0",
+    "contract_a": "Llama_1",
+    "contract_b": "Llama_3",
+    "correct": true
+  },
+  {
+    "trace_id": "Llama_trace_3_0",
+    "contract_a": "Llama_2",
+    "contract_b": "Llama_3",
+    "correct": true
+  },
+  {
+    "trace_id": "Llama_trace_3_1",
+    "contract_a": "Llama_1",
+    "contract_b": "Llama_3",
+    "correct": true
+  },
+  {
+    "trace_id": "Llama_trace_3_1",
+    "contract_a": "Llama_2",
+    "contract_b": "Llama_3",
+    "correct": true
+  },
+  {
+    "trace_id": "Llama_trace_3_2",
+    "contract_a": "Llama_1",
+    "contract_b": "Llama_3",
+    "correct": true
+  },
+  {
+    "trace_id": "Llama_trace_3_2",
+    "contract_a": "Llama_2",
+    "contract_b": "Llama_3",
+    "correct": true
+  },
+  {
+    "trace_id": "Llama_trace_3_3",
+    "contract_a": "Llama_1",
+    "contract_b": "Llama_3",
+    "correct": true
+  },
+  {
+    "trace_id": "Llama_trace_3_3",
+    "contract_a": "Llama_2",
+    "contract_b": "Llama_3",
+    "correct": true
+  }
+]

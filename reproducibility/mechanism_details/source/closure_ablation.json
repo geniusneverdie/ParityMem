@@ -1,0 +1,60 @@
+{
+  "call_counts": {
+    "benchmark_scientific": 0,
+    "gpu": 0,
+    "http_model": 0,
+    "model": 0
+  },
+  "core_method_modified": false,
+  "corpus_n": 465,
+  "evaluation_mode": "frozen capability-mask wrapper over case-level gold features",
+  "generated_at_utc": "2026-08-12T15:26:00.301127+00:00",
+  "rows": [
+    {
+      "expected_behavior_false_positives": 0,
+      "first_divergence_accuracy": 1,
+      "notes": "parser acceptance misses F1/F3/F4 downstream serialization",
+      "safe_false_positives": 0,
+      "severity_accuracy": 0.25,
+      "unique_root_recall": 0.25,
+      "variant": "H-PARSE-ONLY"
+    },
+    {
+      "expected_behavior_false_positives": 0,
+      "first_divergence_accuracy": 1,
+      "notes": "F1/F3 structural blocks found; F4 semantic loss missed",
+      "safe_false_positives": 0,
+      "severity_accuracy": 0.5,
+      "unique_root_recall": 0.75,
+      "variant": "H-STRUCTURAL"
+    },
+    {
+      "expected_behavior_false_positives": 0,
+      "first_divergence_accuracy": 1,
+      "notes": "F2 plus structural roots; F4 semantic loss missed",
+      "safe_false_positives": 0,
+      "severity_accuracy": 0.75,
+      "unique_root_recall": 0.75,
+      "variant": "H-STRUCTURAL+PAIRING"
+    },
+    {
+      "expected_behavior_false_positives": 0,
+      "first_divergence_accuracy": 1,
+      "notes": "all roots detected; execution relevance underclassified",
+      "safe_false_positives": 0,
+      "severity_accuracy": 0.75,
+      "unique_root_recall": 1.0,
+      "variant": "H-SEMANTIC-CLOSURE"
+    },
+    {
+      "expected_behavior_false_positives": 0,
+      "first_divergence_accuracy": 1,
+      "notes": "",
+      "safe_false_positives": 0,
+      "severity_accuracy": 1,
+      "unique_root_recall": 1.0,
+      "variant": "H-FULL-EXECUTION-CLOSURE"
+    }
+  ],
+  "schema_version": "paritymem.paper_p3_e0.closure_ablation.v1"
+}

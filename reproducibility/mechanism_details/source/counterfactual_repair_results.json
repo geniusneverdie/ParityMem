@@ -1,0 +1,731 @@
+{
+  "all_repairs_restore_parity": true,
+  "call_counts": {
+    "gpu": 0,
+    "http": 0,
+    "model": 0,
+    "scientific_execution": 0,
+    "scientific_scorer": 0
+  },
+  "findings": {
+    "RW-RUNTIME-001": {
+      "denominator": 3,
+      "deterministic": true,
+      "repetitions": [
+        {
+          "epoch": 0,
+          "fresh_process": true,
+          "result": {
+            "accepted": true,
+            "counterfactual_template_sha256": "ffefa3f3ac71909b49a6b22eb971f498045c71dafd3ef3a009b0a73c629be1c2",
+            "exception": null,
+            "finding_id": "RW-RUNTIME-001",
+            "gpu_calls": 0,
+            "input_sha256": "125218077e3dc1eefbe0ec727609520d0e40e56d3036de63b1f55b3aa27ec265",
+            "mode": "repair",
+            "model_calls": 0,
+            "rendered_length": 2374,
+            "rendered_sha256": "84b1a96d5a776786d01dc61c8205d15a945f564e55bfc644a92f0e8da8fbab6f",
+            "semantic_projection_after": {
+              "calls": [
+                {
+                  "arguments": {
+                    "order_id": "ORD-1"
+                  },
+                  "index": 0,
+                  "name": "get_order"
+                },
+                {
+                  "arguments": {
+                    "topic": "refund"
+                  },
+                  "index": 1,
+                  "name": "get_policies"
+                },
+                {
+                  "arguments": {
+                    "confirm": false,
+                    "item_id": "ITEM-1"
+                  },
+                  "index": 2,
+                  "name": "process_refund"
+                }
+              ],
+              "results": [
+                {
+                  "content": {
+                    "order_id": "ORD-1"
+                  },
+                  "index": 0
+                },
+                {
+                  "content": {
+                    "policy": "refund"
+                  },
+                  "index": 1
+                },
+                {
+                  "content": {
+                    "status": "preview"
+                  },
+                  "index": 2
+                }
+              ]
+            },
+            "semantic_projection_before": {
+              "calls": [
+                {
+                  "arguments": {
+                    "order_id": "ORD-1"
+                  },
+                  "index": 0,
+                  "name": "get_order"
+                },
+                {
+                  "arguments": {
+                    "topic": "refund"
+                  },
+                  "index": 1,
+                  "name": "get_policies"
+                },
+                {
+                  "arguments": {
+                    "confirm": false,
+                    "item_id": "ITEM-1"
+                  },
+                  "index": 2,
+                  "name": "process_refund"
+                }
+              ],
+              "results": [
+                {
+                  "content": {
+                    "order_id": "ORD-1"
+                  },
+                  "index": 0
+                },
+                {
+                  "content": {
+                    "policy": "refund"
+                  },
+                  "index": 1
+                },
+                {
+                  "content": {
+                    "status": "preview"
+                  },
+                  "index": 2
+                }
+              ]
+            },
+            "semantic_projection_preserved": true,
+            "template_sha256": "e10ca381b1ccc5cf9db52e371f3b6651576caee0a630b452e2816b2d404d4b65",
+            "transport_id_mapping": null
+          },
+          "stderr_sha256": "fe1b79aa51b672602bd8c02cc8cef601c835476a67ff116592551b66bf6f8228"
+        },
+        {
+          "epoch": 1,
+          "fresh_process": true,
+          "result": {
+            "accepted": true,
+            "counterfactual_template_sha256": "ffefa3f3ac71909b49a6b22eb971f498045c71dafd3ef3a009b0a73c629be1c2",
+            "exception": null,
+            "finding_id": "RW-RUNTIME-001",
+            "gpu_calls": 0,
+            "input_sha256": "125218077e3dc1eefbe0ec727609520d0e40e56d3036de63b1f55b3aa27ec265",
+            "mode": "repair",
+            "model_calls": 0,
+            "rendered_length": 2374,
+            "rendered_sha256": "84b1a96d5a776786d01dc61c8205d15a945f564e55bfc644a92f0e8da8fbab6f",
+            "semantic_projection_after": {
+              "calls": [
+                {
+                  "arguments": {
+                    "order_id": "ORD-1"
+                  },
+                  "index": 0,
+                  "name": "get_order"
+                },
+                {
+                  "arguments": {
+                    "topic": "refund"
+                  },
+                  "index": 1,
+                  "name": "get_policies"
+                },
+                {
+                  "arguments": {
+                    "confirm": false,
+                    "item_id": "ITEM-1"
+                  },
+                  "index": 2,
+                  "name": "process_refund"
+                }
+              ],
+              "results": [
+                {
+                  "content": {
+                    "order_id": "ORD-1"
+                  },
+                  "index": 0
+                },
+                {
+                  "content": {
+                    "policy": "refund"
+                  },
+                  "index": 1
+                },
+                {
+                  "content": {
+                    "status": "preview"
+                  },
+                  "index": 2
+                }
+              ]
+            },
+            "semantic_projection_before": {
+              "calls": [
+                {
+                  "arguments": {
+                    "order_id": "ORD-1"
+                  },
+                  "index": 0,
+                  "name": "get_order"
+                },
+                {
+                  "arguments": {
+                    "topic": "refund"
+                  },
+                  "index": 1,
+                  "name": "get_policies"
+                },
+                {
+                  "arguments": {
+                    "confirm": false,
+                    "item_id": "ITEM-1"
+                  },
+                  "index": 2,
+                  "name": "process_refund"
+                }
+              ],
+              "results": [
+                {
+                  "content": {
+                    "order_id": "ORD-1"
+                  },
+                  "index": 0
+                },
+                {
+                  "content": {
+                    "policy": "refund"
+                  },
+                  "index": 1
+                },
+                {
+                  "content": {
+                    "status": "preview"
+                  },
+                  "index": 2
+                }
+              ]
+            },
+            "semantic_projection_preserved": true,
+            "template_sha256": "e10ca381b1ccc5cf9db52e371f3b6651576caee0a630b452e2816b2d404d4b65",
+            "transport_id_mapping": null
+          },
+          "stderr_sha256": "fe1b79aa51b672602bd8c02cc8cef601c835476a67ff116592551b66bf6f8228"
+        },
+        {
+          "epoch": 2,
+          "fresh_process": true,
+          "result": {
+            "accepted": true,
+            "counterfactual_template_sha256": "ffefa3f3ac71909b49a6b22eb971f498045c71dafd3ef3a009b0a73c629be1c2",
+            "exception": null,
+            "finding_id": "RW-RUNTIME-001",
+            "gpu_calls": 0,
+            "input_sha256": "125218077e3dc1eefbe0ec727609520d0e40e56d3036de63b1f55b3aa27ec265",
+            "mode": "repair",
+            "model_calls": 0,
+            "rendered_length": 2374,
+            "rendered_sha256": "84b1a96d5a776786d01dc61c8205d15a945f564e55bfc644a92f0e8da8fbab6f",
+            "semantic_projection_after": {
+              "calls": [
+                {
+                  "arguments": {
+                    "order_id": "ORD-1"
+                  },
+                  "index": 0,
+                  "name": "get_order"
+                },
+                {
+                  "arguments": {
+                    "topic": "refund"
+                  },
+                  "index": 1,
+                  "name": "get_policies"
+                },
+                {
+                  "arguments": {
+                    "confirm": false,
+                    "item_id": "ITEM-1"
+                  },
+                  "index": 2,
+                  "name": "process_refund"
+                }
+              ],
+              "results": [
+                {
+                  "content": {
+                    "order_id": "ORD-1"
+                  },
+                  "index": 0
+                },
+                {
+                  "content": {
+                    "policy": "refund"
+                  },
+                  "index": 1
+                },
+                {
+                  "content": {
+                    "status": "preview"
+                  },
+                  "index": 2
+                }
+              ]
+            },
+            "semantic_projection_before": {
+              "calls": [
+                {
+                  "arguments": {
+                    "order_id": "ORD-1"
+                  },
+                  "index": 0,
+                  "name": "get_order"
+                },
+                {
+                  "arguments": {
+                    "topic": "refund"
+                  },
+                  "index": 1,
+                  "name": "get_policies"
+                },
+                {
+                  "arguments": {
+                    "confirm": false,
+                    "item_id": "ITEM-1"
+                  },
+                  "index": 2,
+                  "name": "process_refund"
+                }
+              ],
+              "results": [
+                {
+                  "content": {
+                    "order_id": "ORD-1"
+                  },
+                  "index": 0
+                },
+                {
+                  "content": {
+                    "policy": "refund"
+                  },
+                  "index": 1
+                },
+                {
+                  "content": {
+                    "status": "preview"
+                  },
+                  "index": 2
+                }
+              ]
+            },
+            "semantic_projection_preserved": true,
+            "template_sha256": "e10ca381b1ccc5cf9db52e371f3b6651576caee0a630b452e2816b2d404d4b65",
+            "transport_id_mapping": null
+          },
+          "stderr_sha256": "fe1b79aa51b672602bd8c02cc8cef601c835476a67ff116592551b66bf6f8228"
+        }
+      ],
+      "restored": 3,
+      "semantic_projection_preserved": true,
+      "status": "PASS"
+    },
+    "RW-RUNTIME-002": {
+      "denominator": 3,
+      "deterministic": true,
+      "repetitions": [
+        {
+          "epoch": 0,
+          "fresh_process": true,
+          "result": {
+            "accepted": true,
+            "counterfactual_template_sha256": null,
+            "exception": null,
+            "finding_id": "RW-RUNTIME-002",
+            "gpu_calls": 0,
+            "input_sha256": "97cfb4427f4667fae5a1a7a2d8960f609a595f57b0e213c09af5a30d90d53762",
+            "mode": "repair",
+            "model_calls": 0,
+            "rendered_length": 857,
+            "rendered_sha256": "cb8ccc1864543111213a8bb7ed976159a1412339c7b7bbd6e3750c5737a1b2d8",
+            "semantic_projection_after": {
+              "calls": [
+                {
+                  "arguments": {
+                    "order_id": "ORD-1"
+                  },
+                  "index": 0,
+                  "name": "get_order"
+                }
+              ],
+              "results": [
+                {
+                  "content": {
+                    "order_id": "ORD-1"
+                  },
+                  "index": 0
+                }
+              ]
+            },
+            "semantic_projection_before": {
+              "calls": [
+                {
+                  "arguments": {
+                    "order_id": "ORD-1"
+                  },
+                  "index": 0,
+                  "name": "get_order"
+                }
+              ],
+              "results": [
+                {
+                  "content": {
+                    "order_id": "ORD-1"
+                  },
+                  "index": 0
+                }
+              ]
+            },
+            "semantic_projection_preserved": true,
+            "template_sha256": "e16746b40344d6c5b5265988e0328a0bf7277be86f1c335156eae07e29c82826",
+            "transport_id_mapping": {
+              "call_000000000000000000000000": "h30000000"
+            }
+          },
+          "stderr_sha256": "fe1b79aa51b672602bd8c02cc8cef601c835476a67ff116592551b66bf6f8228"
+        },
+        {
+          "epoch": 1,
+          "fresh_process": true,
+          "result": {
+            "accepted": true,
+            "counterfactual_template_sha256": null,
+            "exception": null,
+            "finding_id": "RW-RUNTIME-002",
+            "gpu_calls": 0,
+            "input_sha256": "97cfb4427f4667fae5a1a7a2d8960f609a595f57b0e213c09af5a30d90d53762",
+            "mode": "repair",
+            "model_calls": 0,
+            "rendered_length": 857,
+            "rendered_sha256": "cb8ccc1864543111213a8bb7ed976159a1412339c7b7bbd6e3750c5737a1b2d8",
+            "semantic_projection_after": {
+              "calls": [
+                {
+                  "arguments": {
+                    "order_id": "ORD-1"
+                  },
+                  "index": 0,
+                  "name": "get_order"
+                }
+              ],
+              "results": [
+                {
+                  "content": {
+                    "order_id": "ORD-1"
+                  },
+                  "index": 0
+                }
+              ]
+            },
+            "semantic_projection_before": {
+              "calls": [
+                {
+                  "arguments": {
+                    "order_id": "ORD-1"
+                  },
+                  "index": 0,
+                  "name": "get_order"
+                }
+              ],
+              "results": [
+                {
+                  "content": {
+                    "order_id": "ORD-1"
+                  },
+                  "index": 0
+                }
+              ]
+            },
+            "semantic_projection_preserved": true,
+            "template_sha256": "e16746b40344d6c5b5265988e0328a0bf7277be86f1c335156eae07e29c82826",
+            "transport_id_mapping": {
+              "call_000000000000000000000000": "h30000000"
+            }
+          },
+          "stderr_sha256": "fe1b79aa51b672602bd8c02cc8cef601c835476a67ff116592551b66bf6f8228"
+        },
+        {
+          "epoch": 2,
+          "fresh_process": true,
+          "result": {
+            "accepted": true,
+            "counterfactual_template_sha256": null,
+            "exception": null,
+            "finding_id": "RW-RUNTIME-002",
+            "gpu_calls": 0,
+            "input_sha256": "97cfb4427f4667fae5a1a7a2d8960f609a595f57b0e213c09af5a30d90d53762",
+            "mode": "repair",
+            "model_calls": 0,
+            "rendered_length": 857,
+            "rendered_sha256": "cb8ccc1864543111213a8bb7ed976159a1412339c7b7bbd6e3750c5737a1b2d8",
+            "semantic_projection_after": {
+              "calls": [
+                {
+                  "arguments": {
+                    "order_id": "ORD-1"
+                  },
+                  "index": 0,
+                  "name": "get_order"
+                }
+              ],
+              "results": [
+                {
+                  "content": {
+                    "order_id": "ORD-1"
+                  },
+                  "index": 0
+                }
+              ]
+            },
+            "semantic_projection_before": {
+              "calls": [
+                {
+                  "arguments": {
+                    "order_id": "ORD-1"
+                  },
+                  "index": 0,
+                  "name": "get_order"
+                }
+              ],
+              "results": [
+                {
+                  "content": {
+                    "order_id": "ORD-1"
+                  },
+                  "index": 0
+                }
+              ]
+            },
+            "semantic_projection_preserved": true,
+            "template_sha256": "e16746b40344d6c5b5265988e0328a0bf7277be86f1c335156eae07e29c82826",
+            "transport_id_mapping": {
+              "call_000000000000000000000000": "h30000000"
+            }
+          },
+          "stderr_sha256": "fe1b79aa51b672602bd8c02cc8cef601c835476a67ff116592551b66bf6f8228"
+        }
+      ],
+      "restored": 3,
+      "semantic_projection_preserved": true,
+      "status": "PASS"
+    },
+    "RW-RUNTIME-003": {
+      "denominator": 3,
+      "deterministic": true,
+      "repetitions": [
+        {
+          "epoch": 0,
+          "fresh_process": true,
+          "result": {
+            "accepted": true,
+            "counterfactual_template_sha256": "eab6f18cdb1e25d2c6d0ffe20b09e0d02c8fc687becefb2a18db04e4628b7371",
+            "exception": null,
+            "finding_id": "RW-RUNTIME-003",
+            "gpu_calls": 0,
+            "input_sha256": "73e847f5143f62e4b4a5b9c16bd60d08e2a13fde596c2e346aaf63a13fd067bc",
+            "mode": "repair",
+            "model_calls": 0,
+            "rendered_length": 934,
+            "rendered_sha256": "647a41209180c04cd77af80049957568d3e201c07a7857bd642dc7cb5a62f84e",
+            "semantic_projection_after": {
+              "calls": [
+                {
+                  "arguments": {
+                    "order_id": "ORD-1"
+                  },
+                  "index": 0,
+                  "name": "get_order"
+                }
+              ],
+              "results": [
+                {
+                  "content": {
+                    "order_id": "ORD-1"
+                  },
+                  "index": 0
+                }
+              ]
+            },
+            "semantic_projection_before": {
+              "calls": [
+                {
+                  "arguments": {
+                    "order_id": "ORD-1"
+                  },
+                  "index": 0,
+                  "name": "get_order"
+                }
+              ],
+              "results": [
+                {
+                  "content": {
+                    "order_id": "ORD-1"
+                  },
+                  "index": 0
+                }
+              ]
+            },
+            "semantic_projection_preserved": true,
+            "template_sha256": "e16746b40344d6c5b5265988e0328a0bf7277be86f1c335156eae07e29c82826",
+            "transport_id_mapping": null
+          },
+          "stderr_sha256": "fe1b79aa51b672602bd8c02cc8cef601c835476a67ff116592551b66bf6f8228"
+        },
+        {
+          "epoch": 1,
+          "fresh_process": true,
+          "result": {
+            "accepted": true,
+            "counterfactual_template_sha256": "eab6f18cdb1e25d2c6d0ffe20b09e0d02c8fc687becefb2a18db04e4628b7371",
+            "exception": null,
+            "finding_id": "RW-RUNTIME-003",
+            "gpu_calls": 0,
+            "input_sha256": "73e847f5143f62e4b4a5b9c16bd60d08e2a13fde596c2e346aaf63a13fd067bc",
+            "mode": "repair",
+            "model_calls": 0,
+            "rendered_length": 934,
+            "rendered_sha256": "647a41209180c04cd77af80049957568d3e201c07a7857bd642dc7cb5a62f84e",
+            "semantic_projection_after": {
+              "calls": [
+                {
+                  "arguments": {
+                    "order_id": "ORD-1"
+                  },
+                  "index": 0,
+                  "name": "get_order"
+                }
+              ],
+              "results": [
+                {
+                  "content": {
+                    "order_id": "ORD-1"
+                  },
+                  "index": 0
+                }
+              ]
+            },
+            "semantic_projection_before": {
+              "calls": [
+                {
+                  "arguments": {
+                    "order_id": "ORD-1"
+                  },
+                  "index": 0,
+                  "name": "get_order"
+                }
+              ],
+              "results": [
+                {
+                  "content": {
+                    "order_id": "ORD-1"
+                  },
+                  "index": 0
+                }
+              ]
+            },
+            "semantic_projection_preserved": true,
+            "template_sha256": "e16746b40344d6c5b5265988e0328a0bf7277be86f1c335156eae07e29c82826",
+            "transport_id_mapping": null
+          },
+          "stderr_sha256": "fe1b79aa51b672602bd8c02cc8cef601c835476a67ff116592551b66bf6f8228"
+        },
+        {
+          "epoch": 2,
+          "fresh_process": true,
+          "result": {
+            "accepted": true,
+            "counterfactual_template_sha256": "eab6f18cdb1e25d2c6d0ffe20b09e0d02c8fc687becefb2a18db04e4628b7371",
+            "exception": null,
+            "finding_id": "RW-RUNTIME-003",
+            "gpu_calls": 0,
+            "input_sha256": "73e847f5143f62e4b4a5b9c16bd60d08e2a13fde596c2e346aaf63a13fd067bc",
+            "mode": "repair",
+            "model_calls": 0,
+            "rendered_length": 934,
+            "rendered_sha256": "647a41209180c04cd77af80049957568d3e201c07a7857bd642dc7cb5a62f84e",
+            "semantic_projection_after": {
+              "calls": [
+                {
+                  "arguments": {
+                    "order_id": "ORD-1"
+                  },
+                  "index": 0,
+                  "name": "get_order"
+                }
+              ],
+              "results": [
+                {
+                  "content": {
+                    "order_id": "ORD-1"
+                  },
+                  "index": 0
+                }
+              ]
+            },
+            "semantic_projection_before": {
+              "calls": [
+                {
+                  "arguments": {
+                    "order_id": "ORD-1"
+                  },
+                  "index": 0,
+                  "name": "get_order"
+                }
+              ],
+              "results": [
+                {
+                  "content": {
+                    "order_id": "ORD-1"
+                  },
+                  "index": 0
+                }
+              ]
+            },
+            "semantic_projection_preserved": true,
+            "template_sha256": "e16746b40344d6c5b5265988e0328a0bf7277be86f1c335156eae07e29c82826",
+            "transport_id_mapping": null
+          },
+          "stderr_sha256": "fe1b79aa51b672602bd8c02cc8cef601c835476a67ff116592551b66bf6f8228"
+        }
+      ],
+      "restored": 3,
+      "semantic_projection_preserved": true,
+      "status": "PASS"
+    }
+  },
+  "generated_at_utc": "2026-08-11T12:54:45.308918+00:00",
+  "schema_version": "paritymem.h3a_r0.counterfactual_repair_results.v1"
+}

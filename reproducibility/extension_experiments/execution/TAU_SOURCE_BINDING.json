@@ -1,0 +1,35 @@
+{
+  "files": [
+    {
+      "source_path": "external_unseen_benchmarks/tau3_bench/src/tau2/domains/retail/tools.py",
+      "sha256": "34f4fe9702d36f0dd4697700fbcd63d0cf5386e6eb8e7499aaa336243bad8750"
+    },
+    {
+      "source_path": "external_unseen_benchmarks/tau3_bench/src/tau2/domains/retail/data_model.py",
+      "sha256": "f5ad09590953855cc49d2ab2ad5c0594be408cae74d1500fb278e5a6bf2c50d6"
+    },
+    {
+      "source_path": "external_unseen_benchmarks/tau3_bench/src/tau2/domains/retail/environment.py",
+      "sha256": "5b819fb895a4ef49df71404c3d9678ab09e8578eec841b8ec9229c8f51e32405"
+    },
+    {
+      "source_path": "external_unseen_benchmarks/tau3_bench/src/tau2/environment/environment.py",
+      "sha256": "b5357f11e2914c11ce0372af919cc1d726191b91cd97f776b8fb388ae0615350"
+    },
+    {
+      "source_path": "external_unseen_benchmarks/tau3_bench/src/tau2/environment/toolkit.py",
+      "sha256": "3e897891e8878c3399aec72e42eb0eb5546642420c0c902b225421fc936b924a"
+    },
+    {
+      "source_path": "external_unseen_benchmarks/tau3_bench/src/tau2/environment/tool.py",
+      "sha256": "6dd74021ba95a6f8dfa0971546b768b90e15b212f8f9051156ae6bcdd24b77d3"
+    },
+    {
+      "source_path": "external_unseen_benchmarks/tau3_bench/src/tau2/data_model/message.py",
+      "sha256": "378cc451ded5b4314c4fe177bf83e72abb2e0bba53b79c2a0e27c53f3cbd15b0"
+    }
+  ],
+  "original_source_revision": "79975ac5741e23fbb1d2ac44262d62398a6d87bd",
+  "method_bodies_modified": false,
+  "environment_state_isolated_in_memory": true
+}

@@ -1,0 +1,30 @@
+{
+  "primary_semantic_conditions": 144,
+  "unique_traces": 48,
+  "total_alias_evaluations": 288,
+  "gold_severity_counts": {
+    "R3": 120,
+    "R0": 16,
+    "R2": 8
+  },
+  "outcome_agreement": 144,
+  "severity_agreement": 144,
+  "first_divergence_agreement": 144,
+  "safe_false_alarms": 0,
+  "safe_conditions": 16,
+  "defect_recall": 128,
+  "defect_conditions": 128,
+  "name_invariance": {
+    "correct": 144,
+    "total": 144
+  },
+  "contract_change_contrasts": {
+    "correct": 48,
+    "total": 48
+  },
+  "all_alias_evaluation_agreement": 288,
+  "prediction_seal_verified": true,
+  "new_model_calls": 0,
+  "new_gpu_runs": 0,
+  "scope": "New declarative adapter plus unchanged controlled core, tested on source-grounded controlled template variants. Primary denominator is 144 conditions on 48 traces; name aliases are not extra independent cases. Pre-outcome sealing does not imply independent external double-blind design."
+}

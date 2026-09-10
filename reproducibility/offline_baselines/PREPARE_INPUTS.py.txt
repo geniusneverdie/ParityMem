@@ -1,0 +1,24 @@
+from pathlib import Path
+import json,hashlib
+root=Path('/data9/amx/fourth/paritymem')
+paper=root/'paritymem/ParityMem_ICASSP_2027_Method_Clarified_Complete'
+folder=paper/'reproducibility/offline_baselines';folder.mkdir()
+elig_path=root/'artifacts/ai_venue_pivot_r0/natural_trace_eligibility.json'
+history_path=root/'artifacts/ai_venue_pivot_r0/fixed_trace_outcomes.jsonl'
+e=json.loads(elig_path.read_text());em={r['cell_id']:r for r in e['rows'] if r['eligibility']=='ELIGIBLE'}
+h=[json.loads(s) for s in history_path.read_text().splitlines() if s.strip()]
+out=[];gold=[]
+for row in h:
+    natural=em[row['cell_id']]['natural_projection']
+    source={'assistant_content':natural['assistant_content'],'calls':[{'id':c['source_id'],'name':c['name'],'arguments':c['arguments']} for c in natural['native_calls']], 'results':[{'id':r['source_id'],'content':r['content']} for r in natural['native_results']]}
+    history=row['history_object'];assist=[m for m in history if m['role']=='assistant'];assert len(assist)==1
+    m=assist[0]
+    target={'assistant_content':m.get('content',''),'calls':[{'id':c.get('id'),'name':c['function']['name'],'arguments':c['function']['arguments']} for c in m.get('tool_calls',[])], 'results':[{'id':r.get('tool_call_id'),'content':r.get('content')} for r in history if r['role']=='tool']}
+    out.append({'cell_id':row['cell_id'],'source':source,'target':target})
+    gold.append({'cell_id':row['cell_id'],'blocked':row['actual']['actual_class']!='SAFE_REACHABLE'})
+assert len(out)==354 and len({r['cell_id'] for r in out})==354
+(folder/'inputs.jsonl').write_text(''.join(json.dumps(r,sort_keys=True,ensure_ascii=False)+'\n' for r in out))
+(folder/'gold.jsonl').write_text(''.join(json.dumps(r,sort_keys=True)+'\n' for r in gold))
+manifest={'study_type':'post_hoc_offline_record_comparison','date':'2026-09-07','source_files':[{'path':str(p.relative_to(root)),'sha256':hashlib.sha256(p.read_bytes()).hexdigest()} for p in [elig_path,history_path]],'input_scope':'Assistant content plus ordered call/name/argument and result/content records. Source from frozen natural projection; target from frozen backend history. Transport IDs retained in inputs.','predictor_inputs':['cell_id','source','target'],'gold_access_in_predictor':False,'new_model_calls':0,'new_backend_calls':0,'source_records_modified':False}
+(folder/'protocol.json').write_text(json.dumps(manifest,indent=2)+'\n')
+print('Prepared',len(out),'paired records')

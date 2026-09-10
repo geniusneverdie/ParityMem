@@ -1,0 +1,3 @@
+# Default verify/demo commands require Python 3.10+ and only the standard library.
+# No pip installation is necessary. Historical template/GPU/timing scripts are
+# outside these default entry points and retain their original environments.

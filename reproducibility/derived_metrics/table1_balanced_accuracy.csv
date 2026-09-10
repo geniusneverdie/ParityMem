@@ -1,0 +1,8 @@
+variant,TN_safe,FP_safe,TP_block,FN_block,outcome_correct,safe_acceptance_percent,block_recall_percent,balanced_accuracy_percent
+Raw equality,0,295,59,0,59/354,0.0,100.0,50.0
+Strict schema,295,0,0,59,295/354,100.0,0.0,50.0
+Generic normalization,295,0,0,59,295/354,100.0,0.0,50.0
+Full ParityMem,295,0,59,0,354/354,100.0,100.0,100.0
+No pairing semantics,0,295,59,0,59/354,0.0,100.0,50.0
+No history closure,295,0,0,59,295/354,100.0,0.0,50.0
+P0/P1 only,295,0,0,59,295/354,100.0,0.0,50.0

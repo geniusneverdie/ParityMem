@@ -1,0 +1,100 @@
+#!/usr/bin/env python3
+"""Source-grounded P2-S0 adjudicator with no ParityMem or gold imports."""
+
+from __future__ import annotations
+
+import argparse
+import hashlib
+import json
+from pathlib import Path
+from typing import Any
+
+
+def sha_bytes(data: bytes) -> str:
+    return hashlib.sha256(data).hexdigest()
+
+
+def classify(row: dict[str, Any]) -> dict[str, Any]:
+    official = row["official"]
+    observed = row["observed"]
+    history = row["history"]
+    pairing = row["pairing"]
+    validation = row["ownership"].get("official_validation")
+    classification = "SAFE_REPRESENTATION_DRIFT"
+    severity = "R0"
+    divergence = "NONE"
+
+    left = official["semantics"]
+    right = observed["semantics"]
+    if left != right:
+        classification = "MODEL_VISIBLE_SEMANTIC_DEFECT"
+        severity = "R2"
+        if left["assistant_text"] != right["assistant_text"]:
+            divergence = "$.messages[0].assistant_text"
+        elif left["calls"] != right["calls"]:
+            la = left["calls"][0]["arguments"]
+            ra = right["calls"][0]["arguments"]
+            divergence = "$.ownership.normalized_value" if la.get("confirm") is False and ra.get("confirm") is True else "$.tool_calls[0].arguments.order_id"
+        elif left["history_roles"] != right["history_roles"]:
+            divergence = "$.history.roles"
+        else:
+            divergence = "$.observation.status"
+    elif history["runtime_reachable"] and not history["encoder_accepts_observed"]:
+        classification, severity, divergence = "EXECUTION_OR_CLOSURE_DEFECT", "R3", "$.history.encoder_accepts_observed"
+    else:
+        official_execution = official["execution"]
+        observed_execution = observed["execution"]
+        result_indices = [item["paired_call_index"] for item in pairing["history_results"]]
+        expected_indices = list(range(len(pairing["original_calls"])))
+        if result_indices != expected_indices:
+            classification, severity, divergence = "EXECUTION_OR_CLOSURE_DEFECT", "R3", "$.history.tool_result_pairing"
+        elif official_execution != observed_execution:
+            classification, severity = "EXECUTION_OR_CLOSURE_DEFECT", "R3"
+            if official_execution["order"] != observed_execution["order"]:
+                divergence = "$.transition.execution_order"
+            elif official_execution["state"] != observed_execution["state"]:
+                divergence = "$.transition.state"
+            else:
+                divergence = "$.transition.count"
+        elif official["score"] != observed["score"]:
+            classification, severity, divergence = "SCORING_DEFECT", "R4", "$.scorer"
+        elif validation is not None:
+            classification = "EXPECTED_OFFICIAL_BEHAVIOR"
+
+    original_count = len(pairing["original_calls"])
+    result_indices = [item["paired_call_index"] for item in pairing["history_results"]]
+    identity_pairing_preserved = sorted(result_indices) == list(range(original_count)) and len(set(result_indices)) == original_count
+    return {
+        "fixture_id": row["fixture_id"], "integration_id": row["integration_id"],
+        "classification": classification, "severity": severity, "first_divergence": divergence,
+        "identity_pairing_preserved": identity_pairing_preserved,
+        "novel_composition": bool(row["novel_composition"]),
+        "oracle_basis": "SOURCE_DERIVED_ORACLE", "unresolved": False,
+    }
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--inputs", required=True)
+    parser.add_argument("--source-registry", required=True)
+    parser.add_argument("--output", required=True)
+    args = parser.parse_args()
+    inputs = Path(args.inputs)
+    source_registry = Path(args.source_registry)
+    output = Path(args.output)
+    if output.exists():
+        raise RuntimeError("ADJUDICATION_OUTPUT_COLLISION")
+    registry = json.loads(source_registry.read_text())
+    for item in registry["sources"]:
+        path = Path(item["path"])
+        if not path.is_file() or sha_bytes(path.read_bytes()) != item["sha256"]:
+            raise RuntimeError(f"SOURCE_PROVENANCE_MISMATCH:{path}")
+    rows = [json.loads(line) for line in inputs.read_text().splitlines() if line.strip()]
+    with output.open("x", encoding="utf-8") as handle:
+        for row in rows:
+            handle.write(json.dumps(classify(row), ensure_ascii=False, sort_keys=True) + "\n")
+    print(json.dumps({"adjudicated": len(rows), "gold_read": False, "paritymem_imported": False}, sort_keys=True))
+
+
+if __name__ == "__main__":
+    main()

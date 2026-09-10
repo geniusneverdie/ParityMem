@@ -1,0 +1,140 @@
+{
+  "ok": true,
+  "frozen_method_files_hash_checked": 59,
+  "core_outputs_reproduced": 300,
+  "core_gold_endpoint_agreement": {
+    "is_defect": 300,
+    "classification": 300,
+    "severity": 300,
+    "first_divergence": 300
+  },
+  "matrix_predictions_recomputed": 354,
+  "controlled_ablation_predictions": 1500,
+  "controlled_ablation_results": [
+    {
+      "variant": "Full",
+      "cells": 300,
+      "outcome_correct": 300,
+      "safe_false_alarms": 0,
+      "safe_denominator": 150,
+      "defects_detected": 150,
+      "defect_denominator": 150,
+      "severity_label_agreement": 300
+    },
+    {
+      "variant": "No pairing rejection",
+      "cells": 300,
+      "outcome_correct": 289,
+      "safe_false_alarms": 0,
+      "safe_denominator": 150,
+      "defects_detected": 139,
+      "defect_denominator": 150,
+      "severity_label_agreement": 289
+    },
+    {
+      "variant": "No history-closure rejection",
+      "cells": 300,
+      "outcome_correct": 285,
+      "safe_false_alarms": 0,
+      "safe_denominator": 150,
+      "defects_detected": 135,
+      "defect_denominator": 150,
+      "severity_label_agreement": 285
+    },
+    {
+      "variant": "P0/P1 only",
+      "cells": 300,
+      "outcome_correct": 225,
+      "safe_false_alarms": 0,
+      "safe_denominator": 150,
+      "defects_detected": 75,
+      "defect_denominator": 150,
+      "severity_label_agreement": 225
+    },
+    {
+      "variant": "Literal transport-ID pairing",
+      "cells": 300,
+      "outcome_correct": 150,
+      "safe_false_alarms": 150,
+      "safe_denominator": 150,
+      "defects_detected": 150,
+      "defect_denominator": 150,
+      "severity_label_agreement": 150
+    }
+  ],
+  "balanced_panel": {
+    "universe": 80,
+    "selected": 36,
+    "strata": 4,
+    "selected_per_stratum": 9,
+    "original_selection_exactly_reconstructed": true
+  },
+  "server_epochs": 8,
+  "request_records": 360,
+  "repeat_assignments_exactly_reconstructed": 360,
+  "prompt_replay_receipt_verified": 72,
+  "integration_contract_fields": 30,
+  "shared_core_changes": 0,
+  "pairing_field_scope_note": "Frozen composite pairing gate includes argument/normalization checks; raw gold pairing annotation has a narrower association scope.",
+  "pairing_field_scope_cases": [
+    {
+      "fixture_id": "P1H-04-30",
+      "family": "EXECUTION_ORDER_CHANGE",
+      "gold_pairing": true,
+      "composite_gate": false
+    },
+    {
+      "fixture_id": "P1H-05-29",
+      "family": "EXECUTION_ORDER_CHANGE",
+      "gold_pairing": true,
+      "composite_gate": false
+    },
+    {
+      "fixture_id": "P1H-06-28",
+      "family": "EXECUTION_ORDER_CHANGE",
+      "gold_pairing": true,
+      "composite_gate": false
+    },
+    {
+      "fixture_id": "P1H-07-27",
+      "family": "EXECUTION_ORDER_CHANGE",
+      "gold_pairing": true,
+      "composite_gate": false
+    },
+    {
+      "fixture_id": "P1H-08-26",
+      "family": "EXECUTION_ORDER_CHANGE",
+      "gold_pairing": true,
+      "composite_gate": false
+    },
+    {
+      "fixture_id": "P1H-09-25",
+      "family": "EXECUTION_ORDER_CHANGE",
+      "gold_pairing": true,
+      "composite_gate": false
+    },
+    {
+      "fixture_id": "P1H-09-30",
+      "family": "EXECUTION_ORDER_CHANGE",
+      "gold_pairing": true,
+      "composite_gate": false
+    },
+    {
+      "fixture_id": "P1H-10-24",
+      "family": "EXECUTION_ORDER_CHANGE",
+      "gold_pairing": true,
+      "composite_gate": false
+    },
+    {
+      "fixture_id": "P1H-10-29",
+      "family": "EXECUTION_ORDER_CHANGE",
+      "gold_pairing": true,
+      "composite_gate": false
+    }
+  ],
+  "new_model_calls": 0,
+  "new_backend_calls": 0,
+  "new_gpu_runs": 0,
+  "record_baseline_decisions_verified": 1062,
+  "stable_action_pairs_verified": 36
+}

@@ -1,0 +1,291 @@
+{
+  "call_counts": {
+    "benchmark_scientific": 0,
+    "gpu": 0,
+    "http_model": 0,
+    "model": 0
+  },
+  "contract_field_count": 30,
+  "fields": [
+    {
+      "benchmark_id": "TAU3",
+      "contract_field": "Session",
+      "source_exists": true,
+      "source_file": "src/tau2/data_model/simulation.py",
+      "source_sha256": "27e46024145095b852667c4994ebe913acc37aecd5570d19689c1030f787c1f5",
+      "source_symbol": "SimulationRun",
+      "status": "AUTO_EXTRACTED"
+    },
+    {
+      "benchmark_id": "TAU3",
+      "contract_field": "Observation",
+      "source_exists": true,
+      "source_file": "src/tau2/data_model/message.py",
+      "source_sha256": "378cc451ded5b4314c4fe177bf83e72abb2e0bba53b79c2a0e27c53f3cbd15b0",
+      "source_symbol": "ToolMessage",
+      "status": "AUTO_EXTRACTED"
+    },
+    {
+      "benchmark_id": "TAU3",
+      "contract_field": "Memory/State",
+      "source_exists": true,
+      "source_file": "src/tau2/data_model/tasks.py",
+      "source_sha256": "0243a6454b2e9c8a14b8364c38ff95dc1dd7512105b69fada9bf9295fc8170fa",
+      "source_symbol": "InitialState",
+      "status": "SOURCE_CONFIRMED"
+    },
+    {
+      "benchmark_id": "TAU3",
+      "contract_field": "Action",
+      "source_exists": true,
+      "source_file": "src/tau2/data_model/message.py",
+      "source_sha256": "378cc451ded5b4314c4fe177bf83e72abb2e0bba53b79c2a0e27c53f3cbd15b0",
+      "source_symbol": "ToolCall",
+      "status": "AUTO_EXTRACTED"
+    },
+    {
+      "benchmark_id": "TAU3",
+      "contract_field": "Transition",
+      "source_exists": true,
+      "source_file": "src/tau2/environment/environment.py",
+      "source_sha256": "b5357f11e2914c11ce0372af919cc1d726191b91cd97f776b8fb388ae0615350",
+      "source_symbol": "Environment.get_response",
+      "status": "SOURCE_CONFIRMED"
+    },
+    {
+      "benchmark_id": "TAU3",
+      "contract_field": "Identifier",
+      "source_exists": true,
+      "source_file": "src/tau2/data_model/message.py",
+      "source_sha256": "378cc451ded5b4314c4fe177bf83e72abb2e0bba53b79c2a0e27c53f3cbd15b0",
+      "source_symbol": "ToolCall.id/ToolMessage.id",
+      "status": "AUTO_EXTRACTED"
+    },
+    {
+      "benchmark_id": "TAU3",
+      "contract_field": "Ordering",
+      "source_exists": true,
+      "source_file": "src/tau2/orchestrator/orchestrator.py",
+      "source_sha256": "ff6c2631a02b68a3341b1ca3d9a6122bb43ab872ee6acc960379c78015eca420",
+      "source_symbol": "Orchestrator",
+      "status": "SOURCE_CONFIRMED"
+    },
+    {
+      "benchmark_id": "TAU3",
+      "contract_field": "SideEffect",
+      "source_exists": true,
+      "source_file": "src/tau2/environment/environment.py",
+      "source_sha256": "b5357f11e2914c11ce0372af919cc1d726191b91cd97f776b8fb388ae0615350",
+      "source_symbol": "Environment.make_tool_call/sync_tools",
+      "status": "SOURCE_CONFIRMED"
+    },
+    {
+      "benchmark_id": "TAU3",
+      "contract_field": "Scorer",
+      "source_exists": true,
+      "source_file": "src/tau2/evaluator/evaluator.py",
+      "source_sha256": "204d95a82812402f2fee989250392d3c66de702a8bcc20258c7e2a8153a1ea8d",
+      "source_symbol": "evaluate_simulation",
+      "status": "SOURCE_CONFIRMED"
+    },
+    {
+      "benchmark_id": "TAU3",
+      "contract_field": "HistoryClosure",
+      "source_exists": true,
+      "source_file": "src/tau2/data_model/tasks.py",
+      "source_sha256": "0243a6454b2e9c8a14b8364c38ff95dc1dd7512105b69fada9bf9295fc8170fa",
+      "source_symbol": "InitialState.message_history",
+      "status": "SOURCE_CONFIRMED"
+    },
+    {
+      "benchmark_id": "TOOL_SANDBOX",
+      "contract_field": "Session",
+      "source_exists": true,
+      "source_file": "tool_sandbox/common/scenario.py",
+      "source_sha256": "95ca3ec161a8a66d98bfb1e00516a99c9f849f91bf10933e2d08aeb601543eb9",
+      "source_symbol": "Scenario",
+      "status": "AUTO_EXTRACTED"
+    },
+    {
+      "benchmark_id": "TOOL_SANDBOX",
+      "contract_field": "Observation",
+      "source_exists": true,
+      "source_file": "tool_sandbox/common/execution_context.py",
+      "source_sha256": "a18f54e157b92fa011e84780bc33941ea0635ad70ab4b38e7408beedc6221437",
+      "source_symbol": "SANDBOX schema/content",
+      "status": "AUTO_EXTRACTED"
+    },
+    {
+      "benchmark_id": "TOOL_SANDBOX",
+      "contract_field": "Memory/State",
+      "source_exists": true,
+      "source_file": "tool_sandbox/common/execution_context.py",
+      "source_sha256": "a18f54e157b92fa011e84780bc33941ea0635ad70ab4b38e7408beedc6221437",
+      "source_symbol": "ExecutionContext",
+      "status": "SOURCE_CONFIRMED"
+    },
+    {
+      "benchmark_id": "TOOL_SANDBOX",
+      "contract_field": "Action",
+      "source_exists": true,
+      "source_file": "tool_sandbox/roles/execution_environment.py",
+      "source_sha256": "b6088fec693848e132272bced87f34ae6ec9c7d2a85ddca8a71d74b2e028b116",
+      "source_symbol": "respond_to_messages",
+      "status": "SOURCE_CONFIRMED"
+    },
+    {
+      "benchmark_id": "TOOL_SANDBOX",
+      "contract_field": "Transition",
+      "source_exists": true,
+      "source_file": "tool_sandbox/common/execution_context.py",
+      "source_sha256": "a18f54e157b92fa011e84780bc33941ea0635ad70ab4b38e7408beedc6221437",
+      "source_symbol": "add_to_database",
+      "status": "SOURCE_CONFIRMED"
+    },
+    {
+      "benchmark_id": "TOOL_SANDBOX",
+      "contract_field": "Identifier",
+      "source_exists": true,
+      "source_file": "tool_sandbox/common/execution_context.py",
+      "source_sha256": "a18f54e157b92fa011e84780bc33941ea0635ad70ab4b38e7408beedc6221437",
+      "source_symbol": "openai_tool_call_id",
+      "status": "AUTO_EXTRACTED"
+    },
+    {
+      "benchmark_id": "TOOL_SANDBOX",
+      "contract_field": "Ordering",
+      "source_exists": true,
+      "source_file": "tool_sandbox/roles/execution_environment.py",
+      "source_sha256": "b6088fec693848e132272bced87f34ae6ec9c7d2a85ddca8a71d74b2e028b116",
+      "source_symbol": "tool_trace_index",
+      "status": "SOURCE_CONFIRMED"
+    },
+    {
+      "benchmark_id": "TOOL_SANDBOX",
+      "contract_field": "SideEffect",
+      "source_exists": true,
+      "source_file": "tool_sandbox/common/execution_context.py",
+      "source_sha256": "a18f54e157b92fa011e84780bc33941ea0635ad70ab4b38e7408beedc6221437",
+      "source_symbol": "snapshot history",
+      "status": "SOURCE_CONFIRMED"
+    },
+    {
+      "benchmark_id": "TOOL_SANDBOX",
+      "contract_field": "Scorer",
+      "source_exists": true,
+      "source_file": "tool_sandbox/common/evaluation.py",
+      "source_sha256": "0425cff032bd1ca2ebe8cc1c875cdf2ea86463af24b2940734007d938e516ab3",
+      "source_symbol": "Evaluation.evaluate",
+      "status": "SOURCE_CONFIRMED"
+    },
+    {
+      "benchmark_id": "TOOL_SANDBOX",
+      "contract_field": "HistoryClosure",
+      "source_exists": true,
+      "source_file": "tool_sandbox/common/message_conversion.py",
+      "source_sha256": "83ec90371bd8ce54b94729e4ac0412773fb6bd33463b01dbdaae3791dc7bf1f4",
+      "source_symbol": "serialize_to_conversation",
+      "status": "SOURCE_CONFIRMED"
+    },
+    {
+      "benchmark_id": "APPWORLD",
+      "contract_field": "Session",
+      "source_exists": true,
+      "source_file": "src/appworld/environment.py",
+      "source_sha256": "6f01aa53fbb29c1aac751c766c55af438ce5a612048c36671dbb8e877ee955ac",
+      "source_symbol": "AppWorld",
+      "status": "AUTO_EXTRACTED"
+    },
+    {
+      "benchmark_id": "APPWORLD",
+      "contract_field": "Observation",
+      "source_exists": true,
+      "source_file": "src/appworld/environment.py",
+      "source_sha256": "6f01aa53fbb29c1aac751c766c55af438ce5a612048c36671dbb8e877ee955ac",
+      "source_symbol": "environment_io output",
+      "status": "SOURCE_CONFIRMED"
+    },
+    {
+      "benchmark_id": "APPWORLD",
+      "contract_field": "Memory/State",
+      "source_exists": true,
+      "source_file": "src/appworld/environment.py",
+      "source_sha256": "6f01aa53fbb29c1aac751c766c55af438ce5a612048c36671dbb8e877ee955ac",
+      "source_symbol": "save_state/load_state",
+      "status": "SOURCE_CONFIRMED"
+    },
+    {
+      "benchmark_id": "APPWORLD",
+      "contract_field": "Action",
+      "source_exists": true,
+      "source_file": "src/appworld/requester.py",
+      "source_sha256": "65df400104ca228955caed22907916c81f8fce882e026aa91ba4113f8b66dc8d",
+      "source_symbol": "Requester.request",
+      "status": "SOURCE_CONFIRMED"
+    },
+    {
+      "benchmark_id": "APPWORLD",
+      "contract_field": "Transition",
+      "source_exists": true,
+      "source_file": "src/appworld/environment.py",
+      "source_sha256": "6f01aa53fbb29c1aac751c766c55af438ce5a612048c36671dbb8e877ee955ac",
+      "source_symbol": "AppWorld.execute",
+      "status": "SOURCE_CONFIRMED"
+    },
+    {
+      "benchmark_id": "APPWORLD",
+      "contract_field": "Identifier",
+      "source_exists": true,
+      "source_file": "src/appworld/requester.py",
+      "source_sha256": "65df400104ca228955caed22907916c81f8fce882e026aa91ba4113f8b66dc8d",
+      "source_symbol": "RequestCallInfo",
+      "status": "SOURCE_CONFIRMED"
+    },
+    {
+      "benchmark_id": "APPWORLD",
+      "contract_field": "Ordering",
+      "source_exists": true,
+      "source_file": "src/appworld/environment.py",
+      "source_sha256": "6f01aa53fbb29c1aac751c766c55af438ce5a612048c36671dbb8e877ee955ac",
+      "source_symbol": "interaction_number/batch_execute",
+      "status": "SOURCE_CONFIRMED"
+    },
+    {
+      "benchmark_id": "APPWORLD",
+      "contract_field": "SideEffect",
+      "source_exists": true,
+      "source_file": "src/appworld/environment.py",
+      "source_sha256": "6f01aa53fbb29c1aac751c766c55af438ce5a612048c36671dbb8e877ee955ac",
+      "source_symbol": "_save_state",
+      "status": "SOURCE_CONFIRMED"
+    },
+    {
+      "benchmark_id": "APPWORLD",
+      "contract_field": "Scorer",
+      "source_exists": true,
+      "source_file": "src/appworld/evaluator.py",
+      "source_sha256": "bde9deb3b1e6ac0fa9819013729c0e817a97c90f579108fa032a90bba0ca51cb",
+      "source_symbol": "evaluate_task",
+      "status": "SOURCE_CONFIRMED"
+    },
+    {
+      "benchmark_id": "APPWORLD",
+      "contract_field": "HistoryClosure",
+      "source_exists": true,
+      "source_file": "src/appworld/environment.py",
+      "source_sha256": "6f01aa53fbb29c1aac751c766c55af438ce5a612048c36671dbb8e877ee955ac",
+      "source_symbol": "environment_io persistence",
+      "status": "UNRESOLVED"
+    }
+  ],
+  "frozen_before_results": true,
+  "generated_at_utc": "2026-08-13T02:59:35.937514+00:00",
+  "payload_sha256": "8aedbd18e6e02399cb3c86ee01d81f9270583cf4c94d336116ff6e31a2046bb3",
+  "schema_version": "paritymem.paper_p4_e0.contract_registry.v1",
+  "status_counts": {
+    "AUTO_EXTRACTED": 8,
+    "MANUAL_RESOLUTION": 0,
+    "SOURCE_CONFIRMED": 21,
+    "UNRESOLVED": 1
+  }
+}

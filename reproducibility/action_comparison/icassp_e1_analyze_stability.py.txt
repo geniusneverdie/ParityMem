@@ -1,0 +1,57 @@
+#!/usr/bin/env python3
+"""Compute preregistered within- and cross-backend semantic stability metrics."""
+from __future__ import annotations
+from collections import Counter,defaultdict
+from datetime import datetime,timezone
+import hashlib,json,math,os,subprocess
+from pathlib import Path
+ROOT=Path('/data9/amx/fourth/paritymem'); ART=ROOT/'artifacts/icassp_e1'; RUN=ROOT/'runs/icassp_e1'; HELPER=ROOT/'scripts/icassp_e1_parser_batch.py'; SGPY='/data9/amx/fourth/_envs/prointent_sglang_auto_r2/bin/python'; VLPY='/data9/amx/miniconda3/envs/m2s_vllm128/bin/python'
+def now():return datetime.now(timezone.utc).isoformat()
+def canon(v):return json.dumps(v,sort_keys=True,separators=(',',':'),ensure_ascii=False).encode()
+def stable(v):return hashlib.sha256(canon(v)).hexdigest()
+def rows(p):return [json.loads(x) for x in p.read_text().splitlines() if x.strip()]
+def write(p,v):
+    if p.exists():raise RuntimeError(f'OUTPUT_COLLISION:{p}')
+    p.write_text(json.dumps(v,indent=2,sort_keys=True,ensure_ascii=False)+'\n')
+def parse(backend,scope):
+    env={**os.environ,'PYTHONDONTWRITEBYTECODE':'1','CUDA_VISIBLE_DEVICES':''}; py=SGPY if backend=='SGLang' else VLPY
+    if backend=='vLLM':env['LD_LIBRARY_PATH']=':'.join(['/data9/amx/miniconda3/envs/m2s_vllm128/lib/python3.11/site-packages/torch/lib','/data9/amx/miniconda3/envs/m2s_vllm128/lib/python3.11/site-packages/nvidia/cu13/lib'])
+    p=subprocess.run([py,str(HELPER),backend,scope],cwd=ROOT,env=env,text=True,stdout=subprocess.PIPE,stderr=subprocess.PIPE,timeout=1800)
+    if p.returncode:raise RuntimeError(f'PARSER_FAILED:{backend}:{p.stderr[-2000:]}')
+    return {'backend':backend,'stdout':p.stdout.strip(),'stderr_sha256':hashlib.sha256(p.stderr.encode()).hexdigest()}
+def action(raw,p):
+    if not raw['MODEL_CONTINUATION_OBTAINED']:return {'kind':'BLOCKED_BEFORE_INFERENCE'}
+    if p['error']:return {'kind':'INVALID_ACTION','reason':'OFFICIAL_PARSER_ERROR'}
+    if p['accepted']:return {'kind':'TOOL_ACTION','calls':[{'function':c['name'],'arguments':c['arguments']} for c in p['calls']]}
+    if (p.get('content') or '').strip() or raw.get('raw_text','').strip():return {'kind':'NO_TOOL_ACTION'}
+    return {'kind':'INVALID_ACTION','reason':'EMPTY_ASSISTANT_OUTPUT'}
+def analyze(scope,output_primary=True):
+    parser_runs=[parse('SGLang',scope),parse('vLLM',scope)]; raw=[r for r in rows(ART/'stability_results.jsonl') if r['scope']==scope]; prs=rows(RUN/f'parsed_{scope.lower()}_sglang.jsonl')+rows(RUN/f'parsed_{scope.lower()}_vllm.jsonl'); pm={r['run_id']:r for r in prs}; sem=[]
+    for r in raw:
+        a=action(r,pm[r['e1_run_id']]); sem.append({**r,'official_parser':pm[r['e1_run_id']],'semantic_action':a,'semantic_action_sha256':stable(a)})
+    sp=RUN/f'semantic_{scope.lower()}.jsonl'
+    if sp.exists():raise RuntimeError(f'OUTPUT_COLLISION:{sp}')
+    sp.write_text(''.join(json.dumps(r,sort_keys=True,ensure_ascii=False)+'\n' for r in sem)); groups=defaultdict(list)
+    for r in sem:groups[(r['pair_id'],r['backend'])].append(r)
+    gs=[]
+    for (pid,b),rs in sorted(groups.items()):
+        rs.sort(key=lambda r:r['repeat']); cnt=Counter(r['semantic_action_sha256'] for r in rs); mh,mc=sorted(cnt.items(),key=lambda x:(-x[1],x[0]))[0]; ma=next(r['semantic_action'] for r in rs if r['semantic_action_sha256']==mh); same=den=cross=cden=0
+        for i,l in enumerate(rs):
+            for rr in rs[i+1:]:
+                eq=l['semantic_action_sha256']==rr['semantic_action_sha256']
+                if l['server_epoch']==rr['server_epoch']:den+=1;same+=int(eq)
+                else:cden+=1;cross+=int(eq)
+        label='FULLY_STABLE' if mc==5 else 'MOSTLY_STABLE' if mc==4 else 'UNSTABLE'; ent=-sum((n/5)*math.log2(n/5) for n in cnt.values())
+        gs.append({'pair_id':pid,'backend':b,'benchmark':rs[0]['benchmark'],'model_family':rs[0]['model_family'],'repeats':len(rs),'modal_action':ma,'modal_action_sha256':mh,'modal_count':mc,'consensus_fraction':mc/5,'pairwise_semantic_agreement':{'numerator':sum(n*(n-1)//2 for n in cnt.values()),'denominator':10},'semantic_entropy_base2':ent,'stability_class':label,'same_process_agreement':{'numerator':same,'denominator':den},'cross_restart_agreement':{'numerator':cross,'denominator':cden},'repeat_actions':[{'repeat':r['repeat'],'server_epoch':r['server_epoch'],'action':r['semantic_action']} for r in rs]})
+    gm={(r['pair_id'],r['backend']):r for r in gs}; modal=[]
+    for pid in sorted({r['pair_id'] for r in gs}):
+        l,r=gm[(pid,'SGLang')],gm[(pid,'vLLM')]; cls='WITHIN_BACKEND_INSTABILITY' if l['stability_class']!='FULLY_STABLE' or r['stability_class']!='FULLY_STABLE' else ('STABLE_BACKEND_INVARIANT' if l['modal_action_sha256']==r['modal_action_sha256'] else 'STABLE_BACKEND_DIVERGENCE'); modal.append({'pair_id':pid,'benchmark':l['benchmark'],'model_family':l['model_family'],'classification':cls,'sglang':l,'vllm':r})
+    if output_primary:
+        bc={b:sum(r['backend']==b and r['stability_class']=='FULLY_STABLE' for r in gs) for b in ['SGLang','vLLM']}; sn=sum(r['same_process_agreement']['numerator'] for r in gs);sd=sum(r['same_process_agreement']['denominator'] for r in gs);cn=sum(r['cross_restart_agreement']['numerator'] for r in gs);cd=sum(r['cross_restart_agreement']['denominator'] for r in gs); cc=Counter(r['classification'] for r in modal)
+        write(ART/'within_backend_metrics.json',{'schema_version':'paritymem.icassp_e1.within_backend.v1','generated_at_utc':now(),'scope':'PRIMARY_PROSPECTIVE','thresholds':{'FULLY_STABLE':'5/5','MOSTLY_STABLE':'4/5','UNSTABLE':'<=3/5'},'backend_groups':len(gs),'within_backend_full_stability':{'numerator':sum(r['stability_class']=='FULLY_STABLE' for r in gs),'denominator':len(gs)},'sglang_full_stability':{'numerator':bc['SGLang'],'denominator':36},'vllm_full_stability':{'numerator':bc['vLLM'],'denominator':36},'same_process_stability':{'numerator':sn,'denominator':sd},'cross_restart_stability':{'numerator':cn,'denominator':cd},'parser_runs':parser_runs,'groups':gs})
+        write(ART/'cross_backend_modal_results.json',{'schema_version':'paritymem.icassp_e1.cross_backend_modal.v1','generated_at_utc':now(),'primary_pairs':len(modal),'classification_counts':dict(cc),'pairs':modal})
+        textvar=sum(len({r['raw_text_sha256'] for r in sem if r['pair_id']==p['pair_id']})>1 and p['classification']=='STABLE_BACKEND_INVARIANT' for p in modal)
+        write(ART/'backend_effect_decomposition.json',{'schema_version':'paritymem.icassp_e1.backend_effect.v1','generated_at_utc':now(),'primary_prospective':{'CONFORMANCE_BLOCKING':0,'STABLE_BACKEND_SEMANTIC_DIVERGENCE':cc['STABLE_BACKEND_DIVERGENCE'],'WITHIN_BACKEND_SEMANTIC_INSTABILITY':cc['WITHIN_BACKEND_INSTABILITY'],'TEXT_ONLY_VARIATION':textvar,'UNRESOLVED':0},'scope_note':'Primary denominator contains only mutually reachable pairs; frozen conformance-blocking cells remain in the 354-cell pivot matrix.'})
+    return sem,gs,modal
+if __name__=='__main__':
+    s,g,p=analyze('PRIMARY_PROSPECTIVE',True);print(json.dumps({'semantic_rows':len(s),'groups':len(g),'pairs':len(p),'modal_counts':dict(Counter(r['classification'] for r in p))},sort_keys=True))

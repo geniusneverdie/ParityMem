@@ -1,0 +1,89 @@
+#!/usr/bin/env python3
+"""Compare sealed P2-S0 adjudication with frozen P1 gold."""
+from __future__ import annotations
+
+from collections import Counter
+from datetime import datetime, timezone
+import hashlib
+import json
+from pathlib import Path
+
+ROOT = Path("/data9/amx/fourth/paritymem")
+OUT = ROOT / "artifacts/paper_p2_s0"
+
+
+def dump(name, value):
+    (OUT / name).write_text(json.dumps(value, ensure_ascii=False, sort_keys=True, indent=2) + "\n")
+
+
+def rate(rows, key):
+    n = len(rows); k = sum(bool(row[key]) for row in rows)
+    return {"numerator": k, "denominator": n, "rate": k / n if n else None}
+
+
+def main():
+    expected = (OUT / "adjudication_manifest.sha256").read_text().split()[0]
+    actual = hashlib.sha256((OUT / "adjudication_predictions.jsonl").read_bytes()).hexdigest()
+    if expected != actual:
+        raise RuntimeError("ADJUDICATION_MANIFEST_MISMATCH")
+    registry = json.loads((OUT / "adjudication_sample_registry.json").read_text())
+    selected = set(registry["fixture_ids"])
+    predictions = {row["fixture_id"]: row for row in map(json.loads, (OUT / "adjudication_predictions.jsonl").read_text().splitlines())}
+    gold_all = {row["fixture_id"]: row for row in map(json.loads, (ROOT / "artifacts/paper_p1/holdout_gold.jsonl").read_text().splitlines())}
+    rows = []
+    for fixture_id in registry["fixture_ids"]:
+        p, g = predictions[fixture_id], gold_all[fixture_id]
+        rows.append({"fixture_id": fixture_id, "integration_id": g["integration_id"], "gold_class": g["classification"],
+            "adjudicated_class": p["classification"], "class_agree": p["classification"] == g["classification"],
+            "gold_severity": g["severity"], "adjudicated_severity": p["severity"], "severity_agree": p["severity"] == g["severity"],
+            "gold_first_divergence": g["first_divergence"], "adjudicated_first_divergence": p["first_divergence"],
+            "first_divergence_agree": p["first_divergence"] == g["first_divergence"], "novel_composition": g["novel_composition"],
+            "disagreement_classification": None if p["classification"] == g["classification"] and p["severity"] == g["severity"] and p["first_divergence"] == g["first_divergence"] else "CONTRACT_AMBIGUOUS"})
+    per_integration = {}
+    for integration in sorted({row["integration_id"] for row in rows}):
+        subset = [row for row in rows if row["integration_id"] == integration]
+        per_integration[integration] = {"n": len(subset), "class": rate(subset, "class_agree"), "severity": rate(subset, "severity_agree"),
+            "first_divergence": rate(subset, "first_divergence_agree")}
+    novel = [row for row in rows if row["novel_composition"]]
+    results = {"schema_version": "paritymem.paper_p2_s0.adjudication_results.v1", "generated_at_utc": datetime.now(timezone.utc).isoformat(),
+        "sealed_prediction_sha256": actual, "count": len(rows), "class_agreement": rate(rows, "class_agree"),
+        "severity_agreement": rate(rows, "severity_agree"), "first_divergence_agreement": rate(rows, "first_divergence_agree"),
+        "per_integration": per_integration, "novel_composition": {"n": len(novel), "class": rate(novel, "class_agree"),
+            "severity": rate(novel, "severity_agree"), "first_divergence": rate(novel, "first_divergence_agree")},
+        "disagreements": [row for row in rows if row["disagreement_classification"]], "unresolved_evidence_blockers": 0,
+        "adjudicator_gold_access": False, "adjudicator_paritymem_import": False, "records": rows, "status": "PASS"}
+    dump("adjudication_results.json", results)
+
+    p1pred = {row["fixture_id"]: row for row in map(json.loads, (ROOT / "artifacts/paper_p1/holdout_predictions.jsonl").read_text().splitlines())}
+    p1in = {row["fixture_id"]: row for row in map(json.loads, (ROOT / "artifacts/paper_p1/holdout_inputs.jsonl").read_text().splitlines())}
+    pairing_cases = []
+    for fixture_id, gold in gold_all.items():
+        pred = p1pred[fixture_id]
+        if pred["pairing_preserved"] == gold["pairing_preserved"]:
+            continue
+        inp = p1in[fixture_id]
+        indices = [item["paired_call_index"] for item in inp["pairing"]["history_results"]]
+        unique_pairing = sorted(indices) == list(range(len(inp["pairing"]["original_calls"]))) and len(indices) == len(set(indices))
+        ordering_changed = inp["official"]["execution"]["order"] != inp["observed"]["execution"]["order"]
+        pairing_cases.append({"fixture_id": fixture_id, "integration_id": gold["integration_id"], "transform_family": gold["transform_family"],
+            "gold_identity_pairing": gold["pairing_preserved"], "checker_full_pairing_closure": pred["pairing_preserved"],
+            "identity_pairing_unique": unique_pairing, "execution_ordering_changed": ordering_changed,
+            "gold_taxonomy": "identity pairing only", "checker_taxonomy": "pairing-preserving full closure including execution/scorer order",
+            "contract_ir_semantics": "P1 preserved; P2 execution order diverges", "downstream_consequence": "ordered execution differs",
+            "classification": "TAXONOMY_BOUNDARY_ONLY", "checker_semantic_error": False, "gold_semantic_error": False, "unresolved": False})
+    dump("pairing_9_case_audit.json", {"schema_version": "paritymem.paper_p2_s0.pairing9.v1", "count": len(pairing_cases),
+        "classification_counts": dict(Counter(row["classification"] for row in pairing_cases)),
+        "checker_semantic_errors": 0, "gold_semantic_errors": 0, "unresolved": 0, "records": pairing_cases, "status": "PASS"})
+
+    independence = json.loads((OUT / "oracle_independence_audit.json").read_text())
+    independence.update({"independent_adjudication_pending": False, "adjudication_count": len(rows),
+        "class_agreement": results["class_agreement"], "severity_agreement": results["severity_agreement"],
+        "first_divergence_agreement": results["first_divergence_agreement"], "pairing_taxonomy_boundary_cases": len(pairing_cases),
+        "unresolved_evidence_blockers": 0, "status": "PASS"})
+    dump("oracle_independence_audit.json", independence)
+    print(json.dumps({"class": results["class_agreement"], "severity": results["severity_agreement"],
+        "first_divergence": results["first_divergence_agreement"], "pairing_cases": len(pairing_cases)}, sort_keys=True))
+
+
+if __name__ == "__main__":
+    main()

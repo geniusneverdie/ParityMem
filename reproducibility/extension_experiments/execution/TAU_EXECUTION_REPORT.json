@@ -1,0 +1,134 @@
+{
+  "status": "STATE_MATCHED_EXECUTION_COMPLETE",
+  "trace_id": "7e882479-72f7-49b8-9160-97c6b86d1f42",
+  "task_id": "54",
+  "prefix_end_exclusive": 33,
+  "prior_calls_replayed": 14,
+  "all_prior_responses_match": true,
+  "prior_comparisons": [
+    {
+      "call_id": "call_S1A43gK8cbX3reeDidLNAX7J",
+      "name": "find_user_id_by_name_zip",
+      "exact_decoded_response_match": true,
+      "observed_error": true
+    },
+    {
+      "call_id": "call_FkBcw8eyLxHoZW10yWxFvGFT",
+      "name": "find_user_id_by_email",
+      "exact_decoded_response_match": true,
+      "observed_error": true
+    },
+    {
+      "call_id": "call_uaiQPPBjT3whYHcIlWIjDhbG",
+      "name": "find_user_id_by_email",
+      "exact_decoded_response_match": true,
+      "observed_error": false
+    },
+    {
+      "call_id": "call_3I7eavJo3ZyxbbEXV9FMbvBz",
+      "name": "get_user_details",
+      "exact_decoded_response_match": true,
+      "observed_error": false
+    },
+    {
+      "call_id": "call_jaFl9OKb9gYvVg3Twq9hhbnM",
+      "name": "get_order_details",
+      "exact_decoded_response_match": true,
+      "observed_error": false
+    },
+    {
+      "call_id": "call_on49H31MMVrj95tfejcMz7xS",
+      "name": "get_order_details",
+      "exact_decoded_response_match": true,
+      "observed_error": false
+    },
+    {
+      "call_id": "call_uU02Z3MPj66C1sLPnnPNoedc",
+      "name": "get_order_details",
+      "exact_decoded_response_match": true,
+      "observed_error": false
+    },
+    {
+      "call_id": "call_lnRaaP0zxngI0x33onanT1VJ",
+      "name": "get_order_details",
+      "exact_decoded_response_match": true,
+      "observed_error": false
+    },
+    {
+      "call_id": "call_q8eALLooQ5efhqwOaQMrJwKj",
+      "name": "get_order_details",
+      "exact_decoded_response_match": true,
+      "observed_error": false
+    },
+    {
+      "call_id": "call_9cBcGx0AAC1KecZYpx6r5lx0",
+      "name": "get_order_details",
+      "exact_decoded_response_match": true,
+      "observed_error": false
+    },
+    {
+      "call_id": "call_zFA5EuCBASypTvVYrKpsewz9",
+      "name": "return_delivered_order_items",
+      "exact_decoded_response_match": true,
+      "observed_error": false
+    },
+    {
+      "call_id": "call_87N29FOSVlN8DUMGW0c2DsX9",
+      "name": "cancel_pending_order",
+      "exact_decoded_response_match": true,
+      "observed_error": false
+    },
+    {
+      "call_id": "call_LYR9mQ0NSe2ix0sessP1A5Ml",
+      "name": "cancel_pending_order",
+      "exact_decoded_response_match": true,
+      "observed_error": false
+    },
+    {
+      "call_id": "call_kFLGMq9J5vhd9SGlhXaTl9A3",
+      "name": "get_product_details",
+      "exact_decoded_response_match": true,
+      "observed_error": false
+    }
+  ],
+  "initial_state_hash": "b25c9cb211f5efcaee5dd646054a73c4a9f43f4f5acc32c10713cd9f9ac20e9c",
+  "checkpoint_state_hash": "ce62537763499f1686e791ff0dc4d5a74af8df3ae4d33a76d9942f703bb440ef",
+  "db_source_sha256": "413a65160adbdb5fde0ffc0015c49b6d70250b10c18128de169b597af7766765",
+  "original_trajectory_sha256": "6d6badb43b716adca31591b0b40e15fd493b49adddaa8e2c47035bb557549257",
+  "branches": {
+    "sglang": {
+      "action": {
+        "kind": "NO_TOOL_ACTION"
+      },
+      "before_state_hash": "ce62537763499f1686e791ff0dc4d5a74af8df3ae4d33a76d9942f703bb440ef",
+      "after_state_hash": "ce62537763499f1686e791ff0dc4d5a74af8df3ae4d33a76d9942f703bb440ef",
+      "responses": []
+    },
+    "vllm": {
+      "action": {
+        "calls": [
+          {
+            "arguments": {
+              "order_id": "12345"
+            },
+            "function": "get_order_details"
+          }
+        ],
+        "kind": "TOOL_ACTION"
+      },
+      "before_state_hash": "ce62537763499f1686e791ff0dc4d5a74af8df3ae4d33a76d9942f703bb440ef",
+      "after_state_hash": "ce62537763499f1686e791ff0dc4d5a74af8df3ae4d33a76d9942f703bb440ef",
+      "responses": [
+        {
+          "content": "Error: Order not found",
+          "error": true
+        }
+      ]
+    }
+  },
+  "same_final_state": true,
+  "observations_differ": true,
+  "new_model_calls": 0,
+  "task_score_evaluated": false,
+  "runtime": "Original retail tool/environment modules; unrelated eager agent/voice exports bypassed for import isolation; no tool or state function modified."
+}

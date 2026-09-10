@@ -1,0 +1,755 @@
+{
+  "all_3_of_3": true,
+  "call_counts": {
+    "gpu": 0,
+    "http": 0,
+    "model": 0,
+    "scientific_execution": 0,
+    "scientific_scorer": 0
+  },
+  "findings": {
+    "RW-RUNTIME-001": {
+      "denominator": 3,
+      "deterministic": true,
+      "repetitions": [
+        {
+          "epoch": 0,
+          "fresh_process": true,
+          "result": {
+            "accepted": false,
+            "counterfactual_template_sha256": null,
+            "exception": {
+              "message": "This model only supports single tool-calls at once!",
+              "type": "TemplateError"
+            },
+            "finding_id": "RW-RUNTIME-001",
+            "gpu_calls": 0,
+            "input_sha256": "125218077e3dc1eefbe0ec727609520d0e40e56d3036de63b1f55b3aa27ec265",
+            "mode": "original",
+            "model_calls": 0,
+            "rendered_length": null,
+            "rendered_sha256": null,
+            "semantic_projection_after": {
+              "calls": [
+                {
+                  "arguments": {
+                    "order_id": "ORD-1"
+                  },
+                  "index": 0,
+                  "name": "get_order"
+                },
+                {
+                  "arguments": {
+                    "topic": "refund"
+                  },
+                  "index": 1,
+                  "name": "get_policies"
+                },
+                {
+                  "arguments": {
+                    "confirm": false,
+                    "item_id": "ITEM-1"
+                  },
+                  "index": 2,
+                  "name": "process_refund"
+                }
+              ],
+              "results": [
+                {
+                  "content": {
+                    "order_id": "ORD-1"
+                  },
+                  "index": 0
+                },
+                {
+                  "content": {
+                    "policy": "refund"
+                  },
+                  "index": 1
+                },
+                {
+                  "content": {
+                    "status": "preview"
+                  },
+                  "index": 2
+                }
+              ]
+            },
+            "semantic_projection_before": {
+              "calls": [
+                {
+                  "arguments": {
+                    "order_id": "ORD-1"
+                  },
+                  "index": 0,
+                  "name": "get_order"
+                },
+                {
+                  "arguments": {
+                    "topic": "refund"
+                  },
+                  "index": 1,
+                  "name": "get_policies"
+                },
+                {
+                  "arguments": {
+                    "confirm": false,
+                    "item_id": "ITEM-1"
+                  },
+                  "index": 2,
+                  "name": "process_refund"
+                }
+              ],
+              "results": [
+                {
+                  "content": {
+                    "order_id": "ORD-1"
+                  },
+                  "index": 0
+                },
+                {
+                  "content": {
+                    "policy": "refund"
+                  },
+                  "index": 1
+                },
+                {
+                  "content": {
+                    "status": "preview"
+                  },
+                  "index": 2
+                }
+              ]
+            },
+            "semantic_projection_preserved": true,
+            "template_sha256": "e10ca381b1ccc5cf9db52e371f3b6651576caee0a630b452e2816b2d404d4b65",
+            "transport_id_mapping": null
+          },
+          "stderr_sha256": "fe1b79aa51b672602bd8c02cc8cef601c835476a67ff116592551b66bf6f8228"
+        },
+        {
+          "epoch": 1,
+          "fresh_process": true,
+          "result": {
+            "accepted": false,
+            "counterfactual_template_sha256": null,
+            "exception": {
+              "message": "This model only supports single tool-calls at once!",
+              "type": "TemplateError"
+            },
+            "finding_id": "RW-RUNTIME-001",
+            "gpu_calls": 0,
+            "input_sha256": "125218077e3dc1eefbe0ec727609520d0e40e56d3036de63b1f55b3aa27ec265",
+            "mode": "original",
+            "model_calls": 0,
+            "rendered_length": null,
+            "rendered_sha256": null,
+            "semantic_projection_after": {
+              "calls": [
+                {
+                  "arguments": {
+                    "order_id": "ORD-1"
+                  },
+                  "index": 0,
+                  "name": "get_order"
+                },
+                {
+                  "arguments": {
+                    "topic": "refund"
+                  },
+                  "index": 1,
+                  "name": "get_policies"
+                },
+                {
+                  "arguments": {
+                    "confirm": false,
+                    "item_id": "ITEM-1"
+                  },
+                  "index": 2,
+                  "name": "process_refund"
+                }
+              ],
+              "results": [
+                {
+                  "content": {
+                    "order_id": "ORD-1"
+                  },
+                  "index": 0
+                },
+                {
+                  "content": {
+                    "policy": "refund"
+                  },
+                  "index": 1
+                },
+                {
+                  "content": {
+                    "status": "preview"
+                  },
+                  "index": 2
+                }
+              ]
+            },
+            "semantic_projection_before": {
+              "calls": [
+                {
+                  "arguments": {
+                    "order_id": "ORD-1"
+                  },
+                  "index": 0,
+                  "name": "get_order"
+                },
+                {
+                  "arguments": {
+                    "topic": "refund"
+                  },
+                  "index": 1,
+                  "name": "get_policies"
+                },
+                {
+                  "arguments": {
+                    "confirm": false,
+                    "item_id": "ITEM-1"
+                  },
+                  "index": 2,
+                  "name": "process_refund"
+                }
+              ],
+              "results": [
+                {
+                  "content": {
+                    "order_id": "ORD-1"
+                  },
+                  "index": 0
+                },
+                {
+                  "content": {
+                    "policy": "refund"
+                  },
+                  "index": 1
+                },
+                {
+                  "content": {
+                    "status": "preview"
+                  },
+                  "index": 2
+                }
+              ]
+            },
+            "semantic_projection_preserved": true,
+            "template_sha256": "e10ca381b1ccc5cf9db52e371f3b6651576caee0a630b452e2816b2d404d4b65",
+            "transport_id_mapping": null
+          },
+          "stderr_sha256": "fe1b79aa51b672602bd8c02cc8cef601c835476a67ff116592551b66bf6f8228"
+        },
+        {
+          "epoch": 2,
+          "fresh_process": true,
+          "result": {
+            "accepted": false,
+            "counterfactual_template_sha256": null,
+            "exception": {
+              "message": "This model only supports single tool-calls at once!",
+              "type": "TemplateError"
+            },
+            "finding_id": "RW-RUNTIME-001",
+            "gpu_calls": 0,
+            "input_sha256": "125218077e3dc1eefbe0ec727609520d0e40e56d3036de63b1f55b3aa27ec265",
+            "mode": "original",
+            "model_calls": 0,
+            "rendered_length": null,
+            "rendered_sha256": null,
+            "semantic_projection_after": {
+              "calls": [
+                {
+                  "arguments": {
+                    "order_id": "ORD-1"
+                  },
+                  "index": 0,
+                  "name": "get_order"
+                },
+                {
+                  "arguments": {
+                    "topic": "refund"
+                  },
+                  "index": 1,
+                  "name": "get_policies"
+                },
+                {
+                  "arguments": {
+                    "confirm": false,
+                    "item_id": "ITEM-1"
+                  },
+                  "index": 2,
+                  "name": "process_refund"
+                }
+              ],
+              "results": [
+                {
+                  "content": {
+                    "order_id": "ORD-1"
+                  },
+                  "index": 0
+                },
+                {
+                  "content": {
+                    "policy": "refund"
+                  },
+                  "index": 1
+                },
+                {
+                  "content": {
+                    "status": "preview"
+                  },
+                  "index": 2
+                }
+              ]
+            },
+            "semantic_projection_before": {
+              "calls": [
+                {
+                  "arguments": {
+                    "order_id": "ORD-1"
+                  },
+                  "index": 0,
+                  "name": "get_order"
+                },
+                {
+                  "arguments": {
+                    "topic": "refund"
+                  },
+                  "index": 1,
+                  "name": "get_policies"
+                },
+                {
+                  "arguments": {
+                    "confirm": false,
+                    "item_id": "ITEM-1"
+                  },
+                  "index": 2,
+                  "name": "process_refund"
+                }
+              ],
+              "results": [
+                {
+                  "content": {
+                    "order_id": "ORD-1"
+                  },
+                  "index": 0
+                },
+                {
+                  "content": {
+                    "policy": "refund"
+                  },
+                  "index": 1
+                },
+                {
+                  "content": {
+                    "status": "preview"
+                  },
+                  "index": 2
+                }
+              ]
+            },
+            "semantic_projection_preserved": true,
+            "template_sha256": "e10ca381b1ccc5cf9db52e371f3b6651576caee0a630b452e2816b2d404d4b65",
+            "transport_id_mapping": null
+          },
+          "stderr_sha256": "fe1b79aa51b672602bd8c02cc8cef601c835476a67ff116592551b66bf6f8228"
+        }
+      ],
+      "reproduced": 3,
+      "same_input_hash": true,
+      "same_template_hash": true,
+      "status": "PASS"
+    },
+    "RW-RUNTIME-002": {
+      "denominator": 3,
+      "deterministic": true,
+      "repetitions": [
+        {
+          "epoch": 0,
+          "fresh_process": true,
+          "result": {
+            "accepted": false,
+            "counterfactual_template_sha256": null,
+            "exception": {
+              "message": "Tool call IDs should be alphanumeric strings with length 9!",
+              "type": "TemplateError"
+            },
+            "finding_id": "RW-RUNTIME-002",
+            "gpu_calls": 0,
+            "input_sha256": "97cfb4427f4667fae5a1a7a2d8960f609a595f57b0e213c09af5a30d90d53762",
+            "mode": "original",
+            "model_calls": 0,
+            "rendered_length": null,
+            "rendered_sha256": null,
+            "semantic_projection_after": {
+              "calls": [
+                {
+                  "arguments": {
+                    "order_id": "ORD-1"
+                  },
+                  "index": 0,
+                  "name": "get_order"
+                }
+              ],
+              "results": [
+                {
+                  "content": {
+                    "order_id": "ORD-1"
+                  },
+                  "index": 0
+                }
+              ]
+            },
+            "semantic_projection_before": {
+              "calls": [
+                {
+                  "arguments": {
+                    "order_id": "ORD-1"
+                  },
+                  "index": 0,
+                  "name": "get_order"
+                }
+              ],
+              "results": [
+                {
+                  "content": {
+                    "order_id": "ORD-1"
+                  },
+                  "index": 0
+                }
+              ]
+            },
+            "semantic_projection_preserved": true,
+            "template_sha256": "e16746b40344d6c5b5265988e0328a0bf7277be86f1c335156eae07e29c82826",
+            "transport_id_mapping": null
+          },
+          "stderr_sha256": "fe1b79aa51b672602bd8c02cc8cef601c835476a67ff116592551b66bf6f8228"
+        },
+        {
+          "epoch": 1,
+          "fresh_process": true,
+          "result": {
+            "accepted": false,
+            "counterfactual_template_sha256": null,
+            "exception": {
+              "message": "Tool call IDs should be alphanumeric strings with length 9!",
+              "type": "TemplateError"
+            },
+            "finding_id": "RW-RUNTIME-002",
+            "gpu_calls": 0,
+            "input_sha256": "97cfb4427f4667fae5a1a7a2d8960f609a595f57b0e213c09af5a30d90d53762",
+            "mode": "original",
+            "model_calls": 0,
+            "rendered_length": null,
+            "rendered_sha256": null,
+            "semantic_projection_after": {
+              "calls": [
+                {
+                  "arguments": {
+                    "order_id": "ORD-1"
+                  },
+                  "index": 0,
+                  "name": "get_order"
+                }
+              ],
+              "results": [
+                {
+                  "content": {
+                    "order_id": "ORD-1"
+                  },
+                  "index": 0
+                }
+              ]
+            },
+            "semantic_projection_before": {
+              "calls": [
+                {
+                  "arguments": {
+                    "order_id": "ORD-1"
+                  },
+                  "index": 0,
+                  "name": "get_order"
+                }
+              ],
+              "results": [
+                {
+                  "content": {
+                    "order_id": "ORD-1"
+                  },
+                  "index": 0
+                }
+              ]
+            },
+            "semantic_projection_preserved": true,
+            "template_sha256": "e16746b40344d6c5b5265988e0328a0bf7277be86f1c335156eae07e29c82826",
+            "transport_id_mapping": null
+          },
+          "stderr_sha256": "fe1b79aa51b672602bd8c02cc8cef601c835476a67ff116592551b66bf6f8228"
+        },
+        {
+          "epoch": 2,
+          "fresh_process": true,
+          "result": {
+            "accepted": false,
+            "counterfactual_template_sha256": null,
+            "exception": {
+              "message": "Tool call IDs should be alphanumeric strings with length 9!",
+              "type": "TemplateError"
+            },
+            "finding_id": "RW-RUNTIME-002",
+            "gpu_calls": 0,
+            "input_sha256": "97cfb4427f4667fae5a1a7a2d8960f609a595f57b0e213c09af5a30d90d53762",
+            "mode": "original",
+            "model_calls": 0,
+            "rendered_length": null,
+            "rendered_sha256": null,
+            "semantic_projection_after": {
+              "calls": [
+                {
+                  "arguments": {
+                    "order_id": "ORD-1"
+                  },
+                  "index": 0,
+                  "name": "get_order"
+                }
+              ],
+              "results": [
+                {
+                  "content": {
+                    "order_id": "ORD-1"
+                  },
+                  "index": 0
+                }
+              ]
+            },
+            "semantic_projection_before": {
+              "calls": [
+                {
+                  "arguments": {
+                    "order_id": "ORD-1"
+                  },
+                  "index": 0,
+                  "name": "get_order"
+                }
+              ],
+              "results": [
+                {
+                  "content": {
+                    "order_id": "ORD-1"
+                  },
+                  "index": 0
+                }
+              ]
+            },
+            "semantic_projection_preserved": true,
+            "template_sha256": "e16746b40344d6c5b5265988e0328a0bf7277be86f1c335156eae07e29c82826",
+            "transport_id_mapping": null
+          },
+          "stderr_sha256": "fe1b79aa51b672602bd8c02cc8cef601c835476a67ff116592551b66bf6f8228"
+        }
+      ],
+      "reproduced": 3,
+      "same_input_hash": true,
+      "same_template_hash": true,
+      "status": "PASS"
+    },
+    "RW-RUNTIME-003": {
+      "denominator": 3,
+      "deterministic": true,
+      "repetitions": [
+        {
+          "epoch": 0,
+          "fresh_process": true,
+          "result": {
+            "accepted": false,
+            "counterfactual_template_sha256": null,
+            "exception": {
+              "message": "After the optional system message, conversation roles must alternate user/assistant/user/assistant/...",
+              "type": "TemplateError"
+            },
+            "finding_id": "RW-RUNTIME-003",
+            "gpu_calls": 0,
+            "input_sha256": "73e847f5143f62e4b4a5b9c16bd60d08e2a13fde596c2e346aaf63a13fd067bc",
+            "mode": "original",
+            "model_calls": 0,
+            "rendered_length": null,
+            "rendered_sha256": null,
+            "semantic_projection_after": {
+              "calls": [
+                {
+                  "arguments": {
+                    "order_id": "ORD-1"
+                  },
+                  "index": 0,
+                  "name": "get_order"
+                }
+              ],
+              "results": [
+                {
+                  "content": {
+                    "order_id": "ORD-1"
+                  },
+                  "index": 0
+                }
+              ]
+            },
+            "semantic_projection_before": {
+              "calls": [
+                {
+                  "arguments": {
+                    "order_id": "ORD-1"
+                  },
+                  "index": 0,
+                  "name": "get_order"
+                }
+              ],
+              "results": [
+                {
+                  "content": {
+                    "order_id": "ORD-1"
+                  },
+                  "index": 0
+                }
+              ]
+            },
+            "semantic_projection_preserved": true,
+            "template_sha256": "e16746b40344d6c5b5265988e0328a0bf7277be86f1c335156eae07e29c82826",
+            "transport_id_mapping": null
+          },
+          "stderr_sha256": "fe1b79aa51b672602bd8c02cc8cef601c835476a67ff116592551b66bf6f8228"
+        },
+        {
+          "epoch": 1,
+          "fresh_process": true,
+          "result": {
+            "accepted": false,
+            "counterfactual_template_sha256": null,
+            "exception": {
+              "message": "After the optional system message, conversation roles must alternate user/assistant/user/assistant/...",
+              "type": "TemplateError"
+            },
+            "finding_id": "RW-RUNTIME-003",
+            "gpu_calls": 0,
+            "input_sha256": "73e847f5143f62e4b4a5b9c16bd60d08e2a13fde596c2e346aaf63a13fd067bc",
+            "mode": "original",
+            "model_calls": 0,
+            "rendered_length": null,
+            "rendered_sha256": null,
+            "semantic_projection_after": {
+              "calls": [
+                {
+                  "arguments": {
+                    "order_id": "ORD-1"
+                  },
+                  "index": 0,
+                  "name": "get_order"
+                }
+              ],
+              "results": [
+                {
+                  "content": {
+                    "order_id": "ORD-1"
+                  },
+                  "index": 0
+                }
+              ]
+            },
+            "semantic_projection_before": {
+              "calls": [
+                {
+                  "arguments": {
+                    "order_id": "ORD-1"
+                  },
+                  "index": 0,
+                  "name": "get_order"
+                }
+              ],
+              "results": [
+                {
+                  "content": {
+                    "order_id": "ORD-1"
+                  },
+                  "index": 0
+                }
+              ]
+            },
+            "semantic_projection_preserved": true,
+            "template_sha256": "e16746b40344d6c5b5265988e0328a0bf7277be86f1c335156eae07e29c82826",
+            "transport_id_mapping": null
+          },
+          "stderr_sha256": "fe1b79aa51b672602bd8c02cc8cef601c835476a67ff116592551b66bf6f8228"
+        },
+        {
+          "epoch": 2,
+          "fresh_process": true,
+          "result": {
+            "accepted": false,
+            "counterfactual_template_sha256": null,
+            "exception": {
+              "message": "After the optional system message, conversation roles must alternate user/assistant/user/assistant/...",
+              "type": "TemplateError"
+            },
+            "finding_id": "RW-RUNTIME-003",
+            "gpu_calls": 0,
+            "input_sha256": "73e847f5143f62e4b4a5b9c16bd60d08e2a13fde596c2e346aaf63a13fd067bc",
+            "mode": "original",
+            "model_calls": 0,
+            "rendered_length": null,
+            "rendered_sha256": null,
+            "semantic_projection_after": {
+              "calls": [
+                {
+                  "arguments": {
+                    "order_id": "ORD-1"
+                  },
+                  "index": 0,
+                  "name": "get_order"
+                }
+              ],
+              "results": [
+                {
+                  "content": {
+                    "order_id": "ORD-1"
+                  },
+                  "index": 0
+                }
+              ]
+            },
+            "semantic_projection_before": {
+              "calls": [
+                {
+                  "arguments": {
+                    "order_id": "ORD-1"
+                  },
+                  "index": 0,
+                  "name": "get_order"
+                }
+              ],
+              "results": [
+                {
+                  "content": {
+                    "order_id": "ORD-1"
+                  },
+                  "index": 0
+                }
+              ]
+            },
+            "semantic_projection_preserved": true,
+            "template_sha256": "e16746b40344d6c5b5265988e0328a0bf7277be86f1c335156eae07e29c82826",
+            "transport_id_mapping": null
+          },
+          "stderr_sha256": "fe1b79aa51b672602bd8c02cc8cef601c835476a67ff116592551b66bf6f8228"
+        }
+      ],
+      "reproduced": 3,
+      "same_input_hash": true,
+      "same_template_hash": true,
+      "status": "PASS"
+    }
+  },
+  "generated_at_utc": "2026-08-11T12:54:45.300315+00:00",
+  "schema_version": "paritymem.h3a_r0.reproducer_results.v1"
+}

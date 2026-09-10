@@ -1,0 +1,13 @@
+{
+  "status": "LOCAL_REVIEW_CANDIDATE",
+  "intended_github_owner": "geniusneverdie",
+  "public_url": null,
+  "author_details": "pending",
+  "project_wide_license": "not selected",
+  "published": false,
+  "VENUE_SUBMISSION": "NO",
+  "NEW_MODEL_CALLS": 0,
+  "NEW_BACKEND_CALLS": 0,
+  "NEW_GPU_RUNS": 0,
+  "NEW_TIMING_MEASUREMENTS": 0
+}

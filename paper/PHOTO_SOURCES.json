@@ -1,0 +1,273 @@
+{
+  "scope": "Source identification and attribution preparation; not a legal opinion, original rights-holder confirmation, or IEEE permission approval.",
+  "photographic_source_count": 6,
+  "generative_image_calls_this_revision": 0,
+  "sources": [
+    {
+      "id": "evan_amos_clipboard",
+      "title": "Wood-clipboard.jpg",
+      "creator": "Evan-Amos",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Wood-clipboard.jpg",
+      "source_version_url": "https://commons.wikimedia.org/w/index.php?title=File:Wood-clipboard.jpg&oldid=1083441865",
+      "date": "2010-08-27",
+      "license": "Public domain (author release)",
+      "license_url": "https://commons.wikimedia.org/wiki/File:Wood-clipboard.jpg#Summary",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/c/c0/Wood-clipboard.jpg",
+      "assets": [
+        "clipboard",
+        "metal_clip_pair"
+      ],
+      "modification": "Existing clipboard cutout retained. Silver metal clip region newly cropped, alpha-masked, rotated and duplicated as two illustrative objects. This is not a photograph of an actual linked pair.",
+      "verification": "Exact photographic source visually matched against retained 512 x 512 preview. Creator and public-domain release read on the source page. Original full-resolution bytes were not downloaded in this revision.",
+      "checked_on": "2026-09-06",
+      "local_assets": [
+        {
+          "path": "editable_figures/assets/clipboard.png",
+          "sha256": "8f023bca22d5443a3159b432cbc5201ce139053377fd9d04b8b2fc8f695d00ed",
+          "uses": [
+            {
+              "figure": "figure1_tool_use_loop_compact",
+              "element_id": "loop_history_photo"
+            },
+            {
+              "figure": "figure2_f1_motivation_compact",
+              "element_id": "f1_completed_turn_photo"
+            },
+            {
+              "figure": "figure3_method_overview",
+              "element_id": "m_022"
+            },
+            {
+              "figure": "figure3_method_overview",
+              "element_id": "m_130"
+            }
+          ]
+        },
+        {
+          "path": "editable_figures/assets/metal_clip_pair.png",
+          "sha256": "b3e90b9146350d786447973990377b01fcd524fd032fc707f849d802e9e88d1d",
+          "uses": [
+            {
+              "figure": "figure3_method_overview",
+              "element_id": "m_084"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "blogtrepreneur_contract",
+      "title": "Legal Contract & Signature - Warm Tones.jpg",
+      "creator": "Blogtrepreneur",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Legal_Contract_%26_Signature_-_Warm_Tones.jpg",
+      "source_version_url": "https://commons.wikimedia.org/w/index.php?title=File:Legal_Contract_%26_Signature_-_Warm_Tones.jpg&oldid=966134102",
+      "date": "2016-06-21",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0/",
+      "required_attribution_url": "https://howtostartablogonline.net/legal/",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/a/a7/Legal_Contract_%26_Signature_-_Warm_Tones.jpg",
+      "assets": [
+        "pen",
+        "document_detail",
+        "document_bundle"
+      ],
+      "modification": "Existing pen crop retained. Printed-paper region cropped and alpha-masked from retained 250 x 188 preview; repeated copies arranged for a document bundle. Detail crops are illustrations, not a restored complete physical page or source evidence.",
+      "verification": "Photograph, title, creator, CC BY 2.0 grant and requested attribution URL matched on source page. Uses existing preview bytes, not a newly downloaded 6000 x 4500 original.",
+      "checked_on": "2026-09-06",
+      "local_assets": [
+        {
+          "path": "editable_figures/assets/pen.png",
+          "sha256": "f46353ee13d40ef11e6d7b36acc435acdedd50eb9b711fc952aa798cdd5aa54a",
+          "uses": [
+            {
+              "figure": "figure3_method_overview",
+              "element_id": "m_023"
+            },
+            {
+              "figure": "figure3_method_overview",
+              "element_id": "m_160"
+            }
+          ]
+        },
+        {
+          "path": "editable_figures/assets/document_detail.png",
+          "sha256": "9e31dfb5d62bd9ce5660c0b4c6ae3994c1f315aa8f11f1f51f38d42d20a2ffcf",
+          "uses": [
+            {
+              "figure": "figure1_tool_use_loop_compact",
+              "element_id": "loop_result_photo"
+            },
+            {
+              "figure": "figure3_method_overview",
+              "element_id": "m_085"
+            },
+            {
+              "figure": "figure3_method_overview",
+              "element_id": "m_135"
+            }
+          ]
+        },
+        {
+          "path": "editable_figures/assets/document_bundle.png",
+          "sha256": "cc4633cf96a929ed191cfced617c73db19416fdaadff5ed78028b6ebe018fd4e",
+          "uses": [
+            {
+              "figure": "figure1_tool_use_loop_compact",
+              "element_id": "loop_observation_photo"
+            },
+            {
+              "figure": "figure3_method_overview",
+              "element_id": "m_021"
+            },
+            {
+              "figure": "figure3_method_overview",
+              "element_id": "m_176"
+            }
+          ]
+        }
+      ],
+      "original_host_url": "https://www.flickr.com/photos/143601516@N03/28108832021"
+    },
+    {
+      "id": "tomomarusan_magnifier",
+      "title": "Magnifying glass.jpg",
+      "creator": "Tomomarusan",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Magnifying_glass.jpg",
+      "date": "2005-08-31",
+      "license": "CC BY 2.5 (selected from multiple offered licenses)",
+      "license_url": "https://creativecommons.org/licenses/by/2.5/",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/8/80/Magnifying_glass.jpg",
+      "assets": [
+        "magnifier"
+      ],
+      "modification": "Previously retained photo crop and alpha mask preserved; resized on canvas. Glass is not treated as a data overlay.",
+      "verification": "Visual match and selected CC BY 2.5 option verified on source page; no need to combine every alternative license offered on that page.",
+      "checked_on": "2026-09-06",
+      "local_assets": [
+        {
+          "path": "editable_figures/assets/magnifier.png",
+          "sha256": "345ee449788f70ad5dd53afae94aaaa5ad9ec8878c65d117e7fb2df9309a6555",
+          "uses": [
+            {
+              "figure": "figure3_method_overview",
+              "element_id": "m_103"
+            },
+            {
+              "figure": "figure3_method_overview",
+              "element_id": "m_159"
+            },
+            {
+              "figure": "figure3_method_overview",
+              "element_id": "m_180"
+            }
+          ]
+        }
+      ],
+      "source_version_url": "https://commons.wikimedia.org/w/index.php?title=File:Magnifying_glass.jpg&oldid=1180567436"
+    },
+    {
+      "id": "koreng_stopwatch",
+      "title": "Stopwatch, 1810201155, ako.jpg",
+      "creator": "Ansgar Koreng",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Stopwatch,_1810201155,_ako.jpg",
+      "source_version_url": "https://commons.wikimedia.org/w/index.php?title=File:Stopwatch,_1810201155,_ako.jpg&oldid=749889610",
+      "date": "2018-10-20",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "required_attribution": "Ansgar Koreng / CC BY-SA 4.0",
+      "assets": [
+        "stopwatch"
+      ],
+      "modification": "Watch body previously isolated from a retained derivative; chain excluded. Source image is a disclosed 25-photo focus stack created with Helicon Focus. No generative retouching performed here.",
+      "verification": "Source creator, explicit credit form and CC BY-SA 4.0 verified. Local derivative is not claimed to be a byte-identical full-resolution original.",
+      "distribution_note": "The adapted photographic cutout retains CC BY-SA 4.0. Keep its attribution and license available when exporting or reusing a composite.",
+      "checked_on": "2026-09-06",
+      "local_assets": [
+        {
+          "path": "editable_figures/assets/stopwatch.png",
+          "sha256": "94f3af28842312cfa3625769229a8c74ae9e158b585f05aca582818b09b8793e",
+          "uses": [
+            {
+              "figure": "figure3_method_overview",
+              "element_id": "m_183"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "softbank_nao",
+      "title": "NAO Robot .jpg",
+      "creator": "Philippe Dureuil",
+      "copyright_notice": "Philippe Dureuil / TOMA",
+      "releasing_organization": "Softbank Robotics Europe",
+      "source_url": "https://commons.wikimedia.org/wiki/File:NAO_Robot_.jpg",
+      "date": "2016-02-16",
+      "license": "CC BY-SA 4.0 (as published on source page)",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/7/79/NAO_Robot_.jpg",
+      "assets": [
+        "robot"
+      ],
+      "modification": "Existing photographic cutout and pose preserved. Cropped, background removed, and placed as an illustrative LLM-policy/agent role; not experimental hardware.",
+      "verification": "Source page release and creator/copyright fields read. Credit includes both photographer and releasing organization, rather than treating uploader as the sole photographer.",
+      "distribution_note": "The adapted photographic cutout retains CC BY-SA 4.0. The published CC grant coexists with historical EXIF usage terms; request clarification for final publication if relying on the rights chain.",
+      "final_rights_review": "PUBLIC_LICENSE_FOUND; LEGACY_METADATA_REQUIRES_AUTHOR_OR_PUBLISHER_REVIEW",
+      "checked_on": "2026-09-06",
+      "local_assets": [
+        {
+          "path": "editable_figures/assets/robot.png",
+          "sha256": "1b2ef095db610afe6fdc74f7daad2efed753e770a7f11991dbc28e7e0d1470af",
+          "uses": [
+            {
+              "figure": "figure1_tool_use_loop_compact",
+              "element_id": "loop_policy_photo"
+            },
+            {
+              "figure": "figure2_f1_motivation_compact",
+              "element_id": "f1_stopped_agent_photo"
+            },
+            {
+              "figure": "figure3_method_overview",
+              "element_id": "m_141"
+            },
+            {
+              "figure": "figure3_method_overview",
+              "element_id": "m_142"
+            }
+          ]
+        }
+      ],
+      "source_version_url": "https://commons.wikimedia.org/w/index.php?title=File:NAO_Robot_.jpg&oldid=1155754290"
+    },
+    {
+      "id": "nasa_apollo17",
+      "title": "The Earth seen from Apollo 17.jpg",
+      "creator": "NASA / Apollo 17 crew",
+      "source_url": "https://commons.wikimedia.org/wiki/File:The_Earth_seen_from_Apollo_17.jpg",
+      "date": "1972-12-07",
+      "license": "Public domain in the United States (NASA government photograph)",
+      "license_url": "https://commons.wikimedia.org/wiki/File:The_Earth_seen_from_Apollo_17.jpg#Licensing",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/9/97/The_Earth_seen_from_Apollo_17.jpg",
+      "assets": [
+        "earth"
+      ],
+      "modification": "Retained Earth-disc derivative downsampled from 904 x 911 to 381 x 384 pixels with Lanczos filtering for compact publication exports; canvas geometry and meaning unchanged. Represents environment context, not experimental imagery. The larger retained derivative is preserved in source_inputs.",
+      "verification": "Source identity and NASA attribution matched to the preceding retained derivative. Local resampling is recorded; this revision does not revalidate every historical color adjustment of that derivative.",
+      "checked_on": "2026-09-06",
+      "local_assets": [
+        {
+          "path": "editable_figures/assets/earth.png",
+          "sha256": "63cdf30fdb70b841d7844b4e4cabde6a2de234501d8d452de51eaf4a0ef677e7",
+          "uses": [
+            {
+              "figure": "figure1_tool_use_loop_compact",
+              "element_id": "loop_environment_photo"
+            }
+          ]
+        }
+      ],
+      "source_version_url": "https://commons.wikimedia.org/w/index.php?title=File:The_Earth_seen_from_Apollo_17.jpg&oldid=1193076862"
+    }
+  ]
+}

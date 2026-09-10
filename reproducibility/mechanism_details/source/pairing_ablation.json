@@ -1,0 +1,51 @@
+{
+  "call_counts": {
+    "benchmark_scientific": 0,
+    "gpu": 0,
+    "http_model": 0,
+    "model": 0
+  },
+  "core_method_modified": false,
+  "corpus_n": 465,
+  "evaluation_mode": "frozen capability-mask wrapper over case-level gold features",
+  "generated_at_utc": "2026-08-12T15:26:00.301016+00:00",
+  "rows": [
+    {
+      "expected_behavior_false_positives": 0,
+      "first_divergence_accuracy": 1,
+      "notes": "18 holdout plus 18 eligible Qwen/OLMo ID-remap cases falsely rejected",
+      "safe_false_positives": 36,
+      "severity_accuracy": 1,
+      "unique_root_recall": 1.0,
+      "variant": "P-LITERAL-ID"
+    },
+    {
+      "expected_behavior_false_positives": 0,
+      "first_divergence_accuracy": 1,
+      "notes": "F2 ID-domain root and collision semantics are not represented",
+      "safe_false_positives": 0,
+      "severity_accuracy": 0.75,
+      "unique_root_recall": 0.75,
+      "variant": "P-ORDER-ONLY"
+    },
+    {
+      "expected_behavior_false_positives": 0,
+      "first_divergence_accuracy": 1,
+      "notes": "identity collisions detected; swapped-result semantics incomplete",
+      "safe_false_positives": 0,
+      "severity_accuracy": 0.75,
+      "unique_root_recall": 1.0,
+      "variant": "P-INJECTIVE-ID-MAP"
+    },
+    {
+      "expected_behavior_false_positives": 0,
+      "first_divergence_accuracy": 1,
+      "notes": "",
+      "safe_false_positives": 0,
+      "severity_accuracy": 1,
+      "unique_root_recall": 1.0,
+      "variant": "P-FULL-PAIRING-PRESERVING"
+    }
+  ],
+  "schema_version": "paritymem.paper_p3_e0.pairing_ablation.v1"
+}

@@ -1,0 +1,111 @@
+{
+  "study": "PRIMARY_PROSPECTIVE_36_PAIR",
+  "temperature": 0,
+  "top_p": 1.0,
+  "max_output_tokens": 64,
+  "precision_dtype": "bfloat16",
+  "tensor_parallelism": 1,
+  "max_concurrent_sequences": 1,
+  "context_length": 4096,
+  "GPU": "NVIDIA A800 80GB PCIe",
+  "driver_version": "570.86.15",
+  "total_calls": 360,
+  "unique_prompts": 72,
+  "strata": {
+    "APPWORLD|Llama": {
+      "available": 20,
+      "selected": 9
+    },
+    "APPWORLD|Qwen": {
+      "available": 20,
+      "selected": 9
+    },
+    "TAU3|Llama": {
+      "available": 20,
+      "selected": 9
+    },
+    "TAU3|Qwen": {
+      "available": 20,
+      "selected": 9
+    }
+  },
+  "sampling_seed": 42,
+  "selection_seed": "c7be3b65574f95102c7b50e605bbfb5f9e60bc722bdf1a4040ff7f6789e30595",
+  "selection_seed_distinct_from_generation_seed": true,
+  "Qwen_enable_thinking": false,
+  "unsubmitted_request_options": [
+    "top_k",
+    "min_p",
+    "custom stop"
+  ],
+  "omitted_option_policy": "not explicitly supplied; backend defaults remain defined by the recorded runtime/version, not guessed numeric values",
+  "evaluation_parsers": {
+    "SGLang": {
+      "Qwen": "qwen",
+      "Llama": "llama3"
+    },
+    "vLLM": {
+      "Qwen": "Hermes2ProToolParser",
+      "Llama": "Llama3JsonToolParser"
+    }
+  },
+  "epochs": {
+    "sglang_qwen_epoch1": {
+      "backend": "SGLang",
+      "model": "Qwen/Qwen3-14B",
+      "revision": "40c069824f4251a91eefaf281ebe4c544efd3e18",
+      "version": "0.5.6.post2"
+    },
+    "sglang_qwen_epoch0": {
+      "backend": "SGLang",
+      "model": "Qwen/Qwen3-14B",
+      "revision": "40c069824f4251a91eefaf281ebe4c544efd3e18",
+      "version": "0.5.6.post2"
+    },
+    "vllm_qwen_epoch1": {
+      "backend": "vLLM",
+      "model": "Qwen/Qwen3-14B",
+      "revision": "40c069824f4251a91eefaf281ebe4c544efd3e18",
+      "version": "0.23.0",
+      "image": "vllm/vllm-openai@sha256:3a1e7f5904e1a1192a02aa0086ceaffc33985d7044c7bb25b3a43d61bdbe3ac0"
+    },
+    "vllm_qwen_epoch0": {
+      "backend": "vLLM",
+      "model": "Qwen/Qwen3-14B",
+      "revision": "40c069824f4251a91eefaf281ebe4c544efd3e18",
+      "version": "0.23.0",
+      "image": "vllm/vllm-openai@sha256:3a1e7f5904e1a1192a02aa0086ceaffc33985d7044c7bb25b3a43d61bdbe3ac0"
+    },
+    "sglang_llama_epoch1": {
+      "backend": "SGLang",
+      "model": "meta-llama/Meta-Llama-3.1-8B-Instruct",
+      "revision": "8c22764a7e3675c50d4c7c9a4edb474456022b16",
+      "version": "0.5.6.post2"
+    },
+    "sglang_llama_epoch0": {
+      "backend": "SGLang",
+      "model": "meta-llama/Meta-Llama-3.1-8B-Instruct",
+      "revision": "8c22764a7e3675c50d4c7c9a4edb474456022b16",
+      "version": "0.5.6.post2"
+    },
+    "vllm_llama_epoch1": {
+      "backend": "vLLM",
+      "model": "meta-llama/Meta-Llama-3.1-8B-Instruct",
+      "revision": "8c22764a7e3675c50d4c7c9a4edb474456022b16",
+      "version": "0.23.0",
+      "image": "vllm/vllm-openai@sha256:3a1e7f5904e1a1192a02aa0086ceaffc33985d7044c7bb25b3a43d61bdbe3ac0"
+    },
+    "vllm_llama_epoch0": {
+      "backend": "vLLM",
+      "model": "meta-llama/Meta-Llama-3.1-8B-Instruct",
+      "revision": "8c22764a7e3675c50d4c7c9a4edb474456022b16",
+      "version": "0.23.0",
+      "image": "vllm/vllm-openai@sha256:3a1e7f5904e1a1192a02aa0086ceaffc33985d7044c7bb25b3a43d61bdbe3ac0"
+    }
+  },
+  "provenance": {
+    "original_sha256": "6d58db7f7a3c3f128bf8ba42d8d3e915fece1a8a7a973d965bbdfd7d930565bf",
+    "transformation": "field-selection view; launch commands, local model locations and per-process resource records omitted",
+    "original_record_in_v7_package": "reproducibility/runtime_binding/frozen_runtime_configuration.json"
+  }
+}

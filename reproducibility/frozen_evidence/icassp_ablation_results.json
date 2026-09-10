@@ -1,0 +1,94 @@
+{
+  "call_counts": {
+    "benchmark_scientific": 0,
+    "gpu": 0,
+    "http_model": 0,
+    "model": 0
+  },
+  "corpus": {
+    "blocked_or_pairing_failure": 59,
+    "eligible_cells": 354,
+    "safe": 295
+  },
+  "generated_at_utc": "2026-08-14T08:05:24.055399+00:00",
+  "method_modified": false,
+  "rows": [
+    {
+      "R2_R3_distinction_accuracy": {
+        "denominator": 59,
+        "numerator": 59,
+        "value": 1.0
+      },
+      "diagnosis": "Literal transport identity turns every benign backend remap into a predicted failure.",
+      "reachability_prediction_accuracy": {
+        "denominator": 354,
+        "numerator": 59,
+        "value": 0.16666666666666666
+      },
+      "safe_false_positive": {
+        "denominator": 295,
+        "numerator": 295,
+        "value": 1.0
+      },
+      "variant": "A0_NO_PAIRING_SEMANTICS"
+    },
+    {
+      "R2_R3_distinction_accuracy": {
+        "denominator": 59,
+        "numerator": 0,
+        "value": 0.0
+      },
+      "diagnosis": "Schema-valid histories are treated as reachable; the 59 Mistral/SGLang non-closures are missed.",
+      "reachability_prediction_accuracy": {
+        "denominator": 354,
+        "numerator": 295,
+        "value": 0.8333333333333334
+      },
+      "safe_false_positive": {
+        "denominator": 295,
+        "numerator": 0,
+        "value": 0.0
+      },
+      "variant": "A1_NO_HISTORY_CLOSURE"
+    },
+    {
+      "R2_R3_distinction_accuracy": {
+        "denominator": 59,
+        "numerator": 0,
+        "value": 0.0
+      },
+      "diagnosis": "The ID-domain difference is detectable, but execution reachability and R2/R3 consequence are unavailable.",
+      "reachability_prediction_accuracy": {
+        "denominator": 354,
+        "numerator": 295,
+        "value": 0.8333333333333334
+      },
+      "safe_false_positive": {
+        "denominator": 295,
+        "numerator": 0,
+        "value": 0.0
+      },
+      "variant": "A2_P0_P1_ONLY"
+    },
+    {
+      "R2_R3_distinction_accuracy": {
+        "denominator": 59,
+        "numerator": 59,
+        "value": 1.0
+      },
+      "diagnosis": "Frozen pairing and history-closure semantics.",
+      "reachability_prediction_accuracy": {
+        "denominator": 354,
+        "numerator": 354,
+        "value": 1.0
+      },
+      "safe_false_positive": {
+        "denominator": 295,
+        "numerator": 0,
+        "value": 0.0
+      },
+      "variant": "A3_FULL_PARITYMEM"
+    }
+  ],
+  "schema_version": "paritymem.ai_venue_pivot.icassp_ablation.v1"
+}

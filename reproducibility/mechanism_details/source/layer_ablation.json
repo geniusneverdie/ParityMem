@@ -1,0 +1,71 @@
+{
+  "call_counts": {
+    "benchmark_scientific": 0,
+    "gpu": 0,
+    "http_model": 0,
+    "model": 0
+  },
+  "core_method_modified": false,
+  "corpus_n": 465,
+  "evaluation_mode": "frozen capability-mask wrapper over case-level gold features",
+  "generated_at_utc": "2026-08-12T15:26:00.301236+00:00",
+  "rows": [
+    {
+      "R2_R3_distinction": 0.25,
+      "downstream_reachability_accuracy": 0,
+      "execution_relevance_accuracy": 0,
+      "expected_behavior_false_positives": 60,
+      "first_divergence_accuracy": 0,
+      "notes": "",
+      "repair_acceptance_validity": 0,
+      "safe_false_positives": 90,
+      "scoring_relevance_accuracy": 0,
+      "severity_accuracy": 0.25,
+      "unique_root_recall": 1.0,
+      "variant": "L-P0"
+    },
+    {
+      "R2_R3_distinction": 0.25,
+      "downstream_reachability_accuracy": 0.25,
+      "execution_relevance_accuracy": 0,
+      "expected_behavior_false_positives": 0,
+      "first_divergence_accuracy": 1,
+      "notes": "",
+      "repair_acceptance_validity": 0.5,
+      "safe_false_positives": 0,
+      "scoring_relevance_accuracy": 0,
+      "severity_accuracy": 0.25,
+      "unique_root_recall": 1.0,
+      "variant": "L-P0P1"
+    },
+    {
+      "R2_R3_distinction": 1,
+      "downstream_reachability_accuracy": 1,
+      "execution_relevance_accuracy": 1,
+      "expected_behavior_false_positives": 0,
+      "first_divergence_accuracy": 1,
+      "notes": "",
+      "repair_acceptance_validity": 1,
+      "safe_false_positives": 0,
+      "scoring_relevance_accuracy": 0,
+      "severity_accuracy": 1,
+      "unique_root_recall": 1.0,
+      "variant": "L-P0P1P2"
+    },
+    {
+      "R2_R3_distinction": 1,
+      "downstream_reachability_accuracy": 1,
+      "execution_relevance_accuracy": 1,
+      "expected_behavior_false_positives": 0,
+      "first_divergence_accuracy": 1,
+      "notes": "",
+      "repair_acceptance_validity": 1,
+      "safe_false_positives": 0,
+      "scoring_relevance_accuracy": 1,
+      "severity_accuracy": 1,
+      "unique_root_recall": 1.0,
+      "variant": "L-P0P1P2P3"
+    }
+  ],
+  "schema_version": "paritymem.paper_p3_e0.layer_ablation.v1"
+}

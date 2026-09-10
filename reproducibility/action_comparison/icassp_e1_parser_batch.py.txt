@@ -1,0 +1,45 @@
+#!/usr/bin/env python3
+"""Parse sealed ICASSP-E1 continuations with frozen official backend parsers."""
+from __future__ import annotations
+import hashlib, json, sys
+from pathlib import Path
+ROOT=Path('/data9/amx/fourth/paritymem'); ART=ROOT/'artifacts/icassp_e1'
+PATHS={'Qwen':Path('/data9/amx/fourth/_models/huggingface/models--Qwen--Qwen3-14B/snapshots/40c069824f4251a91eefaf281ebe4c544efd3e18'),'Llama':Path('/data5/hanwen/llm_file/Meta-Llama-3.1-8B-Instruct'),'Mistral':ROOT/'runs/paper_p2_r1/mistral_exact_snapshot'}
+CACHE={}
+def norm(v):
+    if isinstance(v,str):
+        try:return json.loads(v)
+        except Exception:return v
+    return v
+def sglang(r):
+    from sglang.srt.entrypoints.openai.protocol import Tool
+    from sglang.srt.entrypoints.openai.serving_chat import OpenAIServingChat
+    from sglang.srt.function_call.function_call_parser import FunctionCallParser
+    name={'Qwen':'qwen','Llama':'llama3','Mistral':'mistral'}[r['model_family']]
+    p=FunctionCallParser([Tool.model_validate(x) for x in r['tools']],name); content,items=p.parse_non_stream(r['raw_text']); dummy=type('Owner',(),{'tool_call_parser':name})()
+    calls=[{'id':OpenAIServingChat._process_tool_call_id(dummy,x,i),'name':x.name,'arguments':norm(x.parameters)} for i,x in enumerate(items)]
+    return {'parser':name,'parser_class':type(p).__name__,'content':content or '','calls':calls,'accepted':bool(calls)}
+def vllm(r):
+    from transformers import AutoTokenizer
+    from vllm.entrypoints.openai.chat_completion.protocol import ChatCompletionRequest
+    from vllm.tool_parsers.hermes_tool_parser import Hermes2ProToolParser
+    from vllm.tool_parsers.llama_tool_parser import Llama3JsonToolParser
+    from vllm.tool_parsers.mistral_tool_parser import MistralToolParser
+    cs={'Qwen':Hermes2ProToolParser,'Llama':Llama3JsonToolParser,'Mistral':MistralToolParser}; m=r['model_family']
+    if m not in CACHE:CACHE[m]=AutoTokenizer.from_pretrained(PATHS[m],local_files_only=True,trust_remote_code=False)
+    req=ChatCompletionRequest(model='icassp-e1',messages=[{'role':'user','content':'probe'}],tools=r['tools']); p=cs[m](CACHE[m]); out=p.extract_tool_calls(r['raw_text'],req)
+    calls=[{'id':x.id,'name':x.function.name,'arguments':norm(x.function.arguments)} for x in out.tool_calls]
+    return {'parser':cs[m].__name__,'parser_class':cs[m].__name__,'content':out.content or '','calls':calls,'accepted':bool(out.tools_called and calls)}
+def main():
+    if len(sys.argv)!=3 or sys.argv[1] not in {'SGLang','vLLM'}:raise SystemExit('usage: ... backend scope')
+    backend,scope=sys.argv[1:]; reg=json.loads((ART/('primary_stability_registry.json' if scope=='PRIMARY_PROSPECTIVE' else 'historical_diagnostic_registry.json')).read_text()); cells={(p['pair_id'],b):c for p in reg['rows'] for b,c in p['cells'].items()}; out=[]
+    for r in [json.loads(x) for x in (ART/'stability_results.jsonl').read_text().splitlines() if x.strip()]:
+        if r['backend']!=backend or r['scope']!=scope:continue
+        item={**r,'tools':cells[(r['pair_id'],backend)]['tools']}
+        try:p=sglang(item) if backend=='SGLang' else vllm(item); err=None
+        except Exception as e:p={'accepted':False,'content':'','calls':[],'parser':None,'parser_class':None}; err={'type':type(e).__name__,'message':str(e)}
+        p.update({'run_id':r['e1_run_id'],'pair_id':r['pair_id'],'backend':backend,'model_family':r['model_family'],'repeat':r['repeat'],'server_epoch':r['server_epoch'],'raw_output_sha256':hashlib.sha256(r['raw_text'].encode()).hexdigest(),'error':err}); out.append(p)
+    path=ROOT/'runs/icassp_e1'/f"parsed_{scope.lower()}_{backend.lower()}.jsonl"
+    if path.exists():raise RuntimeError(f'OUTPUT_COLLISION:{path}')
+    path.write_text(''.join(json.dumps(x,sort_keys=True,ensure_ascii=False)+'\n' for x in out)); print(json.dumps({'backend':backend,'scope':scope,'rows':len(out),'accepted':sum(x['accepted'] for x in out),'errors':sum(x['error'] is not None for x in out)}))
+if __name__=='__main__':main()

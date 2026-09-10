@@ -1,0 +1,68 @@
+{
+  "Mistral_6": {
+    "family": "Mistral",
+    "guard_kind": "id_length",
+    "guard_value": 6,
+    "serialized_call_limit": null,
+    "owner": "released-template controlled copy",
+    "template_file": "contract_test/templates/Mistral_6.jinja",
+    "template_sha256": "25ad352f07f363d53918448f7f0b3e0b1e808a420ec130918502f423ce84fe6f",
+    "source_template_sha256": "e16746b40344d6c5b5265988e0328a0bf7277be86f1c335156eae07e29c82826",
+    "guard_replacements": 2
+  },
+  "Mistral_9": {
+    "family": "Mistral",
+    "guard_kind": "id_length",
+    "guard_value": 9,
+    "serialized_call_limit": null,
+    "owner": "released-template controlled copy",
+    "template_file": "contract_test/templates/Mistral_9.jinja",
+    "template_sha256": "e16746b40344d6c5b5265988e0328a0bf7277be86f1c335156eae07e29c82826",
+    "source_template_sha256": "e16746b40344d6c5b5265988e0328a0bf7277be86f1c335156eae07e29c82826",
+    "guard_replacements": 2
+  },
+  "Mistral_12": {
+    "family": "Mistral",
+    "guard_kind": "id_length",
+    "guard_value": 12,
+    "serialized_call_limit": null,
+    "owner": "released-template controlled copy",
+    "template_file": "contract_test/templates/Mistral_12.jinja",
+    "template_sha256": "a05b8ee049170cc3f3bbd85e9de295d6430c5b86446b9033bd557e981973b187",
+    "source_template_sha256": "e16746b40344d6c5b5265988e0328a0bf7277be86f1c335156eae07e29c82826",
+    "guard_replacements": 2
+  },
+  "Llama_1": {
+    "family": "Llama",
+    "guard_kind": "call_count",
+    "guard_value": 1,
+    "serialized_call_limit": 1,
+    "owner": "released-template controlled copy",
+    "template_file": "contract_test/templates/Llama_1.jinja",
+    "template_sha256": "e10ca381b1ccc5cf9db52e371f3b6651576caee0a630b452e2816b2d404d4b65",
+    "source_template_sha256": "e10ca381b1ccc5cf9db52e371f3b6651576caee0a630b452e2816b2d404d4b65",
+    "guard_replacements": 1
+  },
+  "Llama_2": {
+    "family": "Llama",
+    "guard_kind": "call_count",
+    "guard_value": 2,
+    "serialized_call_limit": 1,
+    "owner": "released-template controlled copy",
+    "template_file": "contract_test/templates/Llama_2.jinja",
+    "template_sha256": "b8944d7ab4389d108a3d64f3c62c30ef6af7b65a62a6f74cb906d80c85dab69f",
+    "source_template_sha256": "e10ca381b1ccc5cf9db52e371f3b6651576caee0a630b452e2816b2d404d4b65",
+    "guard_replacements": 1
+  },
+  "Llama_3": {
+    "family": "Llama",
+    "guard_kind": "call_count",
+    "guard_value": 3,
+    "serialized_call_limit": 1,
+    "owner": "released-template controlled copy",
+    "template_file": "contract_test/templates/Llama_3.jinja",
+    "template_sha256": "971e6fa4623244b3937322d4b4842f93c00e09a4bc226797d46a1488ec54b803",
+    "source_template_sha256": "e10ca381b1ccc5cf9db52e371f3b6651576caee0a630b452e2816b2d404d4b65",
+    "guard_replacements": 1
+  }
+}

@@ -1,0 +1,254 @@
+{
+  "schema_version": "1.0",
+  "evidence_scope": "AGGREGATE_ARITHMETIC_ONLY",
+  "input": "reproducibility/study_registry.json",
+  "input_sha256": "de62ad181bb844979da8de6fa119c6c4a8ed9a9532910e3033be1e41f6c17cf2",
+  "primary_source": "S6: user-supplied table1_endpoint_completion_v1 summary",
+  "formula": "balanced_accuracy = ((safe_cells - safe_false_alarms) / safe_cells + blocked_true_positives / blocking_cells) / 2",
+  "positive_class": "blocked",
+  "denominators": {
+    "safe": 295,
+    "blocked": 59,
+    "all": 354
+  },
+  "derived_not_new_experiment": true,
+  "raw_cellwise_audit_replayed": false,
+  "per_cell_labels_synthesized": false,
+  "severity_or_FD_metrics_recomputed": false,
+  "model_calls": 0,
+  "backend_calls": 0,
+  "GPU_runs": 0,
+  "rows": [
+    {
+      "variant": "Raw equality",
+      "aggregate_confusion_counts": {
+        "TN_safe": 0,
+        "FP_safe": 295,
+        "TP_block": 59,
+        "FN_block": 0
+      },
+      "outcome_correct": [
+        59,
+        354
+      ],
+      "overall_accuracy": {
+        "exact": "1/6",
+        "value": 0.16666666666666666,
+        "percent": 16.666666666666668
+      },
+      "safe_acceptance_rate": {
+        "exact": "0/1",
+        "value": 0.0,
+        "percent": 0.0
+      },
+      "block_recall": {
+        "exact": "1/1",
+        "value": 1.0,
+        "percent": 100.0
+      },
+      "balanced_accuracy": {
+        "exact": "1/2",
+        "value": 0.5,
+        "percent": 50.0
+      }
+    },
+    {
+      "variant": "Strict schema",
+      "aggregate_confusion_counts": {
+        "TN_safe": 295,
+        "FP_safe": 0,
+        "TP_block": 0,
+        "FN_block": 59
+      },
+      "outcome_correct": [
+        295,
+        354
+      ],
+      "overall_accuracy": {
+        "exact": "5/6",
+        "value": 0.8333333333333334,
+        "percent": 83.33333333333333
+      },
+      "safe_acceptance_rate": {
+        "exact": "1/1",
+        "value": 1.0,
+        "percent": 100.0
+      },
+      "block_recall": {
+        "exact": "0/1",
+        "value": 0.0,
+        "percent": 0.0
+      },
+      "balanced_accuracy": {
+        "exact": "1/2",
+        "value": 0.5,
+        "percent": 50.0
+      }
+    },
+    {
+      "variant": "Generic normalization",
+      "aggregate_confusion_counts": {
+        "TN_safe": 295,
+        "FP_safe": 0,
+        "TP_block": 0,
+        "FN_block": 59
+      },
+      "outcome_correct": [
+        295,
+        354
+      ],
+      "overall_accuracy": {
+        "exact": "5/6",
+        "value": 0.8333333333333334,
+        "percent": 83.33333333333333
+      },
+      "safe_acceptance_rate": {
+        "exact": "1/1",
+        "value": 1.0,
+        "percent": 100.0
+      },
+      "block_recall": {
+        "exact": "0/1",
+        "value": 0.0,
+        "percent": 0.0
+      },
+      "balanced_accuracy": {
+        "exact": "1/2",
+        "value": 0.5,
+        "percent": 50.0
+      }
+    },
+    {
+      "variant": "Full ParityMem",
+      "aggregate_confusion_counts": {
+        "TN_safe": 295,
+        "FP_safe": 0,
+        "TP_block": 59,
+        "FN_block": 0
+      },
+      "outcome_correct": [
+        354,
+        354
+      ],
+      "overall_accuracy": {
+        "exact": "1/1",
+        "value": 1.0,
+        "percent": 100.0
+      },
+      "safe_acceptance_rate": {
+        "exact": "1/1",
+        "value": 1.0,
+        "percent": 100.0
+      },
+      "block_recall": {
+        "exact": "1/1",
+        "value": 1.0,
+        "percent": 100.0
+      },
+      "balanced_accuracy": {
+        "exact": "1/1",
+        "value": 1.0,
+        "percent": 100.0
+      }
+    },
+    {
+      "variant": "No pairing semantics",
+      "aggregate_confusion_counts": {
+        "TN_safe": 0,
+        "FP_safe": 295,
+        "TP_block": 59,
+        "FN_block": 0
+      },
+      "outcome_correct": [
+        59,
+        354
+      ],
+      "overall_accuracy": {
+        "exact": "1/6",
+        "value": 0.16666666666666666,
+        "percent": 16.666666666666668
+      },
+      "safe_acceptance_rate": {
+        "exact": "0/1",
+        "value": 0.0,
+        "percent": 0.0
+      },
+      "block_recall": {
+        "exact": "1/1",
+        "value": 1.0,
+        "percent": 100.0
+      },
+      "balanced_accuracy": {
+        "exact": "1/2",
+        "value": 0.5,
+        "percent": 50.0
+      }
+    },
+    {
+      "variant": "No history closure",
+      "aggregate_confusion_counts": {
+        "TN_safe": 295,
+        "FP_safe": 0,
+        "TP_block": 0,
+        "FN_block": 59
+      },
+      "outcome_correct": [
+        295,
+        354
+      ],
+      "overall_accuracy": {
+        "exact": "5/6",
+        "value": 0.8333333333333334,
+        "percent": 83.33333333333333
+      },
+      "safe_acceptance_rate": {
+        "exact": "1/1",
+        "value": 1.0,
+        "percent": 100.0
+      },
+      "block_recall": {
+        "exact": "0/1",
+        "value": 0.0,
+        "percent": 0.0
+      },
+      "balanced_accuracy": {
+        "exact": "1/2",
+        "value": 0.5,
+        "percent": 50.0
+      }
+    },
+    {
+      "variant": "P0/P1 only",
+      "aggregate_confusion_counts": {
+        "TN_safe": 295,
+        "FP_safe": 0,
+        "TP_block": 0,
+        "FN_block": 59
+      },
+      "outcome_correct": [
+        295,
+        354
+      ],
+      "overall_accuracy": {
+        "exact": "5/6",
+        "value": 0.8333333333333334,
+        "percent": 83.33333333333333
+      },
+      "safe_acceptance_rate": {
+        "exact": "1/1",
+        "value": 1.0,
+        "percent": 100.0
+      },
+      "block_recall": {
+        "exact": "0/1",
+        "value": 0.0,
+        "percent": 0.0
+      },
+      "balanced_accuracy": {
+        "exact": "1/2",
+        "value": 0.5,
+        "percent": 50.0
+      }
+    }
+  ]
+}

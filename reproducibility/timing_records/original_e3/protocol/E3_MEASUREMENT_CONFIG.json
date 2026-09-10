@@ -1,0 +1,122 @@
+{
+  "analysis": {
+    "aggregation": [
+      "median",
+      "p95",
+      "IQR",
+      "minimum",
+      "maximum"
+    ],
+    "outlier_treatment": "NONE",
+    "scaling_descriptives": [
+      "Spearman correlation",
+      "log-log OLS slope",
+      "log-log R-squared"
+    ]
+  },
+  "call_prohibitions": {
+    "benchmark_environment_calls": 0,
+    "llm_model_calls": 0,
+    "sglang_requests": 0,
+    "transformers_generation_calls": 0,
+    "vllm_requests": 0
+  },
+  "cost_projection": {
+    "bounded_resource_budget_seconds": 7200,
+    "full_workload_projected_seconds": 7347.107078,
+    "non_scientific_smoke_T_total_ns": 162834820,
+    "selected_workload_including_memory_projected_seconds": 2422.982122,
+    "subset_required": true
+  },
+  "cpu_affinity": [
+    1
+  ],
+  "environment": {
+    "CUDA_VISIBLE_DEVICES": "",
+    "HF_HUB_OFFLINE": "1",
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "PYTHONHASHSEED": "0",
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "PYTHONPATH": "/data9/amx/fourth/paritymem",
+    "TRANSFORMERS_OFFLINE": "1"
+  },
+  "exact_command": "env PYTHONHASHSEED=0 PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=/data9/amx/fourth/paritymem CUDA_VISIBLE_DEVICES= HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 NUMEXPR_NUM_THREADS=1 TMPDIR=/data9/amx/fourth/paritymem/experiments/icassp_e3_efficiency/raw/tmp TMP=/data9/amx/fourth/paritymem/experiments/icassp_e3_efficiency/raw/tmp TEMP=/data9/amx/fourth/paritymem/experiments/icassp_e3_efficiency/raw/tmp taskset -c 1 /data9/amx/fourth/_envs/prointent_sglang_auto_r2/bin/python /data9/amx/fourth/paritymem/experiments/icassp_e3_efficiency/harness/run_e3_measurements.py --execute-sealed",
+  "failure_semantics": {
+    "resource_gate": "SAFE_RESOURCE_PAUSE with no measurement",
+    "scientific_failure": "retain partial raw output; no retry",
+    "semantic_mismatch": "E3_HARNESS_SEMANTIC_MISMATCH and immediate stop"
+  },
+  "hard_timeout_seconds": 7200,
+  "inference_cost_ratio": {
+    "reason": "Frozen E1/E2 logs do not expose an unambiguous explicit request-start and completion pair for every eligible call.",
+    "status": "NOT_AVAILABLE"
+  },
+  "memory": {
+    "primary": "fresh-process repeated-decision batch with 1 ms psutil RSS sampling after tokenizer load",
+    "real_batch_repeats": 100,
+    "real_subset_size": 12,
+    "scaling_batch_repeats": 200,
+    "scaling_subset_size": 12,
+    "secondary": "tracemalloc peak; Python allocations only"
+  },
+  "monitoring": {
+    "check_interval_seconds": 30,
+    "expected_outputs": [
+      "raw/E3_REAL_TRACE_TIMINGS.jsonl",
+      "raw/E3_SCALING_TIMINGS.jsonl",
+      "analysis/E3_REAL_TRACE_SUMMARY.json",
+      "analysis/E3_SCALABILITY_SUMMARY.json",
+      "analysis/E3_MEMORY_SUMMARY.json",
+      "analysis/E3_OPTIONAL_INFERENCE_RATIO.json"
+    ]
+  },
+  "process_model": {
+    "concurrent_e3_workers": 1,
+    "primary": "single process, single measurement worker",
+    "throughput_experiment": false
+  },
+  "python": "/data9/amx/fourth/_envs/prointent_sglang_auto_r2/bin/python",
+  "real_trace": {
+    "full_registry_cells": 354,
+    "memory_subset": 12,
+    "timed_repeats": 100,
+    "timed_subset_cells": 72,
+    "warmup_repeats": 20
+  },
+  "resource_stability_gate": {
+    "max_cpu_utilization_percent": 70.0,
+    "max_load1_per_logical_cpu": 0.5,
+    "max_swap_used_bytes": 51539607552,
+    "min_available_ram_bytes": 137438953472,
+    "no_concurrent_e3": true
+  },
+  "scalability": {
+    "axes": {
+      "HISTORY_TURNS": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        32
+      ],
+      "TOOL_CALL_COUNT": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        32
+      ]
+    },
+    "timed_repeats": 200,
+    "warmup_repeats": 20
+  },
+  "schema_version": "paritymem.icassp_e3.measurement_config.v1",
+  "timer": "time.perf_counter_ns",
+  "working_directory": "/data9/amx/fourth/paritymem"
+}
+

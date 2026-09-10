@@ -1,0 +1,61 @@
+{
+  "kind": "new_post_hoc_controlled_component_interventions",
+  "input_cases": 300,
+  "prediction_rows": 1500,
+  "rows": [
+    {
+      "variant": "Full",
+      "cells": 300,
+      "outcome_correct": 300,
+      "safe_false_alarms": 0,
+      "safe_denominator": 150,
+      "defects_detected": 150,
+      "defect_denominator": 150,
+      "severity_label_agreement": 300
+    },
+    {
+      "variant": "No pairing rejection",
+      "cells": 300,
+      "outcome_correct": 289,
+      "safe_false_alarms": 0,
+      "safe_denominator": 150,
+      "defects_detected": 139,
+      "defect_denominator": 150,
+      "severity_label_agreement": 289
+    },
+    {
+      "variant": "No history-closure rejection",
+      "cells": 300,
+      "outcome_correct": 285,
+      "safe_false_alarms": 0,
+      "safe_denominator": 150,
+      "defects_detected": 135,
+      "defect_denominator": 150,
+      "severity_label_agreement": 285
+    },
+    {
+      "variant": "P0/P1 only",
+      "cells": 300,
+      "outcome_correct": 225,
+      "safe_false_alarms": 0,
+      "safe_denominator": 150,
+      "defects_detected": 75,
+      "defect_denominator": 150,
+      "severity_label_agreement": 225
+    },
+    {
+      "variant": "Literal transport-ID pairing",
+      "cells": 300,
+      "outcome_correct": 150,
+      "safe_false_alarms": 150,
+      "safe_denominator": 150,
+      "defects_detected": 150,
+      "defect_denominator": 150,
+      "severity_label_agreement": 150
+    }
+  ],
+  "model_calls": 0,
+  "backend_calls": 0,
+  "gold_read_after_prediction_generation": true,
+  "scope": "Controlled P1 holdout only; distinct from the 354-cell F2 matrix and four-root aggregate tables. Interventions suppress one rejection condition, remove P2/P3 evidence, or require literal transport identity in the frozen predictor."
+}

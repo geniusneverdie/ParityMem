@@ -1,0 +1,99 @@
+{
+  "automatic_extraction_rate": 0.26666666666666666,
+  "blocked_count": 0,
+  "call_counts": {
+    "benchmark_scientific": 0,
+    "gpu": 0,
+    "http_model": 0,
+    "model": 0
+  },
+  "candidate_count": 3,
+  "contract_fields": 30,
+  "contract_status_counts": {
+    "AUTO_EXTRACTED": 8,
+    "SOURCE_CONFIRMED": 21,
+    "UNRESOLVED": 1
+  },
+  "eligible_count": 3,
+  "full_bic": 2,
+  "generalization_substatus": "UNSEEN_STATEFUL_BENCHMARK_TRANSFER_PASS",
+  "generated_at_utc": "2026-08-13T03:14:06.940170+00:00",
+  "manual_resolution_rate": 0.0,
+  "new_external_root_candidates": 0,
+  "partial_bic": 1,
+  "rows": [
+    {
+      "P0": "PASS",
+      "P1": "PASS",
+      "P2": "PASS",
+      "P3": "PASS",
+      "benchmark_id": "TAU3",
+      "bic": "FULL_BIC",
+      "confirmed_defects": 0,
+      "expected_fp": 0,
+      "first_divergence_accuracy": 1.0,
+      "native_test": {
+        "deselected_model_dispatch": 4,
+        "fail": 0,
+        "pass": 36
+      },
+      "registered_fixtures": 150,
+      "safe_fp": 0,
+      "unresolved": 0,
+      "zero_core_change": true
+    },
+    {
+      "P0": "PASS",
+      "P1": "PASS",
+      "P2": "PASS",
+      "P3": "PASS",
+      "benchmark_id": "TOOL_SANDBOX",
+      "bic": "FULL_BIC",
+      "confirmed_defects": 0,
+      "expected_fp": 0,
+      "first_divergence_accuracy": null,
+      "native_failure_scope": "environment/version-sensitive native assertions; not classified as ParityMem external defects",
+      "native_test": {
+        "fail": 2,
+        "failures": [
+          "Python-3.11 syntax caret rendering differs",
+          "parallel permutation response order assertion"
+        ],
+        "pass": 27
+      },
+      "official_scenarios_constructed": {
+        "expanded": 1032,
+        "stateful": 1032,
+        "with_milestones": 824,
+        "with_minefields": 208
+      },
+      "registered_fixtures": 129,
+      "safe_fp": 0,
+      "unresolved": 2,
+      "zero_core_change": true
+    },
+    {
+      "P0": "PASS",
+      "P1": "PASS",
+      "P2": "SOURCE_CONFIRMED",
+      "P3": "SOURCE_CONFIRMED",
+      "benchmark_id": "APPWORLD",
+      "bic": "PARTIAL_BIC",
+      "confirmed_defects": 0,
+      "expected_fp": 0,
+      "first_divergence_accuracy": null,
+      "native_test": {
+        "reason": "public apps.bundle/tests.bundle are 131-byte private-bundle pointers",
+        "status": "NOT_EXECUTABLE"
+      },
+      "registered_fixtures": 54,
+      "safe_fp": 0,
+      "unresolved": 54,
+      "zero_core_change": true
+    }
+  ],
+  "schema_version": "paritymem.paper_p4_e0.unseen_transfer.v1",
+  "unresolved_contract_rate": 0.03333333333333333,
+  "zero_adaptation_success": true,
+  "zero_core_change_completed": 3
+}

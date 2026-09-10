@@ -1,0 +1,20 @@
+{
+  "files": [
+    {
+      "source_path": "artifacts/icassp_e1/cross_backend_modal_results.json",
+      "package_path": "reproducibility/action_comparison/cross_backend_modal_results.json",
+      "sha256": "0eaa32ececfc1d86d6c14ec9e91df8d778f069806961d2f05e193f75079ac0b0"
+    },
+    {
+      "source_path": "scripts/icassp_e1_analyze_stability.py",
+      "package_path": "reproducibility/action_comparison/icassp_e1_analyze_stability.py.txt",
+      "sha256": "82032b8e18da6119b9258a673e60d5d390aac75c7c4be59e99281ffab204eebf"
+    },
+    {
+      "source_path": "scripts/icassp_e1_parser_batch.py",
+      "package_path": "reproducibility/action_comparison/icassp_e1_parser_batch.py.txt",
+      "sha256": "ad0f5b4f9f2923875b1273a12d03ac22b9e3aa65ed4ac1994559ee2017cdc453"
+    }
+  ],
+  "scope": "Frozen action records and source snapshots; no inference rerun"
+}
